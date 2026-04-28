@@ -1,0 +1,362 @@
+# PRISM Risk axis rule catalog.
+#
+# Sourced from https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+# plus the Jagex Third-Party Client Guidelines plus patterns observed in 87
+# policy-bucket rejections from runelite/plugin-hub.
+#
+# Each rule has:
+#   id          — stable identifier
+#   category    — policy / forbidden_language / jagex_request / abuse_risk
+#   severity    — block (definite reject) | warn (manual review needed)
+#   detect      — list of patterns checked against {description, capabilities, manifest}
+#                 each entry is a {field: pattern} dict; pattern is a regex
+#                 OR a "cap:" prefix matching against capability strings
+#                 OR an "all:" composite of multiple sub-patterns (AND)
+#   citation    — reference URL(s)
+#   rationale   — one-line why
+#
+# Pattern matching is case-insensitive. A rule fires when ANY of its detect
+# entries matches.
+
+rules:
+
+  # ============================================================
+  # JAGEX-DRIVEN REMOVALS (definitive blocks)
+  # ============================================================
+
+  - id: aoe_warning_plugin
+    category: jagex_request
+    severity: block
+    detect:
+      - text: '\b(?:aoe|area[- ]of[- ]effect)\b.+(?:warning|indicator|highlight)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features#removed-in-the-past
+    rationale: Removed at Jagex's request
+
+  - id: zulrah_helper
+    category: jagex_request
+    severity: block
+    detect:
+      - text: 'zulrah\s+(?:rotation|helper|prayer|kill[- ]?counter[- ]?logic)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features#removed-in-the-past
+    rationale: Zulrah helper removed at Jagex's request (issue #1386)
+
+  - id: ba_left_click_calling
+    category: jagex_request
+    severity: block
+    detect:
+      - text: 'left[- ]click\s+calling\s+.+barbarian\s+assault'
+      - text: 'barbarian\s+assault\s+.+left[- ]click\s+calling'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features#removed-in-the-past
+    rationale: Removed by maintainer policy (PR #859)
+
+  - id: jad_trivializer
+    category: jagex_request
+    severity: block
+    detect:
+      - text: 'jad\s+(?:helper|prayer|trivialize|auto)'
+      - text: '(?:trivializ|simplif).+(?:fight\s+caves?|jad)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features#removed-in-the-past
+    rationale: Plugin trivialises the fight against Jad
+
+  - id: cerberus_helper
+    category: jagex_request
+    severity: block
+    detect:
+      - text: 'cerberus\s+(?:helper|prayer|tracker)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features#removed-in-the-past
+    rationale: Removed per Jagex Third-Party Client Guidelines
+
+  - id: inventory_pane_background_removal
+    category: jagex_request
+    severity: block
+    detect:
+      - text: '(?:remove|hide|click[- ]through).+inventory\s+(?:pane|background)'
+      - text: 'transparent\s+inventory\s+(?:pane|background)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features#removed-in-the-past
+    rationale: Abused to trivialize click-intensive skilling methods
+
+  # ============================================================
+  # NOT CURRENTLY CONSIDERED (warn — usually rejected, may have valid edge cases)
+  # ============================================================
+
+  - id: spellbook_resizing
+    category: policy
+    severity: block
+    detect:
+      - text: 'resiz(?:e|ing)\s+(?:the\s+)?spellbook'
+      - text: 'spellbook\s+(?:component|interface)\s+(?:resiz|scal)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: 2024-04-17 Jagex guidelines update prohibits this
+
+  - id: offline_friends_highlight
+    category: policy
+    severity: warn
+    detect:
+      - text: 'highlight\s+(?:offline\s+)?friends'
+      - text: 'offline\s+friends?\s+(?:list|highlight|status)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Not included to respect players with Private messaging mode
+
+  - id: opponent_freeze_timer
+    category: policy
+    severity: block
+    detect:
+      - text: '(?:opponent|enemy|other\s+player)\s+(?:freeze|frozen)\s+timer'
+      - text: 'freeze\s+duration\s+(?:on|for)\s+(?:opponent|enemy)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Forbidden by Jagex Third-Party Client Guidelines
+
+  - id: pk_skull_warning
+    category: policy
+    severity: warn
+    detect:
+      - text: '(?:pk|player[- ]?kill).+skull\s+warning'
+      - text: 'skull\s+warning.+(?:pk|wilderness|risk)'
+      - cap: 'pk-skull-warning'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: PK/Skull warning features not accepted
+
+  - id: afk_agility_helper
+    category: abuse_risk
+    severity: warn
+    detect:
+      # Tighter: must explicitly target agility-AFK, not just be an idle
+      # detector with agility in the tag list.
+      - text: 'afk\s+agility'
+      - text: 'agility.+(?:afk[- ]?(?:detect|alert|prevent))'
+      - text: 'rooftop.+(?:afk|idle)\s+(?:helper|alert)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Features exploitable for AFK agility training rejected (issue #6979); generic idle alerters are warned not blocked
+
+  - id: level_based_pvp_indicator
+    category: policy
+    severity: block
+    detect:
+      - text: 'highlight\s+players?\s+by\s+(?:combat\s+)?level'
+      - text: '(?:combat\s+)?level[- ]based\s+(?:player\s+)?(?:highlight|indicator|filter)'
+      - text: 'attack\s+range\s+(?:highlight|filter)\s+(?:players?|opponents?)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Not permitted under PvP guidelines
+
+  - id: hiscores_pb_tracking
+    category: policy
+    severity: warn
+    detect:
+      - text: 'personal\s+best.+leaderboard'
+      - text: '(?:hiscore|leaderboard)\s+for\s+(?:personal\s+best|pb)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Data easily spoofed; useless without official source
+
+  - id: camera_preset_swapping
+    category: policy
+    severity: block
+    detect:
+      # The wiki phrasing the maintainers cite verbatim:
+      - text: 'presets?\s+for\s+camera\s+(?:yaw|pitch|position)'
+      # Multiple-preset variants:
+      - text: 'multiple\s+camera\s+preset'
+      - text: 'switch(?:able)?\s+camera\s+preset'
+      - text: 'camera\s+presets?\s+(?:list|library|swap)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Presets for Camera yaw/pitch/position not supported (single save/recall like `camera-points` is allowed)
+
+  - id: party_auto_rejoin
+    category: policy
+    severity: block
+    detect:
+      - text: 'auto[- ]?rejoin\s+party'
+      - text: 'party\s+auto[- ]?rejoin'
+      - text: 'reconnect\s+(?:to\s+)?party\s+automatically'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Would strain party servers excessively
+
+  - id: touchscreen_controller
+    category: abuse_risk
+    severity: block
+    detect:
+      - text: 'touchscreen\s+(?:controller|input|support)'
+      - text: 'controller\s+(?:emulat|input|gamepad).+(?:osrs|runelite)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Would likely trigger Jagex macro detection
+
+  - id: user_id_based_plugin
+    category: policy
+    severity: warn
+    detect:
+      - text: 'user[- ]?(?:provided|defined)\s+(?:npc|item|object)\s+ids?'
+      - text: '(?:add|configure)\s+(?:custom|your\s+own)\s+(?:npc|item|object)\s+id(?:s)?'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Player-provided IDs cause moderation issues; fixed ID sets are OK
+
+  - id: twitch_emote_plugin
+    category: policy
+    severity: block
+    detect:
+      - text: 'twitch\s+emote'
+      - text: '(?:bttv|ffz|7tv)\s+emote'
+      - text: 'third[- ]party\s+emote'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Distribution would skirt legal service agreements
+
+  - id: http_player_info_exposure
+    category: abuse_risk
+    severity: warn
+    detect:
+      - text: 'expose.+(?:player|character)\s+(?:info|data|state).+http'
+      - text: 'http\s+(?:server|api|endpoint).+(?:player|character|inventory)\s+(?:data|state)'
+      - cap: 'localhost-http-server'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Forbidden — risk of data exfiltration / abuse
+
+  - id: adult_sexual_content
+    category: policy
+    severity: block
+    detect:
+      - text: '\b(?:adult|nsfw|sexual|porn|erotic)\b'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Plugins of adult or overtly sexual nature not accepted
+
+  - id: simulated_content
+    category: policy
+    severity: block
+    detect:
+      - text: 'simulat(?:e|or|ion)\s+(?:the\s+)?(?:fight|encounter|mechanic|boss)'
+      - text: '(?:practice|training)\s+simulator'
+      - cap: 'content-simulation'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Plugins simulating content rejected (Jagex policy)
+
+  - id: crowdsourced_player_data
+    category: abuse_risk
+    severity: warn
+    detect:
+      - all:
+          - text: 'crowdsourc'
+          - text: '(?:player|character)\s+(?:location|gear|name|inventory|stat)'
+      - text: 'crowdsource\s+(?:player|gear|location)\s+data'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Cannot crowdsource player locations, gear, or names
+
+  - id: autotype_chat_insertion
+    category: jagex_request
+    severity: block
+    detect:
+      - text: '(?:auto|programmatic)\s+(?:type|insert)\s+(?:into\s+)?chat'
+      - text: 'paste\s+text\s+(?:into|to)\s+chatbox'
+      - text: 'shorthand\s+expansion.+chat'
+      - text: 'auto[- ]?complete\s+chat\s+message'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Autotyping prohibited; only manual keypresses permitted
+
+  - id: post_send_chat_modification
+    category: jagex_request
+    severity: block
+    detect:
+      - text: '(?:modif|alter|rewrite)\s+outgoing\s+chat'
+      - text: 'replace\s+(?:words|text)\s+(?:on|after)\s+send'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Counts as autotyping
+
+  - id: credential_direct_storage
+    category: abuse_risk
+    severity: warn
+    detect:
+      - text: '(?:store|save)\s+(?:password|credential)\s+(?:to|on)\s+disk'
+      - text: 'plaintext\s+(?:password|credential)'
+      - text: 'credential.+(?:profile|file|json|properties)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Direct credential storage rejected; use vetted password managers
+
+  # ============================================================
+  # FORBIDDEN LANGUAGE FEATURES (definitive blocks)
+  # ============================================================
+
+  - id: non_java_language
+    category: forbidden_language
+    severity: block
+    detect:
+      - text: '\bkotlin\b'
+      - text: '\bscala\b'
+      - text: 'build\.gradle\.kts'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features#forbidden-language-features
+    rationale: Only Java permitted in plugin-hub
+
+  - id: java_reflection
+    category: forbidden_language
+    severity: block
+    detect:
+      - text: 'java\.lang\.reflect'
+      - text: 'getDeclared(?:Method|Field|Constructor)'
+      - text: '\bsetAccessible\b'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features#forbidden-language-features
+    rationale: Reflection prevents full source code review
+
+  - id: jni_native
+    category: forbidden_language
+    severity: block
+    detect:
+      - text: '\bjni\b'
+      - text: 'java\s+native\s+interface'
+      - text: 'System\.loadLibrary'
+      - text: '\bjna\b'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features#forbidden-language-features
+    rationale: Native interfaces prevent full source code review
+
+  - id: subprocess_execution
+    category: forbidden_language
+    severity: block
+    detect:
+      - text: 'Runtime\.getRuntime\(\)\.exec'
+      - text: 'ProcessBuilder'
+      - text: '\bsubprocess\b'
+      - text: 'execute\s+external\s+(?:program|process|command)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features#forbidden-language-features
+    rationale: External program execution prevents full source code review
+
+  - id: runtime_code_vendoring
+    category: forbidden_language
+    severity: block
+    detect:
+      - text: 'download.+(?:code|jar|class)\s+at\s+runtime'
+      - text: 'fetch.+source.+at\s+runtime'
+      - text: 'class\s*Loader.+(?:url|http|download)'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features#forbidden-language-features
+    rationale: Runtime code vendoring prevents review
+
+  # ============================================================
+  # ABUSE RISK (warn)
+  # ============================================================
+
+  - id: rwt_or_crypto
+    category: abuse_risk
+    severity: block
+    detect:
+      - text: '\b(?:rwt|real[- ]world\s+(?:trade|trading|reward|value))\b'
+      - text: '\b(?:crypto|cryptocurrency|nft|blockchain|web3)\b'
+      - text: 'play[- ]to[- ]earn'
+      - text: '\brug\s+pull\b'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: RWT, crypto, and play-to-earn schemes are blocked
+
+  - id: keystroke_or_mouse_faking
+    category: jagex_request
+    severity: block
+    detect:
+      - text: '(?:fake|simulat|emulat|inject|robot)\s+(?:keyboard|mouse|key|click)'
+      - text: 'java\.awt\.Robot'
+      - text: 'auto[- ]?click'
+    citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    rationale: Faking input is the literal definition of botting per maintainer policy
+
+  # ============================================================
+  # PROCESS / GOVERNANCE (cite-by-policy-doc)
+  # ============================================================
+
+  - id: plugin_takeover_without_policy
+    category: policy
+    severity: warn
+    detect:
+      - text: '\btakeover\b'
+      - text: 'taking\s+over\s+(?:the\s+)?(?:abandoned|unmaintained)\s+plugin'
+    citation: https://github.com/runelite/runelite/wiki/Plugin-takeover-policy
+    rationale: Plugin takeover requires following the documented takeover policy
