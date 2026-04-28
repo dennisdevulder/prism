@@ -6,6 +6,29 @@ A PRISM packet is a self-contained directory that lets the framework triage subm
 
 The whole point of the LTM positioning is harness-neutrality. The same `prism triage` command should work for any open-source registry, just by pointing at the right packet. A reviewer for a different ecosystem builds their packet once (rules from their docs, catalog index from their existing entries) and then PRISM works the same way.
 
+## Security model — hash verification is mandatory
+
+Packets carry policy rules and a saturation index that influence triage outputs. Anyone with write access to the packet location (a stale release artifact, a compromised mirror, a malicious PR to a packet repo) could swap a file with one that biases triage — e.g. a rule catalog where `simulated_content` becomes `severity: warn` instead of `block`, or a saturation index that claims a malicious plugin duplicates a benign one.
+
+The framework defends against this with **mandatory sha256 verification at packet load time**:
+
+1. `manifest.yaml` declares full sha256 (64 hex chars) for every file in `contents[]`
+2. `Packet(path)` computes sha256 of each file and compares to the manifest entry
+3. **Any mismatch raises `PacketIntegrityError`** — no warning, no fallback, no "load anyway"
+4. The CI action (and any downstream consumer) inherits this — a tampered packet fails the action loudly
+
+The framework code itself must be pinned by **commit SHA** (not tag) in any GitHub Action that consumes a packet, so the verification code itself can't be swapped. `@v1` tags are mutable; `@a1b2c3d` commit SHAs are not.
+
+**Future hardening (v2):** `manifest.yaml.sig` will sign the manifest with sigstore, so substituting both a file AND the manifest is also caught. Loader will require the signature when present and verify it against a well-known public key.
+
+**To regenerate hashes after editing packet contents during development:**
+
+```bash
+python3 scripts/packet.py --packet <dir> --update-hashes
+```
+
+Production packets should never be modified post-release; bump `packet.version` and ship a new packet instead.
+
 ## Tier layering (read this first)
 
 PRISM is a layered triage tool. Each tier exists to do something a cheaper tier can't:

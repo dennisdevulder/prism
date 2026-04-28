@@ -6,6 +6,31 @@ packet:
   ecosystem: RuneLite Plugin Hub
   ecosystem_url: https://github.com/runelite/plugin-hub
 
+# Verification is mandatory. The framework refuses to load any file whose
+# computed sha256 does not match the value declared here. To regenerate
+# this section after editing packet contents, run: prism verify --update
+contents:
+  - file: risk_rules.yaml
+    type: rule_catalog
+    sha256: a11cad28a278aa21567ecb0e3af157f2ef6ce93073d6caf3ce753fd4df0289e4
+  - file: saturation_index.jsonl
+    type: saturation_index
+    sha256: 102e89fac80853e067230edcd90302e3fdf7abe83ad8012a3ede602f8ba0010d
+  - file: capability_idf.json
+    type: idf_weights
+    sha256: ef935532a0157dfde9d00cbc0f5718615bb133507894189d398878e8ef84a3c6
+  - file: chronology.json
+    type: ecosystem_extension
+    description: First-add timestamps + first-commit author per catalog slug
+    sha256: edaa0d380c899e871364a261dfca2a4aab5c4ca28717e097ba33b9262951ad56
+  - file: prompts/capability_extraction.md
+    type: prompt_template
+    sha256: ec61358928d13370e1946ed9fa50163b045483ac6819b15ac717b8c0355c08f8
+  - file: prompts/t0_llm_rule_check.md
+    type: prompt_template
+    description: T0 LLM extension — model-level rule sweep when regex T0 returns compliant
+    sha256: 47a4d98d41fc8eb39d9204d4a88d3b22b55566445ef5cb70a827ddc5f71ff6c5
+
 sources:
   rules:
     primary_citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
@@ -18,28 +43,6 @@ sources:
   chronology:
     source: git history of plugin-hub repo (plugins/<slug> first-add commit)
     last_updated: 2026-04-28
-
-contents:
-  - file: risk_rules.yaml
-    type: rule_catalog
-    sha256_prefix: a11cad28a278aa21
-  - file: saturation_index.jsonl
-    type: saturation_index
-    sha256_prefix: 102e89fac80853e0
-  - file: capability_idf.json
-    type: idf_weights
-    sha256_prefix: ef935532a0157dfd
-  - file: chronology.json
-    type: ecosystem_extension
-    description: First-add timestamps + first-commit author per catalog slug
-    sha256_prefix: edaa0d380c899e87
-  - file: prompts/capability_extraction.md
-    type: prompt_template
-    sha256_prefix: ec61358928d13370
-  - file: prompts/t0_llm_rule_check.md
-    type: prompt_template
-    description: T0 LLM extension — model-level rule sweep when regex T0 returns compliant
-    sha256_prefix: 47a4d98d41fc8eb3
 
 ecosystem_config:
   source_url_pattern: "https://github.com/{owner}/{repo}/tree/{commit}"
