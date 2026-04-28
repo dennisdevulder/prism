@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 .venv/
 .DS_Store
+corpus/reclassify_chunk_*.json
+corpus/eval_*.jsonl

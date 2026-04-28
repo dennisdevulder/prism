@@ -133,15 +133,15 @@
   },
   {
     "number": 9585,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "PR management (duplicate, replaced, merged)"
   },
   {
     "number": 9555,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": "sailing",
-    "rationale": ""
+    "rationale": "PR management (duplicate, replaced, merged)"
   },
   {
     "number": 9524,
@@ -163,15 +163,15 @@
   },
   {
     "number": 9498,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 9477,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "PR management (duplicate, replaced, merged)"
   },
   {
     "number": 9460,
@@ -187,9 +187,9 @@
   },
   {
     "number": 9446,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9420,
@@ -199,15 +199,15 @@
   },
   {
     "number": 9405,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9393,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9391,
@@ -223,9 +223,9 @@
   },
   {
     "number": 9382,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 9361,
@@ -235,33 +235,33 @@
   },
   {
     "number": 9360,
-    "bucket": "takeover",
+    "bucket": "policy",
     "cited_existing_slug": null,
-    "rationale": "Plugin takeover or maintenance issue"
+    "rationale": "Policy or unsafe API violation"
   },
   {
     "number": 9352,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": "crabman-group-bronzeman-plugin",
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9350,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": "push-notifications",
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9341,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 9331,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 9330,
@@ -271,9 +271,9 @@
   },
   {
     "number": 9314,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "PR management (duplicate, replaced, merged)"
   },
   {
     "number": 9307,
@@ -313,15 +313,15 @@
   },
   {
     "number": 9229,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9224,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 9220,
@@ -343,27 +343,27 @@
   },
   {
     "number": 9214,
-    "bucket": "takeover",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": "Plugin takeover or maintenance issue"
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 9212,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": "runepouch-loadouts",
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9211,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "PR management (duplicate, replaced, merged)"
   },
   {
     "number": 9208,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 9204,
@@ -379,21 +379,21 @@
   },
   {
     "number": 9196,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": "dink",
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9195,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": "entity-render-distance",
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9187,
-    "bucket": "ambiguous",
+    "bucket": "takeover",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Plugin takeover or maintenance issue"
   },
   {
     "number": 9179,
@@ -415,9 +415,9 @@
   },
   {
     "number": 9146,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality issues unaddressed"
   },
   {
     "number": 9134,
@@ -427,15 +427,15 @@
   },
   {
     "number": 9130,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality issues unaddressed"
   },
   {
     "number": 9127,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": "life-saving-jewellery",
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9118,
@@ -457,21 +457,21 @@
   },
   {
     "number": 9087,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality issues unaddressed"
   },
   {
     "number": 9053,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 9038,
-    "bucket": "ambiguous",
+    "bucket": "policy",
     "cited_existing_slug": "homeassistant",
-    "rationale": ""
+    "rationale": "Policy or unsafe API violation"
   },
   {
     "number": 9034,
@@ -493,21 +493,21 @@
   },
   {
     "number": 9026,
-    "bucket": "takeover",
+    "bucket": "saturation",
     "cited_existing_slug": "bank-value-tracker",
-    "rationale": "Plugin takeover or maintenance issue"
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9019,
-    "bucket": "takeover",
+    "bucket": "saturation",
     "cited_existing_slug": "monsterstats",
-    "rationale": "Plugin takeover or maintenance issue"
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9015,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "PR management (duplicate, replaced, merged)"
   },
   {
     "number": 9011,
@@ -523,21 +523,21 @@
   },
   {
     "number": 8984,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 8982,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 8978,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 8977,
@@ -547,9 +547,9 @@
   },
   {
     "number": 8968,
-    "bucket": "takeover",
+    "bucket": "saturation",
     "cited_existing_slug": "monsterstats",
-    "rationale": "Plugin takeover or maintenance issue"
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 8964,
@@ -559,15 +559,15 @@
   },
   {
     "number": 8954,
-    "bucket": "takeover",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": "Plugin takeover or maintenance issue"
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 8942,
-    "bucket": "takeover",
+    "bucket": "policy",
     "cited_existing_slug": "kitten-tracker",
-    "rationale": "Plugin takeover or maintenance issue"
+    "rationale": "Policy or unsafe API violation"
   },
   {
     "number": 8906,
@@ -577,9 +577,9 @@
   },
   {
     "number": 8901,
-    "bucket": "takeover",
+    "bucket": "policy",
     "cited_existing_slug": null,
-    "rationale": "Plugin takeover or maintenance issue"
+    "rationale": "Policy or unsafe API violation"
   },
   {
     "number": 8891,
