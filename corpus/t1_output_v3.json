@@ -1,0 +1,432 @@
+[
+  {
+    "number": 11454,
+    "matched_rules": [
+      {
+        "rule_id": "level_based_pvp_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "combat level detection",
+        "rationale": "Not permitted under PvP guidelines"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Alerts with 'combat level detection' constitute level-based player filtering"
+  },
+  {
+    "number": 11280,
+    "matched_rules": [
+      {
+        "rule_id": "simulated_content",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Overlays boss models and attack patterns on the Gemstone Crab for PvM training",
+        "rationale": "Plugins simulating content rejected (Jagex policy)"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Boss fight training overlay matches simulated_content pattern"
+  },
+  {
+    "number": 11182,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 11123,
+    "matched_rules": [
+      {
+        "rule_id": "plugin_takeover_without_policy",
+        "severity": "warn",
+        "confidence": "high",
+        "evidence": "takeover",
+        "rationale": "Plugin takeover requires following the documented takeover policy"
+      }
+    ],
+    "verdict": "policy-warning",
+    "reasoning": "Matched 1 warning rule(s)"
+  },
+  {
+    "number": 11077,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 11023,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 10989,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 10896,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 10877,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "orb paths, debris, and shadow markers",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matched 1 blocking rule(s)"
+  },
+  {
+    "number": 10683,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 10598,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "tracks the volatile shield path",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Shield path tracking matches boss mechanic indicator pattern"
+  },
+  {
+    "number": 10450,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Highlights projectiles with customizable colored overlays",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matched 1 blocking rule(s)"
+  },
+  {
+    "number": 10345,
+    "matched_rules": [
+      {
+        "rule_id": "simulated_content",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "help players learn the mechanics of the Vorkath fight",
+        "rationale": "Plugins simulating content rejected (Jagex policy)"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Boss fight training plugin matches simulated_content pattern"
+  },
+  {
+    "number": 10180,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 10153,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 10148,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 10069,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 9962,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 9513,
+    "matched_rules": [
+      {
+        "rule_id": "level_based_pvp_indicator",
+        "severity": "block",
+        "confidence": "medium",
+        "evidence": "Highlights attackable targets in bounty hunter",
+        "rationale": "Not permitted under PvP guidelines"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Attackable target highlighting in PvP context matches level-based filter pattern"
+  },
+  {
+    "number": 9459,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 9343,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "highlights dangerous tiles during special attacks",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matched 1 blocking rule(s)"
+  },
+  {
+    "number": 9324,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 9319,
+    "matched_rules": [
+      {
+        "rule_id": "opponent_freeze_timer",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "freeze timer opponent",
+        "rationale": "Forbidden by Jagex Third-Party Client Guidelines"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "PK Helper with freeze/opponent/timer tags indicates opponent freeze timer"
+  },
+  {
+    "number": 9202,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 9150,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 9005,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Path overlay for Rotation 2 no prayer fight cave runs",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matched 1 blocking rule(s)"
+  },
+  {
+    "number": 8905,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 8855,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 8787,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 8772,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 8727,
+    "matched_rules": [
+      {
+        "rule_id": "crowdsourced_player_data",
+        "severity": "warn",
+        "confidence": "high",
+        "evidence": "Logs player data (location, activity, gear) to a custom API",
+        "rationale": "Cannot crowdsource player locations, gear, or names"
+      }
+    ],
+    "verdict": "policy-warning",
+    "reasoning": "Tracks and logs player location and gear data"
+  },
+  {
+    "number": 8725,
+    "matched_rules": [
+      {
+        "rule_id": "level_based_pvp_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Hides players below a certain combat level",
+        "rationale": "Not permitted under PvP guidelines"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Filtering players by combat level is explicitly prohibited"
+  },
+  {
+    "number": 8682,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 8548,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Attack style tracker/helper to assist with learning corrupted gauntlet",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Attack style helper for boss encounter matches mechanic indicator pattern"
+  },
+  {
+    "number": 8520,
+    "matched_rules": [
+      {
+        "rule_id": "party_auto_rejoin",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Automatically join last party on login",
+        "rationale": "Would strain party servers excessively"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Auto-rejoin party is explicitly forbidden"
+  },
+  {
+    "number": 8062,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Highlight Sote projectiles",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matched 1 blocking rule(s)"
+  },
+  {
+    "number": 7932,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 7890,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 7858,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 7737,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 7615,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 7545,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 7494,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 7383,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 7172,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 5592,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 3708,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Renders customizable flinching timer over designated NPC",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matched 1 blocking rule(s)"
+  },
+  {
+    "number": 3128,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  },
+  {
+    "number": 3062,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy rules matched"
+  }
+]

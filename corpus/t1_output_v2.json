@@ -1,0 +1,352 @@
+[
+  {
+    "number": 11454,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 11280,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 11182,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 11123,
+    "matched_rules": [
+      {
+        "rule_id": "plugin_takeover_without_policy",
+        "severity": "warn",
+        "confidence": "high",
+        "evidence": "bank memory: takeover Bank Memory Remembe",
+        "rationale": "Plugin takeover requires following the documented takeover policy"
+      }
+    ],
+    "verdict": "policy-warning",
+    "reasoning": "Matches warning rule(s): plugin_takeover_without_policy"
+  },
+  {
+    "number": 11077,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 11023,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 10989,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 10896,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 10877,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "debris, and shadow markers. earthen shield, volatile earth, doom, mokha,",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matches blocking rule(s): boss_mechanic_indicator"
+  },
+  {
+    "number": 10683,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 10598,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 10450,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Add Projectile Highlighter plugin Projectile Highlighter Highlig",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matches blocking rule(s): boss_mechanic_indicator"
+  },
+  {
+    "number": 10345,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 10180,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 10153,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 10148,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 10069,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 9962,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 9513,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 9459,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 9343,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "erts and highlights dangerous tiles during Crazy/Deran",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matches blocking rule(s): boss_mechanic_indicator"
+  },
+  {
+    "number": 9324,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 9319,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 9202,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 9150,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 9005,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "er Fight Cave Guide Path overlay for Rotation 2 no praye",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matches blocking rule(s): boss_mechanic_indicator"
+  },
+  {
+    "number": 8905,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 8855,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 8787,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 8772,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 8727,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 8725,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 8682,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 8548,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 8520,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 8062,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "ghlighter Sote Ball Highlighter Highlight Sote projectiles sote,tob,projectile",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matches blocking rule(s): boss_mechanic_indicator"
+  },
+  {
+    "number": 7932,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 7890,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 7858,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 7737,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 7615,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 7545,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 7494,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 7383,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 7172,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 5592,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 3708,
+    "matched_rules": [
+      {
+        "rule_id": "boss_mechanic_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "ate flinching-timer Flinching Timer Renders customizabl",
+        "rationale": "Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Matches blocking rule(s): boss_mechanic_indicator"
+  },
+  {
+    "number": 3128,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": 3062,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  }
+]

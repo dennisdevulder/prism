@@ -226,6 +226,33 @@ rules:
     citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
     rationale: Plugins simulating content rejected (Jagex policy)
 
+  - id: boss_mechanic_indicator
+    category: policy
+    severity: block
+    detect:
+      # Visual cues for boss mechanics — Jagex 3PC: "Adds additional visual
+      # or audio indicators of a boss mechanic". Word boundaries are required
+      # because 'orb' as a substring matches 'colorblind' etc.
+      - text: '(?:highlight|mark|overlay|render).{0,40}\b(?:projectile|attack\s+pattern|orb|shockwave|tornado|volatile)\b'
+      - text: '\b(?:dangerous|safe|avoid)\s+tile'
+      - text: 'where\s+(?:to|not\s+to)\s+stand'
+      - text: '\b(?:safe\s+spot|safe\s+square|safe\s+tile)\b'
+      - text: 'highlight(?:s|ing)?\s+(?:dangerous\s+(?:tile|zone)|projectile|incoming\s+attack|boss\s+attack)'
+      - text: '\b(?:dangerous\s+tile|attack\s+tile|attack\s+zone|telegraph(?:ed)?\s+attack)'
+      # Mechanic timing indicators
+      - text: 'flinch(?:ing)?\s+timer'
+      - text: '\b(?:tick|attack)\s+timer.{0,20}\b(?:boss|npc|opponent|enemy)'
+      - text: 'prayer\s+flick.{0,30}(?:timer|helper|guide|timing)'
+      # Boss "where to go" guidance
+      - text: 'path\s+overlay\s+(?:for|in|during)'
+      - text: '\b(?:rotation|wave)\s+(?:guide|helper|overlay)'
+      - text: 'attack\s+style\s+(?:tracker|helper).{0,40}\b(?:gauntlet|boss|encounter)'
+      # Auditory cues — must reference opponent/boss/incoming attack, not
+      # the player's own actions (e.g. 'sound when attacking' = own action)
+      - text: 'play(?:s)?\s+(?:a\s+)?sound\s+(?:when|on).{0,30}\b(?:boss|incoming|opponent|enemy|special\s+attack|missed|glance)'
+    citation: https://secure.runescape.com/m=news/third-party-client-guidelines?oldschool=1
+    rationale: Jagex 3PC bans plugins that add visual/audio indicators of boss mechanics or guide player positioning during fights
+
   - id: crowdsourced_player_data
     category: abuse_risk
     severity: warn
