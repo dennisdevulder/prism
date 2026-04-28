@@ -1,0 +1,36 @@
+{
+  "what_it_does": "The plugin monitors OSRS gameplay events (level-ups, quest completions, loot drops, clue scroll rewards, collection log entries, deaths, and pet drops) and POSTs them with video/screenshot attachments to osrs-tracker.com. It also runs a bingo-event subsystem that polls the API for active group bingo tiles and silently reports boss kills, NPC kills, loot, raids, gauntlet, and slayer task completions against those tiles. Additionally, it scans the player's bank for clan-shared items (Item Snitch), highlights them with a bank overlay, and reports sightings to the API.",
+  "description_match": {
+    "verdict": "partial",
+    "summary": "The code delivers everything the manifest claims but ships three undisclosed feature sets: a full bingo-event tracking and reporting system, a pet-drop tracker, and an Item Snitch bank scanner that auto-reports shared clan items.",
+    "gaps": [
+      "Bingo event system (BingoSubscriptionManager, BingoProgressReporter, polling /api/bingo/subscriptions every 5 min) not mentioned in manifest",
+      "Pet drop tracking (PetTracker, 20-second extended capture) not mentioned in manifest",
+      "Item Snitch bank scanner and item sighting reporting not mentioned in manifest",
+      "ScreenshotUploadService uploads directly to Backblaze B2 via presigned URL — third-party egress not disclosed in manifest",
+      "Raid/slayer/gauntlet completions are also reported (to bingo endpoint) though not listed as tracked events",
+      "Quick Capture sidebar button sends arbitrary on-demand clips to /api/webhooks/quick_capture"
+    ]
+  },
+  "unsafe_operations": [
+    {
+      "kind": "external_network",
+      "where": "src/main/java/com/osrstracker/api/ScreenshotUploadService.java:87",
+      "what": "Uploads screenshot bytes directly to a Backblaze B2 presigned URL fetched at runtime — data leaves to a third-party storage host not mentioned in the manifest",
+      "level": "medium"
+    },
+    {
+      "kind": "external_network",
+      "where": "src/main/java/com/osrstracker/bingo/BingoSubscriptionManager.java:143",
+      "what": "Polls /api/bingo/subscriptions on login and every 5 minutes when an event is active or starting within 6 hours — continuous background network traffic not disclosed in manifest",
+      "level": "low"
+    },
+    {
+      "kind": "external_network",
+      "where": "src/main/java/com/osrstracker/bingo/BingoProgressReporter.java:331",
+      "what": "POSTs gameplay event data (boss kills, NPC kills, loot, raids, slayer tasks, gauntlet) to /api/bingo/progress — undisclosed telemetry endpoint",
+      "level": "low"
+    }
+  ],
+  "bottom_line": "The code is safe from a Java-security standpoint (no reflection, no native, no subprocess, no simulated input), but the reviewer needs to decide whether the three undisclosed feature sets — bingo tracking, pet drops, Item Snitch bank scanning, and Backblaze direct uploads — are acceptable without manifest disclosure; that is the only substantive gate."
+}
