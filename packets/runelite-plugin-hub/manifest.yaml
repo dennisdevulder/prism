@@ -33,7 +33,7 @@ contents:
   - file: prompts/t1_correctness_review.md
     type: prompt_template
     description: T1 code-level review — surfaces file:line pointers worth reviewer attention
-    sha256: 26587673894b3aeea1d1f38270e8e3c5c358a7b8bec008870b3221281f161176
+    sha256: 36f929bdc81d81f7f18c342ac8b480338b20addefde808c77684fc004db8d678
 
 sources:
   rules:
