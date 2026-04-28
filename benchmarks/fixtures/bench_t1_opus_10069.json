@@ -1,0 +1,39 @@
+{
+  "pointers": [
+    {
+      "file": "src/main/java/com/pathrender/memorydiagnostic/MemoryDiagnosticPlugin.java",
+      "line_range": "244-286",
+      "concern": "Reflection with setAccessible(true) on every non-static field of every enabled plugin",
+      "why": "MemoryEstimator.getAllFields walks the class hierarchy and calls field.setAccessible(true) on declared fields of every enabled RuneLite plugin. This bypasses Java access control across foreign packages and reads private state of arbitrary plugins. Even though the estimator only sums sizes (not exfiltrating values), the same machinery could trivially be repurposed; reviewers should confirm no field values are logged/transmitted and consider whether plugin-hub policy permits cross-plugin reflection.",
+      "severity": "high"
+    },
+    {
+      "file": "src/main/java/com/pathrender/memorydiagnostic/MemoryDiagnosticPlugin.java",
+      "line_range": "185-257",
+      "concern": "Recursive field traversal of live plugin objects on the client thread",
+      "why": "estimate() reflectively reads every field of every enabled plugin via field.get(obj) on each ClientTick interval. Touching live plugin internals (which may include lazily-initialized state, thread-unsafe collections, or proxies) can trigger side effects, NPEs, ConcurrentModificationException, or hangs. Map/Collection.size() calls on non-thread-safe containers from a background traversal are also unsafe.",
+      "severity": "medium"
+    },
+    {
+      "file": "src/main/java/com/pathrender/memorydiagnostic/MemoryDiagnosticPlugin.java",
+      "line_range": "95-107",
+      "concern": "Heavy reflective scan on every ClientTick",
+      "why": "onClientTick fires ~50/sec. Although gated by nextUpdateMillis, the gating uses System.currentTimeMillis comparison and runs updateUsage() on the client thread which iterates every plugin and reflectively walks fields. A misconfiguration (refreshIntervalSeconds=1) would freeze/slow the client. Should run off the client thread.",
+      "severity": "low"
+    },
+    {
+      "file": "src/main/java/com/pathrender/memorydiagnostic/MemoryDiagnosticPlugin.java",
+      "line_range": "181-190",
+      "concern": "Package name (com.pathrender) does not match plugin description / no obvious author tie",
+      "why": "Description claims a memory diagnostic but the implementation strategy (cross-plugin reflective field walking) is a non-obvious approach for an estimator; pure JVM-based estimates (e.g., using java.lang.instrument or simply counting plugin classes) would not require setAccessible on foreign plugin internals. Reviewer should confirm the author and that the package is owned and not impersonating another plugin.",
+      "severity": "low"
+    },
+    {
+      "file": "src/main/java/com/pathrender/memorydiagnostic/MemoryDiagnosticPlugin.java",
+      "line_range": "259-286",
+      "concern": "Unbounded fieldCache keyed by Class<?> can leak classloaders/memory",
+      "why": "Ironic for a 'memory diagnostic' plugin: the HashMap<Class<?>, Field[]> retains strong references to every plugin Class object scanned. If plugins are reloaded (class redefinition), this prevents classloader GC. Minor but worth flagging.",
+      "severity": "low"
+    }
+  ]
+}

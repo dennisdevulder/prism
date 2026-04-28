@@ -1,0 +1,23 @@
+{
+  "what_it_does": "A RuneLite plugin that estimates and displays relative memory usage of enabled plugins by recursively traversing object graphs up to depth 2, computing heuristic memory units for arrays, collections, maps, and strings. It provides a toolbar panel showing the top N plugins sorted by estimated memory consumption with percentages and total estimates.",
+  "description_match": {
+    "verdict": "matches",
+    "summary": "The manifest description 'Estimates relative memory usage of enabled plugins' is accurate to the actual code behavior, which introspects enabled plugins via reflection and calculates memory footprints using object graph traversal.",
+    "gaps": []
+  },
+  "unsafe_operations": [
+    {
+      "kind": "reflection",
+      "where": "MemoryDiagnosticPlugin.java:258-287",
+      "what": "Uses java.lang.reflect to access private fields of arbitrary plugins via field.setAccessible(true), enabling inspection of internal state of third-party code",
+      "level": "medium"
+    },
+    {
+      "kind": "reflection",
+      "where": "MemoryDiagnosticPlugin.java:549-548",
+      "what": "Calls getAnnotation() and plugin.getClass().getPackage() to extract metadata; uses Class.getDeclaredFields() and Class.getSuperclass() for introspection",
+      "level": "low"
+    }
+  ],
+  "bottom_line": "A memory profiling utility with safe design; reflection use is appropriate for its diagnostic purpose and confined to read-only introspection."
+}

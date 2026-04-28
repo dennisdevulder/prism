@@ -1,0 +1,53 @@
+{
+  "pointers": [
+    {
+      "file": "src/main/java/com/osrstracker/OsrsTrackerConfig.java",
+      "line_range": "140-157",
+      "concern": "Environment-variable-controlled API endpoint redirect",
+      "why": "getEffectiveApiUrl() checks OSRS_TRACKER_DEV env-var and, when set, replaces the hardcoded production URL with whatever OSRS_TRACKER_API_URL contains. Any env-var manipulation on the user's machine (malicious software, CI overrides, etc.) can silently redirect all bearer-token-authenticated requests—including screenshots and video—to an attacker-controlled server. There is no URL validation or whitelist check on the value.",
+      "severity": "high"
+    },
+    {
+      "file": "src/main/java/com/osrstracker/bingo/BingoProgressReporter.java",
+      "line_range": "306-340",
+      "concern": "BingoProgressReporter bypasses the uploadToPlatform user consent gate",
+      "why": "ApiClient.isConfigurationValid() checks config.uploadToPlatform() before sending any data. BingoProgressReporter.sendProgress() constructs its own OkHttpClient and sends directly to /api/bingo/progress, checking only apiToken (not uploadToPlatform). A user who disables 'Upload Clips to Platform' still has boss kills, NPC kills, loot, clue completions, raid completions, gauntlet completions, and slayer task completions—including screenshots—uploaded without their consent.",
+      "severity": "high"
+    },
+    {
+      "file": "src/main/java/com/osrstracker/OsrsTrackerPlugin.java",
+      "line_range": "96-100",
+      "concern": "Bingo feature absent from manifest description and tags",
+      "why": "The PR manifest description lists level-ups, quest completions, loot drops, clue scrolls, collection log updates, and deaths. The diff introduces a full bingo subscription and progress-reporting system (BingoSubscriptionManager, BingoProgressReporter, bingo module) that polls the API, reports gameplay events to a separate /api/bingo/progress endpoint, and captures screenshots/video for it. This undisclosed functionality is a material mismatch with the stated description.",
+      "severity": "high"
+    },
+    {
+      "file": "src/main/java/com/osrstracker/OsrsTrackerPlugin.java",
+      "line_range": "96-100",
+      "concern": "Quick Capture feature absent from manifest description and tags",
+      "why": "The manifest does not mention a 'Quick Capture' button in the sidebar. The diff adds a fully functional sidebar panel with a clickable capture button that sends player RSN, screenshot, and video to /api/webhooks/quick_capture on demand. This is a new data-exfiltration surface not disclosed in the plugin description.",
+      "severity": "medium"
+    },
+    {
+      "file": "src/main/java/com/osrstracker/bingo/BingoProgressReporter.java",
+      "line_range": "55-78",
+      "concern": "BingoProgressReporter constructs its own OkHttpClient, evading any RuneLite-level network monitoring",
+      "why": "RuneLite's plugin-hub policy generally expects plugins to reuse the shared OkHttpClient so network activity can be tracked/audited. BingoProgressReporter calls httpClient.newBuilder().cache(null).build() to create a private client, obscuring bingo-related HTTP traffic from any RuneLite diagnostics or traffic monitors that inspect the shared client.",
+      "severity": "medium"
+    },
+    {
+      "file": "src/main/java/com/osrstracker/api/ApiClient.java",
+      "line_range": "55-66",
+      "concern": "ApiClient also forks its own private OkHttpClient",
+      "why": "Same pattern as BingoProgressReporter: ApiClient creates a private fork of the injected RuneLite OkHttpClient to disable disk caching. While the stated reason (avoiding cache conflicts on Windows) is plausible, the effect is that all plugin network traffic leaves RuneLite's shared-client audit trail, and the two classes make independent connection pools with separate keep-alive behaviour that is harder to reason about.",
+      "severity": "low"
+    },
+    {
+      "file": "src/main/java/com/osrstracker/OsrsTrackerPlugin.java",
+      "line_range": "925-928",
+      "concern": "Unmanaged ScheduledExecutorService with no guaranteed shutdown on plugin disable",
+      "why": "cooldownExecutor is created via Executors.newSingleThreadScheduledExecutor() (instantiation is in the omitted startCooldownTimer body) and assigned to a field. shutDown() only calls shutdownNow() if the reference is non-null, but if startCooldownTimer() is never reached (quick capture never used), the reference stays null. More importantly, there is no finally-block ensuring shutdown, so a crash path that bypasses shutDown() would leak a daemon thread tied to the plugin classloader, preventing GC.",
+      "severity": "low"
+    }
+  ]
+}

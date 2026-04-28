@@ -1,0 +1,56 @@
+{
+  "cases": [
+    {
+      "id": "pr_11280_gemstone_trainer",
+      "pr": 11280,
+      "rejection_type": "policy_description_visible",
+      "rejection_reason": "simulated_content (Jagex 3PC: plugins simulating content)",
+      "expected_layer": "T0",
+      "manifest": {
+        "displayName": "Gemstone Trainer",
+        "description": "Overlays boss models and attack patterns on the Gemstone Crab for PvM training.",
+        "tags": "verzik,sol,heredit,colosseum,tob,trainer,pvm,gemstone,crab"
+      },
+      "source": {
+        "owner": null,
+        "repo": null,
+        "commit": null,
+        "note": "Source not fetched for this case — T0 description-only check is sufficient (the rejection is visible in the manifest)."
+      }
+    },
+    {
+      "id": "pr_10069_memory_diagnostic",
+      "pr": 10069,
+      "rejection_type": "policy_source_only",
+      "rejection_reason": "reflection (forbidden language feature)",
+      "expected_layer": "T1+T2",
+      "manifest": {
+        "displayName": "memory-diagnostic",
+        "description": "Estimates relative memory usage of enabled plugins.",
+        "tags": "memory,diagnostic,performance"
+      },
+      "source": {
+        "owner": "Pathrender",
+        "repo": "memory-diagnostic",
+        "commit": "07565424"
+      }
+    },
+    {
+      "id": "pr_11565_osrs_tracker",
+      "pr": 11565,
+      "rejection_type": "clean_with_undisclosed_features",
+      "rejection_reason": "(not rejected — but T2 should surface undisclosed feature sets)",
+      "expected_layer": "T2",
+      "manifest": {
+        "displayName": "OSRS Tracker",
+        "description": "Automatically sends level-ups, quest completions, loot drops, clue scrolls, collection log updates, and deaths to osrs-tracker.com with video replay clips.",
+        "tags": "tracker,levels,quests,loot,collection log,notifications,deaths,clue scrolls,video"
+      },
+      "source": {
+        "owner": "dennisdevulder",
+        "repo": "osrs-tracker-plugin",
+        "commit": "c4851ded"
+      }
+    }
+  ]
+}

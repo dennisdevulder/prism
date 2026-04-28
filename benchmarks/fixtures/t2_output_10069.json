@@ -1,0 +1,23 @@
+{
+  "what_it_does": "Memory Diagnostic is a RuneLite plugin that estimates relative memory usage of all enabled plugins by walking their object graphs via Java reflection. It iterates all enabled plugins on a configurable interval (default 10s), scores each plugin's fields using fixed unit weights per type (Map, Collection, Cache, String, array, plain object), and displays the ranked results in a side panel showing per-plugin unit counts and percentages.",
+  "description_match": {
+    "verdict": "matches",
+    "summary": "The manifest says 'Estimates relative memory usage of enabled plugins' and the code does exactly that — heuristic unit-based scoring, not real byte measurement. The panel label even says 'Units = relative object+cache estimate (not bytes)', so the plugin is upfront about the approximation.",
+    "gaps": []
+  },
+  "unsafe_operations": [
+    {
+      "kind": "reflection",
+      "where": "MemoryDiagnosticPlugin.java:266",
+      "what": "field.setAccessible(true) is called on every non-static, non-synthetic field of every enabled plugin's class hierarchy in order to read field values for the memory estimate. This bypasses visibility modifiers across all plugins in the JVM.",
+      "level": "medium"
+    },
+    {
+      "kind": "reflection",
+      "where": "MemoryDiagnosticPlugin.java:542-548",
+      "what": "plugin.getClass().getAnnotation(PluginDescriptor.class) reads annotation metadata via reflection on every enabled plugin. Low risk but part of the same reflective access pattern.",
+      "level": "low"
+    }
+  ],
+  "bottom_line": "Clean, well-scoped diagnostic plugin with one genuine concern: broad field.setAccessible(true) on all enabled plugins' private fields is a non-trivial reflective privilege that reviewers should explicitly accept before merging."
+}

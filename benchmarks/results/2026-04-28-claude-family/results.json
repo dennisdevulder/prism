@@ -1,0 +1,122 @@
+[
+  {
+    "case": "10069",
+    "model": "haiku-4-5",
+    "tier": "T1",
+    "tokens": 28314,
+    "elapsed": 14.5,
+    "file": "/tmp/t1_output_10069.json",
+    "caught": true,
+    "cost_usd": 0.04530239999999999
+  },
+  {
+    "case": "10069",
+    "model": "sonnet-4-6",
+    "tier": "T1",
+    "tokens": 22099,
+    "elapsed": 32.6,
+    "file": "/tmp/bench_t1_sonnet_10069.json",
+    "caught": true,
+    "cost_usd": 0.10607520000000001
+  },
+  {
+    "case": "10069",
+    "model": "opus-4-7",
+    "tier": "T1",
+    "tokens": 29373,
+    "elapsed": 26.4,
+    "file": "/tmp/bench_t1_opus_10069.json",
+    "caught": true,
+    "cost_usd": 0.234984
+  },
+  {
+    "case": "10069",
+    "model": "haiku-4-5",
+    "tier": "T2",
+    "tokens": 27805,
+    "elapsed": 8.5,
+    "file": "/tmp/bench_t2_haiku_10069.json",
+    "caught": true,
+    "cost_usd": 0.044488
+  },
+  {
+    "case": "10069",
+    "model": "sonnet-4-6",
+    "tier": "T2",
+    "tokens": 21362,
+    "elapsed": 17.8,
+    "file": "/tmp/t2_output_10069.json",
+    "caught": true,
+    "cost_usd": 0.1025376
+  },
+  {
+    "case": "10069",
+    "model": "opus-4-7",
+    "tier": "T2",
+    "tokens": 28899,
+    "elapsed": 22.2,
+    "file": "/tmp/bench_t2_opus_10069.json",
+    "caught": true,
+    "cost_usd": 0.23119199999999995
+  },
+  {
+    "case": "11565",
+    "model": "haiku-4-5",
+    "tier": "T1",
+    "tokens": 46968,
+    "elapsed": 54.0,
+    "file": "/tmp/t1_output.json",
+    "caught": true,
+    "cost_usd": 0.07514879999999999
+  },
+  {
+    "case": "11565",
+    "model": "sonnet-4-6",
+    "tier": "T1",
+    "tokens": 54004,
+    "elapsed": 124.7,
+    "file": "/tmp/bench_t1_sonnet_11565.json",
+    "caught": true,
+    "cost_usd": 0.2592192
+  },
+  {
+    "case": "11565",
+    "model": "opus-4-7",
+    "tier": "T1",
+    "tokens": 51762,
+    "elapsed": 82.7,
+    "file": "/tmp/bench_t1_opus_11565.json",
+    "caught": true,
+    "cost_usd": 0.41409599999999996
+  },
+  {
+    "case": "11565",
+    "model": "haiku-4-5",
+    "tier": "T2",
+    "tokens": 34047,
+    "elapsed": 27.7,
+    "file": "/tmp/bench_t2_haiku_11565.json",
+    "caught": false,
+    "cost_usd": 0.0544752
+  },
+  {
+    "case": "11565",
+    "model": "sonnet-4-6",
+    "tier": "T2",
+    "tokens": 80517,
+    "elapsed": 60.0,
+    "file": "/tmp/t2_output.json",
+    "caught": true,
+    "cost_usd": 0.3864816
+  },
+  {
+    "case": "11565",
+    "model": "opus-4-7",
+    "tier": "T2",
+    "tokens": 29152,
+    "elapsed": 67.5,
+    "file": "/tmp/bench_t2_opus_11565.json",
+    "caught": true,
+    "cost_usd": 0.233216
+  }
+]
