@@ -13,9 +13,9 @@
   },
   {
     "number": 9827,
-    "bucket": "ambiguous",
+    "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Build or compilation failure"
   },
   {
     "number": 9826,
@@ -85,9 +85,9 @@
   },
   {
     "number": 9637,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": "sailing",
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9616,
@@ -121,9 +121,9 @@
   },
   {
     "number": 9591,
-    "bucket": "procedural",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "PR management (duplicate, replaced, merged)"
+    "rationale": "Code quality issues unaddressed"
   },
   {
     "number": 9590,
@@ -139,9 +139,9 @@
   },
   {
     "number": 9555,
-    "bucket": "procedural",
+    "bucket": "saturation",
     "cited_existing_slug": "sailing",
-    "rationale": "PR management (duplicate, replaced, merged)"
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9524,
@@ -151,9 +151,9 @@
   },
   {
     "number": 9522,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality issues unaddressed"
   },
   {
     "number": 9504,
@@ -169,9 +169,9 @@
   },
   {
     "number": 9477,
-    "bucket": "procedural",
+    "bucket": "off_topic",
     "cited_existing_slug": null,
-    "rationale": "PR management (duplicate, replaced, merged)"
+    "rationale": "Screenshot/image comment without substantive feedback"
   },
   {
     "number": 9460,
@@ -223,9 +223,9 @@
   },
   {
     "number": 9382,
-    "bucket": "invalid",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Submission violates format requirements"
+    "rationale": "PR management (duplicate, replaced, merged)"
   },
   {
     "number": 9361,
@@ -253,9 +253,9 @@
   },
   {
     "number": 9341,
-    "bucket": "invalid",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Submission violates format requirements"
+    "rationale": "Code quality issues unaddressed"
   },
   {
     "number": 9331,
@@ -265,9 +265,9 @@
   },
   {
     "number": 9330,
-    "bucket": "ambiguous",
+    "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Build or compilation failure"
   },
   {
     "number": 9314,
@@ -289,15 +289,15 @@
   },
   {
     "number": 9283,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9282,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9281,
@@ -307,9 +307,9 @@
   },
   {
     "number": 9277,
-    "bucket": "ambiguous",
+    "bucket": "policy",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Policy or unsafe API violation"
   },
   {
     "number": 9229,
@@ -403,9 +403,9 @@
   },
   {
     "number": 9173,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "PR management (duplicate, replaced, merged)"
   },
   {
     "number": 9172,
@@ -439,21 +439,21 @@
   },
   {
     "number": 9118,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality issues unaddressed"
   },
   {
     "number": 9104,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality issues unaddressed"
   },
   {
     "number": 9103,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": "party-status-bars-overlay",
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9087,
@@ -475,15 +475,15 @@
   },
   {
     "number": 9034,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Existing plugin has this functionality"
   },
   {
     "number": 9030,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "PR management (duplicate, replaced, merged)"
   },
   {
     "number": 9028,
@@ -505,9 +505,9 @@
   },
   {
     "number": 9015,
-    "bucket": "procedural",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": "PR management (duplicate, replaced, merged)"
+    "rationale": "Submission violates format requirements"
   },
   {
     "number": 9011,
@@ -517,15 +517,15 @@
   },
   {
     "number": 9010,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
-  },
-  {
-    "number": 8984,
     "bucket": "invalid",
     "cited_existing_slug": null,
     "rationale": "Submission violates format requirements"
+  },
+  {
+    "number": 8984,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code quality issues unaddressed"
   },
   {
     "number": 8982,
@@ -535,15 +535,15 @@
   },
   {
     "number": 8978,
-    "bucket": "invalid",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Submission violates format requirements"
+    "rationale": "PR management (duplicate, replaced, merged)"
   },
   {
     "number": 8977,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality issues unaddressed"
   },
   {
     "number": 8968,
@@ -571,9 +571,9 @@
   },
   {
     "number": 8906,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality issues unaddressed"
   },
   {
     "number": 8901,

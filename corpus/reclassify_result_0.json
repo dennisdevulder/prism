@@ -2,7 +2,7 @@
   {
     "number": 11641,
     "bucket": "ambiguous",
-    "cited_existing_slug": null,
+    "cited_existing_slug": "hotkey-toggle-sidepanels",
     "rationale": ""
   },
   {
@@ -13,21 +13,21 @@
   },
   {
     "number": 11598,
-    "bucket": "off_topic",
-    "cited_existing_slug": null,
-    "rationale": "Non-rejection interaction"
+    "bucket": "procedural",
+    "cited_existing_slug": "bank-heatmap",
+    "rationale": "Already merged/closed"
   },
   {
     "number": 11591,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Reference to related issue"
   },
   {
     "number": 11586,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Reference to related issue"
   },
   {
     "number": 11584,
@@ -37,45 +37,45 @@
   },
   {
     "number": 11545,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
+    "bucket": "procedural",
+    "cited_existing_slug": "leaguessync",
+    "rationale": "Duplicate/concurrent PR"
   },
   {
     "number": 11466,
     "bucket": "policy",
     "cited_existing_slug": "camera-points",
-    "rationale": "Violates plugin policy"
+    "rationale": "Policy violation"
   },
   {
     "number": 11368,
-    "bucket": "ambiguous",
+    "bucket": "policy",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Policy violation"
   },
   {
     "number": 11350,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Invalid submission"
   },
   {
     "number": 11324,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Duplicate/concurrent PR"
   },
   {
     "number": 11323,
-    "bucket": "ambiguous",
+    "bucket": "policy",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Policy violation"
   },
   {
     "number": 11254,
-    "bucket": "ambiguous",
+    "bucket": "policy",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Policy violation"
   },
   {
     "number": 11229,
@@ -85,63 +85,63 @@
   },
   {
     "number": 11183,
-    "bucket": "policy",
-    "cited_existing_slug": null,
-    "rationale": "Plugin takeover policy violation"
+    "bucket": "takeover",
+    "cited_existing_slug": "citizens",
+    "rationale": "Plugin takeover"
   },
   {
     "number": 11182,
-    "bucket": "policy",
+    "bucket": "takeover",
     "cited_existing_slug": null,
-    "rationale": "Plugin takeover policy violation"
+    "rationale": "Plugin takeover"
   },
   {
     "number": 11172,
     "bucket": "ambiguous",
-    "cited_existing_slug": null,
+    "cited_existing_slug": "watchdog",
     "rationale": ""
   },
   {
     "number": 11170,
-    "bucket": "ambiguous",
+    "bucket": "policy",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Policy violation"
   },
   {
     "number": 11128,
     "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": "Build/compilation failure"
+    "rationale": "Build failure"
   },
   {
     "number": 11123,
-    "bucket": "policy",
-    "cited_existing_slug": null,
-    "rationale": "Plugin takeover policy violation"
+    "bucket": "takeover",
+    "cited_existing_slug": "bank-memory",
+    "rationale": "Plugin takeover"
   },
   {
     "number": 11118,
     "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": "Build/CI issue"
+    "rationale": "Branch conflicts"
   },
   {
     "number": 11104,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
+    "bucket": "code_quality",
+    "cited_existing_slug": "07flip",
+    "rationale": "Code quality feedback"
   },
   {
     "number": 11092,
-    "bucket": "saturation",
-    "cited_existing_slug": null,
-    "rationale": "Duplicate functionality"
+    "bucket": "takeover",
+    "cited_existing_slug": "group-ironmen-tracker",
+    "rationale": "Ownership/maintenance"
   },
   {
     "number": 11087,
     "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": "Uses deprecated API"
+    "rationale": "Build failure"
   },
   {
     "number": 11084,
@@ -151,266 +151,266 @@
   },
   {
     "number": 11078,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Duplicate/concurrent PR"
   },
   {
     "number": 11077,
-    "bucket": "policy",
+    "bucket": "takeover",
     "cited_existing_slug": null,
-    "rationale": "Plugin takeover policy violation"
+    "rationale": "Plugin takeover"
   },
   {
     "number": 11008,
-    "bucket": "build",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Build/compilation failure"
+    "rationale": "Already merged/closed"
   },
   {
     "number": 10984,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
-  },
-  {
-    "number": 10981,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
-  },
-  {
-    "number": 10945,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
-  },
-  {
-    "number": 10922,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
-  },
-  {
-    "number": 10910,
-    "bucket": "off_topic",
-    "cited_existing_slug": null,
-    "rationale": "Non-rejection interaction"
-  },
-  {
-    "number": 10893,
-    "bucket": "build",
-    "cited_existing_slug": null,
-    "rationale": "Build/CI issue"
-  },
-  {
-    "number": 10892,
-    "bucket": "build",
-    "cited_existing_slug": null,
-    "rationale": "Build/CI issue"
-  },
-  {
-    "number": 10883,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
-  },
-  {
-    "number": 10880,
-    "bucket": "policy",
-    "cited_existing_slug": null,
-    "rationale": "Plugin takeover policy violation"
-  },
-  {
-    "number": 10868,
-    "bucket": "build",
-    "cited_existing_slug": null,
-    "rationale": "Build/compilation failure"
-  },
-  {
-    "number": 10862,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
-  },
-  {
-    "number": 10839,
-    "bucket": "policy",
-    "cited_existing_slug": null,
-    "rationale": "Plugin takeover policy violation"
-  },
-  {
-    "number": 10828,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
-  },
-  {
-    "number": 10826,
-    "bucket": "off_topic",
-    "cited_existing_slug": null,
-    "rationale": "Non-rejection interaction"
-  },
-  {
-    "number": 10822,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
-  },
-  {
-    "number": 10765,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
-  },
-  {
-    "number": 10757,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
-  },
-  {
-    "number": 10754,
     "bucket": "saturation",
     "cited_existing_slug": null,
     "rationale": "Duplicate functionality"
   },
   {
-    "number": 10733,
+    "number": 10981,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Branch conflicts"
+  },
+  {
+    "number": 10945,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "chat-widgets",
+    "rationale": ""
+  },
+  {
+    "number": 10922,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate/concurrent PR"
+  },
+  {
+    "number": 10910,
+    "bucket": "policy",
+    "cited_existing_slug": null,
+    "rationale": "Policy violation"
+  },
+  {
+    "number": 10893,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate/concurrent PR"
+  },
+  {
+    "number": 10892,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate/concurrent PR"
+  },
+  {
+    "number": 10883,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate/concurrent PR"
+  },
+  {
+    "number": 10880,
+    "bucket": "takeover",
+    "cited_existing_slug": "gauntlet",
+    "rationale": "Plugin takeover"
+  },
+  {
+    "number": 10868,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Already merged/closed"
+  },
+  {
+    "number": 10862,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Already merged/closed"
+  },
+  {
+    "number": 10839,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Plugin takeover"
+  },
+  {
+    "number": 10828,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Already merged/closed"
+  },
+  {
+    "number": 10826,
+    "bucket": "off_topic",
+    "cited_existing_slug": "worn-equip-viewer",
+    "rationale": "Positive interaction"
+  },
+  {
+    "number": 10822,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Already merged/closed"
+  },
+  {
+    "number": 10765,
+    "bucket": "procedural",
+    "cited_existing_slug": "examine-tooltip",
+    "rationale": "Duplicate/concurrent PR"
+  },
+  {
+    "number": 10757,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code quality feedback"
+  },
+  {
+    "number": 10754,
     "bucket": "ambiguous",
     "cited_existing_slug": null,
     "rationale": ""
+  },
+  {
+    "number": 10733,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build configuration error"
   },
   {
     "number": 10722,
-    "bucket": "ambiguous",
+    "bucket": "not_interested",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Design/direction feedback"
   },
   {
     "number": 10696,
-    "bucket": "ambiguous",
+    "bucket": "policy",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Policy violation"
   },
   {
     "number": 10689,
-    "bucket": "policy",
-    "cited_existing_slug": null,
-    "rationale": "Plugin takeover policy violation"
+    "bucket": "saturation",
+    "cited_existing_slug": "boredgenerator",
+    "rationale": "Duplicate of boredgenerator"
   },
   {
     "number": 10684,
-    "bucket": "takeover",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": "Maintenance/ownership issue"
+    "rationale": "Duplicate functionality"
   },
   {
     "number": 10683,
-    "bucket": "policy",
+    "bucket": "takeover",
     "cited_existing_slug": null,
-    "rationale": "Plugin takeover policy violation"
+    "rationale": "Plugin takeover"
   },
   {
     "number": 10682,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": "slayer-boosting",
-    "rationale": ""
+    "rationale": "Duplicate of slayer-boosting"
   },
   {
     "number": 10673,
-    "bucket": "code_quality",
+    "bucket": "not_interested",
     "cited_existing_slug": null,
-    "rationale": "Unaddressed code quality feedback"
+    "rationale": "Design/direction feedback"
   },
   {
     "number": 10666,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": "osrs-claude",
-    "rationale": ""
+    "rationale": "Code quality feedback"
   },
   {
     "number": 10658,
-    "bucket": "ambiguous",
+    "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Build failure"
   },
   {
     "number": 10654,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Duplicate functionality"
   },
   {
     "number": 10594,
     "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": "Invalid submission format"
+    "rationale": "Invalid submission"
   },
   {
     "number": 10577,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality feedback"
   },
   {
     "number": 10523,
-    "bucket": "off_topic",
+    "bucket": "not_interested",
     "cited_existing_slug": null,
-    "rationale": "Non-rejection interaction"
+    "rationale": "Design/direction feedback"
   },
   {
     "number": 10505,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality feedback"
   },
   {
     "number": 10458,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
+    "bucket": "invalid",
+    "cited_existing_slug": "cacheviewer",
+    "rationale": "Invalid submission"
   },
   {
     "number": 10449,
     "bucket": "ambiguous",
-    "cited_existing_slug": null,
+    "cited_existing_slug": "gauntlet",
     "rationale": ""
   },
   {
     "number": 10438,
-    "bucket": "ambiguous",
-    "cited_existing_slug": null,
-    "rationale": ""
+    "bucket": "procedural",
+    "cited_existing_slug": "sailing",
+    "rationale": "Already merged/closed"
   },
   {
     "number": 10437,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality feedback"
   },
   {
     "number": 10431,
-    "bucket": "off_topic",
-    "cited_existing_slug": null,
-    "rationale": "Non-rejection interaction"
-  },
-  {
-    "number": 10428,
-    "bucket": "invalid",
-    "cited_existing_slug": null,
-    "rationale": "Invalid submission format"
-  },
-  {
-    "number": 10426,
     "bucket": "ambiguous",
     "cited_existing_slug": null,
     "rationale": ""
+  },
+  {
+    "number": 10428,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Already merged/closed"
+  },
+  {
+    "number": 10426,
+    "bucket": "procedural",
+    "cited_existing_slug": "choicer",
+    "rationale": "Reference to related issue"
   },
   {
     "number": 10425,
     "bucket": "ambiguous",
-    "cited_existing_slug": null,
+    "cited_existing_slug": "choicer",
     "rationale": ""
   },
   {
@@ -423,13 +423,13 @@
     "number": 10400,
     "bucket": "takeover",
     "cited_existing_slug": null,
-    "rationale": "Maintenance/ownership issue"
+    "rationale": "Plugin takeover"
   },
   {
     "number": 10391,
     "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": "Uses deprecated API"
+    "rationale": "Build configuration error"
   },
   {
     "number": 10382,
@@ -439,14 +439,14 @@
   },
   {
     "number": 10379,
-    "bucket": "code_quality",
+    "bucket": "ambiguous",
     "cited_existing_slug": null,
-    "rationale": "Unaddressed code quality feedback"
+    "rationale": ""
   },
   {
     "number": 10359,
     "bucket": "ambiguous",
-    "cited_existing_slug": null,
+    "cited_existing_slug": "damage-history",
     "rationale": ""
   },
   {
@@ -458,56 +458,56 @@
   {
     "number": 10260,
     "bucket": "ambiguous",
-    "cited_existing_slug": null,
+    "cited_existing_slug": "qol-interfaces",
     "rationale": ""
   },
   {
     "number": 10251,
-    "bucket": "off_topic",
-    "cited_existing_slug": null,
-    "rationale": "Non-rejection interaction"
+    "bucket": "ambiguous",
+    "cited_existing_slug": "dink",
+    "rationale": ""
   },
   {
     "number": 10230,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Duplicate functionality"
   },
   {
     "number": 10227,
     "bucket": "ambiguous",
-    "cited_existing_slug": null,
+    "cited_existing_slug": "collapsible-modern-chat",
     "rationale": ""
   },
   {
     "number": 10203,
-    "bucket": "saturation",
-    "cited_existing_slug": null,
-    "rationale": "Duplicate functionality"
+    "bucket": "ambiguous",
+    "cited_existing_slug": "sailing",
+    "rationale": ""
   },
   {
     "number": 10193,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Unaddressed code quality feedback"
+    "rationale": "Code quality feedback"
   },
   {
     "number": 10181,
-    "bucket": "code_quality",
-    "cited_existing_slug": null,
-    "rationale": "Unaddressed code quality feedback"
-  },
-  {
-    "number": 10154,
     "bucket": "ambiguous",
     "cited_existing_slug": null,
     "rationale": ""
   },
   {
+    "number": 10154,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "custom-emoji",
+    "rationale": ""
+  },
+  {
     "number": 10115,
-    "bucket": "saturation",
+    "bucket": "ambiguous",
     "cited_existing_slug": null,
-    "rationale": "Duplicate functionality"
+    "rationale": ""
   },
   {
     "number": 10068,
@@ -523,63 +523,63 @@
   },
   {
     "number": 10052,
-    "bucket": "off_topic",
-    "cited_existing_slug": null,
-    "rationale": "Non-rejection interaction"
+    "bucket": "build",
+    "cited_existing_slug": "homeassistant",
+    "rationale": "Build failure"
   },
   {
     "number": 10022,
     "bucket": "off_topic",
     "cited_existing_slug": null,
-    "rationale": "Non-rejection interaction"
+    "rationale": "Positive interaction"
   },
   {
     "number": 9997,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Reference to related issue"
   },
   {
     "number": 9995,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Unaddressed code quality feedback"
+    "rationale": "Code quality feedback"
   },
   {
     "number": 9962,
     "bucket": "policy",
     "cited_existing_slug": null,
-    "rationale": "Violates plugin policy"
+    "rationale": "Policy violation"
   },
   {
     "number": 9951,
     "bucket": "build",
-    "cited_existing_slug": null,
-    "rationale": "Build/compilation failure"
+    "cited_existing_slug": "item-link",
+    "rationale": "Build failure"
   },
   {
     "number": 9949,
-    "bucket": "off_topic",
-    "cited_existing_slug": null,
-    "rationale": "Non-rejection interaction"
+    "bucket": "not_interested",
+    "cited_existing_slug": "thieving-stall-counter",
+    "rationale": "Design/direction feedback"
   },
   {
     "number": 9941,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Unaddressed code quality feedback"
+    "rationale": "Code quality feedback"
   },
   {
     "number": 9936,
-    "bucket": "off_topic",
-    "cited_existing_slug": null,
-    "rationale": "Non-rejection interaction"
+    "bucket": "ambiguous",
+    "cited_existing_slug": "item-link",
+    "rationale": ""
   },
   {
     "number": 9895,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Unaddressed code quality feedback"
+    "rationale": "Code quality feedback"
   },
   {
     "number": 9889,

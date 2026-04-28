@@ -1,0 +1,50 @@
+{
+  "11466": {
+    "owner": "runelite",
+    "repo": "runelite",
+    "commit": null,
+    "format": "repo_only"
+  },
+  "9658": {
+    "owner": "Khaled2143",
+    "repo": "bank-watcher",
+    "commit": "004f66fbbda48ffb4181474b6ea79cf84abecaf2",
+    "format": "any_tree_url"
+  },
+  "9172": {
+    "owner": "jespernapp",
+    "repo": "Loot-Notifier",
+    "commit": null,
+    "format": "repo_only"
+  },
+  "8662": {
+    "owner": "notifications",
+    "repo": "unsubscribe-auth",
+    "commit": null,
+    "format": "repo_only"
+  },
+  "7996": {
+    "owner": "spg8642",
+    "repo": "discord-forwarder",
+    "commit": null,
+    "format": "repo_only"
+  },
+  "7881": {
+    "owner": "runelite",
+    "repo": "runelite",
+    "commit": null,
+    "format": "repo_only"
+  },
+  "7867": {
+    "owner": "Az3rate",
+    "repo": "ironman-questing-helper",
+    "commit": "8da7a7ba500f048b30b79382cbb2294dd4fdc9c9",
+    "format": "any_tree_url"
+  },
+  "7459": {
+    "owner": "Kamran14",
+    "repo": "RuneGPT",
+    "commit": "88e81340ae994fd9353fe036f40659a96e94543d",
+    "format": "any_tree_url"
+  }
+}
