@@ -30,6 +30,10 @@ contents:
     type: prompt_template
     description: T0 LLM extension — model-level rule sweep when regex T0 returns compliant
     sha256: 47a4d98d41fc8eb39d9204d4a88d3b22b55566445ef5cb70a827ddc5f71ff6c5
+  - file: prompts/t1_correctness_review.md
+    type: prompt_template
+    description: T1 code-level review — surfaces file:line pointers worth reviewer attention
+    sha256: 26587673894b3aeea1d1f38270e8e3c5c358a7b8bec008870b3221281f161176
 
 sources:
   rules:

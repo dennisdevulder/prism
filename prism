@@ -40,6 +40,8 @@ def cmd_triage(args):
         argv += ["--json"]
     if args.t0_llm:
         argv += ["--t0-llm"]
+    if args.t1:
+        argv += ["--t1"]
     sys.argv = ["prism_triage"] + argv
     prism_triage.main()
 
@@ -101,6 +103,8 @@ def build_parser():
                           help="precomputed capabilities (skip extraction)")
     p_triage.add_argument("--t0-llm", action="store_true",
                           help="run T0 LLM rule extension when regex T0 returns compliant")
+    p_triage.add_argument("--t1", action="store_true",
+                          help="run T1 code-level review (Haiku); requires ANTHROPIC_API_KEY")
     p_triage.add_argument("--json", action="store_true",
                           help="emit raw JSON instead of markdown")
     p_triage.set_defaults(func=cmd_triage)

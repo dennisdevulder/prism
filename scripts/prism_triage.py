@@ -34,7 +34,7 @@ from packet import Packet, DEFAULT_PACKET
 
 PLUGIN_REF = re.compile(
     # `slug`: [old..new](https://github.com/OWNER/REPO/compare/HASH1..[OWNER:]HASH2)
-    r"`([a-z0-9_-]+)`:\s+(?:\[[^\]]*\])?\s*\(?https://github\.com/([^/\s)]+)/([^/\s)]+)/compare/[0-9a-f]+\.\.(?:[a-z0-9_-]+:)?([0-9a-f]{7,40})",
+    r"`([a-z0-9_-]+)`:\s+(?:\[[^\]]*\])?\s*\(?https://github\.com/([^/\s)]+)/([^/\s)]+)/compare/([0-9a-f]+)\.\.(?:[a-z0-9_-]+:)?([0-9a-f]{7,40})",
     re.IGNORECASE,
 )
 NEW_PLUGIN = re.compile(
@@ -79,7 +79,7 @@ def detect_target(pr):
     target_slug = candidates[0] if candidates else None
 
     # 2. Find runelite-github-app comment with new commit hash
-    owner = repo = commit = None
+    owner = repo = commit = base_commit = None
     is_new = False
     for c in pr["comments"]["nodes"]:
         if (c.get("author") or {}).get("login") != "runelite-github-app":
@@ -93,7 +93,7 @@ def detect_target(pr):
             break
         m = PLUGIN_REF.search(body)
         if m:
-            slug, owner, repo, commit = m.groups()
+            slug, owner, repo, base_commit, commit = m.groups()
             target_slug = slug
             break
 
@@ -102,6 +102,7 @@ def detect_target(pr):
         "owner": owner,
         "repo": repo,
         "commit": commit,
+        "base_commit": base_commit,
         "is_new_plugin": is_new,
     }
 
@@ -131,7 +132,7 @@ def parse_properties(text):
 
 
 def render_markdown(pr, target, manifest, manifest_url, capabilities,
-                     saturation, risk, packet=None):
+                     saturation, risk, packet=None, t1=None):
     """Reviewer-friendly markdown output. Designed to be pasted into a PR
     review comment. Suppresses empty sections; always opens with the
     overall verdict so the reviewer sees the bottom line first.
@@ -216,6 +217,26 @@ def render_markdown(pr, target, manifest, manifest_url, capabilities,
             if m.get("citation"):
                 out.append(f"  - Cite: <{m['citation']}>")
 
+    # ===== T1 pointers =====
+    if t1 and t1.get("pointers"):
+        out.append("")
+        out.append(f"### T1 — code-level pointers ({len(t1['pointers'])} for reviewer attention)")
+        out.append("")
+        out.append(f"_Examined {t1.get('files_examined', '?')} file(s) in {t1.get('scope', '?')}._")
+        out.append("")
+        for p in t1["pointers"]:
+            sev = p.get("severity", "low")
+            badge = {"high": "🛑", "medium": "⚠️", "low": "ℹ️"}.get(sev, "·")
+            file_ref = f"`{p.get('file', '?')}`"
+            line_ref = p.get("line_range", "?")
+            out.append(f"- {badge} **{file_ref} L{line_ref}** — {p.get('concern', '')}")
+            out.append(f"  - {p.get('why', '')}")
+    elif t1 and t1.get("error"):
+        out.append("")
+        out.append(f"### T1 — code-level pointers")
+        out.append("")
+        out.append(f"_T1 not run: {t1['error']}_")
+
     # ===== reviewer summary =====
     out.append("")
     out.append("### Reviewer notes")
@@ -244,6 +265,7 @@ def main():
     parser.add_argument("--json", action="store_true", help="Emit raw JSON instead of formatted report")
     parser.add_argument("--markdown", action="store_true", help="Emit reviewer-friendly markdown (default)")
     parser.add_argument("--t0-llm", action="store_true", help="Run T0 LLM rule extension (Haiku, N=3); requires ANTHROPIC_API_KEY")
+    parser.add_argument("--t1", action="store_true", help="Run T1 code-level review (Haiku); requires ANTHROPIC_API_KEY")
     parser.add_argument("--packet", type=Path, default=DEFAULT_PACKET,
                         help=f"Path to PRISM Core Memory Packet (default: {DEFAULT_PACKET.name})")
     args = parser.parse_args()
@@ -321,6 +343,17 @@ def main():
         except SystemExit:
             sys.stderr.write("(T0 LLM extension skipped — ANTHROPIC_API_KEY not set)\n")
 
+    # ===== Step 7: optionally run T1 code-level review =====
+    t1_result = None
+    if args.t1 and risk["verdict"] != "policy-violation":
+        # T1 only useful if T0 didn't already block — saves tokens.
+        from risk_scorer_t1 import evaluate as t1_evaluate
+        try:
+            t1_result = t1_evaluate(packet, target, pr, manifest)
+        except RuntimeError as e:
+            sys.stderr.write(f"(T1 skipped — {e})\n")
+            t1_result = None
+
     # ===== Step 6: render =====
     if args.json:
         print(json.dumps({
@@ -333,7 +366,7 @@ def main():
         }, indent=2))
         return
 
-    print(render_markdown(pr, target, manifest, manifest_url, capabilities, saturation, risk, packet=packet))
+    print(render_markdown(pr, target, manifest, manifest_url, capabilities, saturation, risk, packet=packet, t1=t1_result))
 
 
 if __name__ == "__main__":
