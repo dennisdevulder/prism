@@ -27,8 +27,9 @@ from pathlib import Path
 PRISM_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PRISM_ROOT / "scripts"))
 
-from saturation_scorer import score_pr as score_saturation, load_idf, load_jsonl
-from risk_scorer import evaluate as score_risk, load_rules
+from saturation_scorer import score_pr as score_saturation
+from risk_scorer import evaluate as score_risk
+from packet import Packet, DEFAULT_PACKET
 
 
 PLUGIN_REF = re.compile(
@@ -130,7 +131,7 @@ def parse_properties(text):
 
 
 def render_markdown(pr, target, manifest, manifest_url, capabilities,
-                     saturation, risk):
+                     saturation, risk, packet=None):
     """Reviewer-friendly markdown output. Designed to be pasted into a PR
     review comment. Suppresses empty sections; always opens with the
     overall verdict so the reviewer sees the bottom line first.
@@ -223,6 +224,9 @@ def render_markdown(pr, target, manifest, manifest_url, capabilities,
     if not capabilities:
         out.append("")
         out.append("_(No capabilities supplied — saturation matching is not meaningful without them. Run capability extraction before relying on the saturation verdict.)_")
+    if packet:
+        out.append("")
+        out.append(f"_Packet: `{packet.id}@{packet.version}` · {len(packet.saturation_index)} catalog entries · {len(packet.rules)} rules_")
 
     return "\n".join(out)
 
@@ -240,6 +244,8 @@ def main():
     parser.add_argument("--json", action="store_true", help="Emit raw JSON instead of formatted report")
     parser.add_argument("--markdown", action="store_true", help="Emit reviewer-friendly markdown (default)")
     parser.add_argument("--t1-risk", action="store_true", help="Run T1 risk ensemble (Haiku, N=3); requires ANTHROPIC_API_KEY")
+    parser.add_argument("--packet", type=Path, default=DEFAULT_PACKET,
+                        help=f"Path to PRISM Core Memory Packet (default: {DEFAULT_PACKET.name})")
     args = parser.parse_args()
 
     if not args.pr and not args.plugin_file:
@@ -293,15 +299,15 @@ def main():
         "createdAt": pr.get("createdAt"),
     }
 
-    # ===== Step 4: run T0 saturation =====
-    index = load_jsonl(PRISM_ROOT / "corpus" / "saturation_index.jsonl")
-    idf = load_idf(PRISM_ROOT / "corpus" / "capability_idf.json")
-    # Exclude self from candidate pool when the slug is already in catalog
-    saturation = score_saturation(plugin_record, index, idf, k=5,
-                                   exclude_slug=target["slug"])
+    # ===== Step 4: load packet (rules + saturation index + chronology + prompts) =====
+    packet = Packet(args.packet)
 
-    # ===== Step 5: run T0 risk; optionally escalate to T1 if T0 came back compliant =====
-    risk = score_risk(plugin_record, load_rules())
+    # ===== Step 5: run T0 saturation =====
+    saturation = score_saturation(plugin_record, packet.saturation_index, packet.idf,
+                                   k=5, exclude_slug=target["slug"])
+
+    # ===== Step 6: run T0 risk; optionally escalate to T1 if T0 came back compliant =====
+    risk = score_risk(plugin_record, packet.rules)
     if args.t1_risk and risk["verdict"] == "compliant":
         from risk_scorer_t1 import evaluate as t1_evaluate
         t1_input = {
@@ -327,7 +333,7 @@ def main():
         }, indent=2))
         return
 
-    print(render_markdown(pr, target, manifest, manifest_url, capabilities, saturation, risk))
+    print(render_markdown(pr, target, manifest, manifest_url, capabilities, saturation, risk, packet=packet))
 
 
 if __name__ == "__main__":

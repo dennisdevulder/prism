@@ -1,0 +1,46 @@
+schema_version: 1
+
+packet:
+  id: runelite-plugin-hub
+  version: 2026-04-28
+  ecosystem: RuneLite Plugin Hub
+  ecosystem_url: https://github.com/runelite/plugin-hub
+
+sources:
+  rules:
+    primary_citation: https://github.com/runelite/runelite/wiki/Rejected-or-Rolled-Back-Features
+    secondary_citation: https://secure.runescape.com/m=news/third-party-client-guidelines?oldschool=1
+    last_updated: 2026-04-28
+  saturation:
+    catalog_size: 1659
+    capability_vocab_size: 1889
+    last_updated: 2026-04-28
+  chronology:
+    source: git history of plugin-hub repo (plugins/<slug> first-add commit)
+    last_updated: 2026-04-28
+
+contents:
+  - file: risk_rules.yaml
+    type: rule_catalog
+    sha256_prefix: a11cad28a278aa21
+  - file: saturation_index.jsonl
+    type: saturation_index
+    sha256_prefix: 102e89fac80853e0
+  - file: capability_idf.json
+    type: idf_weights
+    sha256_prefix: ef935532a0157dfd
+  - file: chronology.json
+    type: ecosystem_extension
+    description: First-add timestamps + first-commit author per catalog slug
+    sha256_prefix: edaa0d380c899e87
+  - file: prompts/capability_extraction.md
+    type: prompt_template
+    sha256_prefix: ec61358928d13370
+  - file: prompts/t1_risk_classification.md
+    type: prompt_template
+    sha256_prefix: 7a403df04d1c0191
+
+ecosystem_config:
+  source_url_pattern: "https://github.com/{owner}/{repo}/tree/{commit}"
+  manifest_path: runelite-plugin.properties
+  pr_repo: runelite/plugin-hub
