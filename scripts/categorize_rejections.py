@@ -53,7 +53,6 @@ PATTERNS = [
         r"covered by vanilla",
         r"use the .+ plugin instead",
         r"(?:use|consider using) \S+ instead",
-        # Newly-added from unclear-bucket review:
         r"there are already multiple .+ plugins",
         r"there'?s (?:also )?(?:a |an )?\S+ plugin",
         r"should (?:just )?be (?:a feature|part) (?:added |of |in )",
@@ -65,6 +64,27 @@ PATTERNS = [
         r"contribution to the core",
         r"merge(?:d)? (?:in|with) (?:the )?\w+ plugin",
         r"this is (?:already )?(?:available|done) (?:in|via|by)",
+        # Soft-rejection language from second-pass review:
+        r"redundant given",
+        r"covered by (?:several|many|multiple) other",
+        r"covered by .+ such as",
+        r"prefer (?:you|that) (?:contribute|collab|merge|PR|push) (?:it )?(?:there|to)",
+        r"(?:would you mind|why not) (?:PR|push|add|submit)(?:ing)? (?:it|this|these) (?:there|to|in)",
+        r"(?:rather|i'?d (?:prefer|rather)) not have duplicates",
+        r"\d+ (?:other|more|existing) (?:flipping|tracking|notifier|alert|timer) plugins",
+        r"is there a reason you can'?t use",
+        r"(?:extend|replace) the existing plugin",
+        r"(?:put|add) (?:these|this|that) (?:kind of |type of )?(?:things|features|options|content) into (?:the )?existing",
+        r"PR(?:ing)? (?:it )?there\?",
+        r"collab(?:orate)? with (?:them|the (?:author|maintainer)|the existing)",
+        r"(?:try|please) (?:and )?(?:collab|contribute|push|merge) (?:to|with|into)",
+        r"work bits into that plugin",
+        r"work with (?:the )?(?:existing|original) (?:author|maintainer|plugin)",
+        r"in the form of \[",  # form of [Existing Plugin Name](url)
+        r"feature already exists",
+        r"these features already",
+        r"runelite\.net/plugin-hub/show/[a-z0-9_-]+\s*\?",  # just a URL ending in ? — implicit saturation
+        r"\?\s*\nyou can (?:check|use)",
     ]),
     ("policy", [
         r"rejected[- ]or[- ]rolled[- ]back",
@@ -82,11 +102,24 @@ PATTERNS = [
         r"breaks a rejected feature",
         r"violates (?:several |the )?(?:pvp|jagex|following rules)",
         r"violates the following",
-        # Newly-added:
         r"definition of botting",
         r"faking a (?:keyboard|mouse) event",
         r"third[- ]party client(?:\s|$)",
         r"sensitive apis?",
+        # Crypto/RWT/abusive content categories:
+        r"play[- ]to[- ]earn",
+        r"crypto (?:project|points|rewards)",
+        r"\bnft(?:s)?\b",
+        r"\brug pull\b",
+        r"promoting rwt",
+        r"real world trading",
+        r"data farming",
+    ]),
+    ("not_interested", [
+        r"not interested in hosting",
+        r"won'?t be hosting",
+        r"will not (?:host|accept)",
+        r"don'?t want to host",
     ]),
     ("takeover", [
         r"plugin[- ]takeover[- ]policy",
@@ -105,11 +138,18 @@ PATTERNS = [
         r"\bcommit hash\b.*\b(?:wrong|invalid|update)",
         r"plugin fails to build",
         r"this submission is still broken",
-        # Newly-added:
         r"ci build failed",
         r"branch conflicts",
         r"repository is not public",
         r"build (?:errors|failures)",
+        # Newly-added third pass:
+        r"does not (?:currently |yet )?build",
+        r"plugin uses terminally deprecated apis",
+        r"deprecated apis?",
+        r"needs (?:a )?rebase",
+        r"still has conflicts",
+        r"branch.+conflicts",
+        r"actions/runs/\d+",  # CI failure URL
     ]),
     ("invalid", [
         r"submission is (?:invalid|empty)",
