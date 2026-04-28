@@ -1,0 +1,137 @@
+{
+  "threshold-notification": {
+    "idf": 2.4939893643623194,
+    "doc_count": 137,
+    "doc_frequency": 0.08257986738999397
+  },
+  "ge-price-tracking": {
+    "idf": 3.5427692792825534,
+    "doc_count": 48,
+    "doc_frequency": 0.028933092224231464
+  },
+  "flip-discovery": {
+    "idf": 5.111385197196399,
+    "doc_count": 10,
+    "doc_frequency": 0.006027727546714889
+  },
+  "tick-timer": {
+    "idf": 5.4680601411351315,
+    "doc_count": 7,
+    "doc_frequency": 0.004219409282700422
+  },
+  "shader-enhancement": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
+  },
+  "gpu-rendering": {
+    "idf": 5.016075017392074,
+    "doc_count": 11,
+    "doc_frequency": 0.006630500301386378
+  },
+  "weather-simulation": {
+    "idf": 6.315358001522335,
+    "doc_count": 3,
+    "doc_frequency": 0.0018083182640144665
+  },
+  "boss-encounter-aid": {
+    "idf": 2.651796355392688,
+    "doc_count": 117,
+    "doc_frequency": 0.0705244122965642
+  },
+  "afk-detection": {
+    "idf": 3.5221499920798176,
+    "doc_count": 49,
+    "doc_frequency": 0.029535864978902954
+  },
+  "requirement-validation": {
+    "idf": 5.8045323777563445,
+    "doc_count": 5,
+    "doc_frequency": 0.0030138637733574444
+  },
+  "teleport-protection": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "collection-log-tracking": {
+    "idf": 3.776384130464059,
+    "doc_count": 38,
+    "doc_frequency": 0.022905364677516575
+  },
+  "skill-progress-display": {
+    "idf": 5.216745712854225,
+    "doc_count": 9,
+    "doc_frequency": 0.0054249547920434
+  },
+  "equipment-filtering": {
+    "idf": 5.8045323777563445,
+    "doc_count": 5,
+    "doc_frequency": 0.0030138637733574444
+  },
+  "inventory-search": {
+    "idf": 5.216745712854225,
+    "doc_count": 9,
+    "doc_frequency": 0.0054249547920434
+  },
+  "item-notification-system": {
+    "idf": 4.929063640402444,
+    "doc_count": 12,
+    "doc_frequency": 0.007233273056057866
+  },
+  "gameplay-statistics": {
+    "idf": 3.9799830857052982,
+    "doc_count": 31,
+    "doc_frequency": 0.018685955394816153
+  },
+  "raid-analytics": {
+    "idf": 4.774912960575186,
+    "doc_count": 14,
+    "doc_frequency": 0.008438818565400843
+  },
+  "spot-respawn-timing": {
+    "idf": 6.027675929070554,
+    "doc_count": 4,
+    "doc_frequency": 0.0024110910186859553
+  },
+  "logout-timer": {
+    "idf": 5.216745712854225,
+    "doc_count": 9,
+    "doc_frequency": 0.0054249547920434
+  },
+  "probability-calculation": {
+    "idf": 3.482144657466119,
+    "doc_count": 51,
+    "doc_frequency": 0.03074141048824593
+  },
+  "action-prevention": {
+    "idf": 3.776384130464059,
+    "doc_count": 38,
+    "doc_frequency": 0.022905364677516575
+  },
+  "automation": {
+    "idf": 3.7003982234861366,
+    "doc_count": 41,
+    "doc_frequency": 0.02471368294153104
+  },
+  "item-reordering": {
+    "idf": 4.774912960575186,
+    "doc_count": 14,
+    "doc_frequency": 0.008438818565400843
+  },
+  "wiki-data-lookup": {
+    "idf": 3.9799830857052982,
+    "doc_count": 31,
+    "doc_frequency": 0.018685955394816153
+  },
+  "discord-webhook-output": {
+    "idf": 3.948234387390718,
+    "doc_count": 32,
+    "doc_frequency": 0.019288728149487643
+  },
+  "respawn-timing": {
+    "idf": 4.3694478524670215,
+    "doc_count": 21,
+    "doc_frequency": 0.012658227848101266
+  }
+}
