@@ -1,0 +1,590 @@
+[
+  {
+    "number": 8890,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8886,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8882,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Plugin takeover or maintenance handover"
+  },
+  {
+    "number": 8871,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8867,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8860,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate PR or branch management issue"
+  },
+  {
+    "number": 8853,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build/CI failure or deprecated APIs"
+  },
+  {
+    "number": 8852,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8851,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build/CI failure or deprecated APIs"
+  },
+  {
+    "number": 8849,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8842,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "yama-phase-reminder",
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8839,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8831,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Plugin takeover or maintenance handover"
+  },
+  {
+    "number": 8829,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Comment is feedback, not rejection"
+  },
+  {
+    "number": 8826,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8822,
+    "bucket": "policy",
+    "cited_existing_slug": null,
+    "rationale": "Violates RuneLite plugin policy or guidelines"
+  },
+  {
+    "number": 8819,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8807,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8805,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8803,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8797,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Comment is feedback, not rejection"
+  },
+  {
+    "number": 8791,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8789,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8786,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8781,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8769,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8743,
+    "bucket": "saturation",
+    "cited_existing_slug": "reword-manager",
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8739,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "price-graph-opener",
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8734,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "music-track-display",
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8726,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8725,
+    "bucket": "policy",
+    "cited_existing_slug": "zom-combat-level-muting",
+    "rationale": "Violates RuneLite plugin policy or guidelines"
+  },
+  {
+    "number": 8724,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8723,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8722,
+    "bucket": "saturation",
+    "cited_existing_slug": "not-enough-runes",
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8713,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build/CI failure or deprecated APIs"
+  },
+  {
+    "number": 8701,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8686,
+    "bucket": "takeover",
+    "cited_existing_slug": "push-notifications",
+    "rationale": "Plugin takeover or maintenance handover"
+  },
+  {
+    "number": 8662,
+    "bucket": "off_topic",
+    "cited_existing_slug": "hide-widgets",
+    "rationale": "Comment is feedback, not rejection"
+  },
+  {
+    "number": 8660,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8615,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8600,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "gemstone-crab-timer",
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8591,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code changes not addressed by author"
+  },
+  {
+    "number": 8590,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code changes not addressed by author"
+  },
+  {
+    "number": 8580,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "afk-marks-canafis",
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8546,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build/CI failure or deprecated APIs"
+  },
+  {
+    "number": 8539,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build/CI failure or deprecated APIs"
+  },
+  {
+    "number": 8536,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Plugin takeover or maintenance handover"
+  },
+  {
+    "number": 8535,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8495,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8488,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build/CI failure or deprecated APIs"
+  },
+  {
+    "number": 8487,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8469,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8463,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "loot-logger",
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8441,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8435,
+    "bucket": "build",
+    "cited_existing_slug": "betterbingo",
+    "rationale": "Build/CI failure or deprecated APIs"
+  },
+  {
+    "number": 8431,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8430,
+    "bucket": "code_quality",
+    "cited_existing_slug": "easy-pharaoh-sceptre",
+    "rationale": "Code changes not addressed by author"
+  },
+  {
+    "number": 8423,
+    "bucket": "saturation",
+    "cited_existing_slug": "easy-pharaoh-sceptre",
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8419,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code changes not addressed by author"
+  },
+  {
+    "number": 8368,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8346,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8334,
+    "bucket": "not_interested",
+    "cited_existing_slug": null,
+    "rationale": "Maintainer subjectively not interested"
+  },
+  {
+    "number": 8331,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8326,
+    "bucket": "takeover",
+    "cited_existing_slug": "custom-death-sound",
+    "rationale": "Plugin takeover or maintenance handover"
+  },
+  {
+    "number": 8318,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8315,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code changes not addressed by author"
+  },
+  {
+    "number": 8311,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8308,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Comment is feedback, not rejection"
+  },
+  {
+    "number": 8300,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Comment is feedback, not rejection"
+  },
+  {
+    "number": 8296,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8284,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8278,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Comment is feedback, not rejection"
+  },
+  {
+    "number": 8272,
+    "bucket": "saturation",
+    "cited_existing_slug": "boss-voicer",
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8269,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Plugin takeover or maintenance handover"
+  },
+  {
+    "number": 8266,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8261,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8256,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "shortest-clue",
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8251,
+    "bucket": "build",
+    "cited_existing_slug": "visual-timer",
+    "rationale": "Build/CI failure or deprecated APIs"
+  },
+  {
+    "number": 8244,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8238,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8236,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8233,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8144,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8143,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8142,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8126,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8125,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8121,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code changes not addressed by author"
+  },
+  {
+    "number": 8109,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8105,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8094,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8090,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "bingo-event-automated",
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8085,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8084,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8083,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Functionality exists in another plugin"
+  },
+  {
+    "number": 8074,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build/CI failure or deprecated APIs"
+  },
+  {
+    "number": 8066,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": "Cannot determine rejection reason"
+  },
+  {
+    "number": 8056,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code changes not addressed by author"
+  }
+]

@@ -1,0 +1,584 @@
+[
+  {
+    "number": 8053,
+    "bucket": "saturation",
+    "cited_existing_slug": "markofdarknesshelper",
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 8048,
+    "bucket": "saturation",
+    "cited_existing_slug": "markofdarknesshelper",
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 8039,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Feedback/discussion"
+  },
+  {
+    "number": 8028,
+    "bucket": "invalid",
+    "cited_existing_slug": null,
+    "rationale": "Invalid submission"
+  },
+  {
+    "number": 7996,
+    "bucket": "saturation",
+    "cited_existing_slug": "dink",
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 7976,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Feedback/discussion"
+  },
+  {
+    "number": 7965,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or API issue"
+  },
+  {
+    "number": 7962,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7945,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7933,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 7927,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Feedback/discussion"
+  },
+  {
+    "number": 7915,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7914,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7907,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Maintenance handover"
+  },
+  {
+    "number": 7901,
+    "bucket": "saturation",
+    "cited_existing_slug": "runeprofile",
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 7894,
+    "bucket": "invalid",
+    "cited_existing_slug": null,
+    "rationale": "Invalid submission"
+  },
+  {
+    "number": 7886,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Feedback/discussion"
+  },
+  {
+    "number": 7881,
+    "bucket": "saturation",
+    "cited_existing_slug": "dink",
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 7877,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code feedback unaddressed"
+  },
+  {
+    "number": 7867,
+    "bucket": "saturation",
+    "cited_existing_slug": "quest-helper",
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 7866,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Feedback/discussion"
+  },
+  {
+    "number": 7855,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code feedback unaddressed"
+  },
+  {
+    "number": 7816,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or API issue"
+  },
+  {
+    "number": 7813,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Maintenance handover"
+  },
+  {
+    "number": 7806,
+    "bucket": "invalid",
+    "cited_existing_slug": null,
+    "rationale": "Invalid submission"
+  },
+  {
+    "number": 7801,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7770,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7731,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 7725,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 7724,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code feedback unaddressed"
+  },
+  {
+    "number": 7684,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7667,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7634,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7617,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Maintenance handover"
+  },
+  {
+    "number": 7588,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Maintenance handover"
+  },
+  {
+    "number": 7537,
+    "bucket": "not_interested",
+    "cited_existing_slug": null,
+    "rationale": "Not interested"
+  },
+  {
+    "number": 7536,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7516,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 7504,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 7459,
+    "bucket": "saturation",
+    "cited_existing_slug": "scapegpt",
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 7456,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7386,
+    "bucket": "not_interested",
+    "cited_existing_slug": null,
+    "rationale": "Not interested"
+  },
+  {
+    "number": 7345,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7332,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Maintenance handover"
+  },
+  {
+    "number": 7282,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or API issue"
+  },
+  {
+    "number": 7242,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 7193,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 7190,
+    "bucket": "invalid",
+    "cited_existing_slug": null,
+    "rationale": "Invalid submission"
+  },
+  {
+    "number": 7189,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7186,
+    "bucket": "saturation",
+    "cited_existing_slug": "histogram",
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 7183,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 7143,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 7142,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 7097,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 7093,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 7087,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Feedback/discussion"
+  },
+  {
+    "number": 7083,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 7080,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 7073,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code feedback unaddressed"
+  },
+  {
+    "number": 5712,
+    "bucket": "off_topic",
+    "cited_existing_slug": null,
+    "rationale": "Feedback/discussion"
+  },
+  {
+    "number": 5687,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 5667,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 5656,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 5646,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5641,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 5639,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate functionality"
+  },
+  {
+    "number": 5637,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5634,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5633,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5567,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5545,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5541,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5539,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5538,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5535,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5485,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5484,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5452,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or API issue"
+  },
+  {
+    "number": 5383,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5332,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 5314,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 3719,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "Duplicate or superseded PR"
+  },
+  {
+    "number": 3703,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 3439,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 3399,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 3362,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 3350,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 3290,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 3275,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 3223,
+    "bucket": "invalid",
+    "cited_existing_slug": null,
+    "rationale": "Invalid submission"
+  },
+  {
+    "number": 2935,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 2934,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 2766,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or API issue"
+  },
+  {
+    "number": 2750,
+    "bucket": "not_interested",
+    "cited_existing_slug": null,
+    "rationale": "Not interested"
+  },
+  {
+    "number": 2740,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or API issue"
+  },
+  {
+    "number": 360,
+    "bucket": "policy",
+    "cited_existing_slug": null,
+    "rationale": "Policy violation"
+  },
+  {
+    "number": 282,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  }
+]

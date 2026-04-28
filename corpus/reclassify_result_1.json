@@ -1,0 +1,590 @@
+[
+  {
+    "number": 9870,
+    "bucket": "policy",
+    "cited_existing_slug": null,
+    "rationale": "Policy or unsafe API violation"
+  },
+  {
+    "number": 9869,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9827,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9826,
+    "bucket": "invalid",
+    "cited_existing_slug": null,
+    "rationale": "Submission violates format requirements"
+  },
+  {
+    "number": 9736,
+    "bucket": "saturation",
+    "cited_existing_slug": "bearycuda-trials",
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9725,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9724,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9723,
+    "bucket": "invalid",
+    "cited_existing_slug": null,
+    "rationale": "Submission violates format requirements"
+  },
+  {
+    "number": 9715,
+    "bucket": "policy",
+    "cited_existing_slug": null,
+    "rationale": "Policy or unsafe API violation"
+  },
+  {
+    "number": 9658,
+    "bucket": "saturation",
+    "cited_existing_slug": "bank-value-tracker",
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9657,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9652,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9648,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9638,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9637,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "sailing",
+    "rationale": ""
+  },
+  {
+    "number": 9616,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9614,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9604,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "PR management (duplicate, replaced, merged)"
+  },
+  {
+    "number": 9597,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9594,
+    "bucket": "saturation",
+    "cited_existing_slug": "bearycuda-trials",
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9591,
+    "bucket": "procedural",
+    "cited_existing_slug": null,
+    "rationale": "PR management (duplicate, replaced, merged)"
+  },
+  {
+    "number": 9590,
+    "bucket": "build",
+    "cited_existing_slug": "monster-monitor",
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9585,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9555,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "sailing",
+    "rationale": ""
+  },
+  {
+    "number": 9524,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Plugin takeover or maintenance issue"
+  },
+  {
+    "number": 9522,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9504,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9498,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9477,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9460,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9456,
+    "bucket": "invalid",
+    "cited_existing_slug": null,
+    "rationale": "Submission violates format requirements"
+  },
+  {
+    "number": 9446,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9420,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9405,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9393,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9391,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code quality issues unaddressed"
+  },
+  {
+    "number": 9388,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9382,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9361,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9360,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Plugin takeover or maintenance issue"
+  },
+  {
+    "number": 9352,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "crabman-group-bronzeman-plugin",
+    "rationale": ""
+  },
+  {
+    "number": 9350,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "push-notifications",
+    "rationale": ""
+  },
+  {
+    "number": 9341,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9331,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9330,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9314,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9307,
+    "bucket": "not_interested",
+    "cited_existing_slug": null,
+    "rationale": "Maintainer subjectively declined"
+  },
+  {
+    "number": 9305,
+    "bucket": "saturation",
+    "cited_existing_slug": "dink",
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9283,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9282,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9281,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9277,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9229,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9224,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9220,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Plugin takeover or maintenance issue"
+  },
+  {
+    "number": 9218,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9215,
+    "bucket": "invalid",
+    "cited_existing_slug": null,
+    "rationale": "Submission violates format requirements"
+  },
+  {
+    "number": 9214,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Plugin takeover or maintenance issue"
+  },
+  {
+    "number": 9212,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "runepouch-loadouts",
+    "rationale": ""
+  },
+  {
+    "number": 9211,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9208,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9204,
+    "bucket": "invalid",
+    "cited_existing_slug": null,
+    "rationale": "Submission violates format requirements"
+  },
+  {
+    "number": 9199,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 9196,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "dink",
+    "rationale": ""
+  },
+  {
+    "number": 9195,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "entity-render-distance",
+    "rationale": ""
+  },
+  {
+    "number": 9187,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9179,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9173,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9172,
+    "bucket": "saturation",
+    "cited_existing_slug": "dink",
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9146,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9134,
+    "bucket": "procedural",
+    "cited_existing_slug": "max-skill-trim",
+    "rationale": "PR management (duplicate, replaced, merged)"
+  },
+  {
+    "number": 9130,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9127,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "life-saving-jewellery",
+    "rationale": ""
+  },
+  {
+    "number": 9118,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9104,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9103,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "party-status-bars-overlay",
+    "rationale": ""
+  },
+  {
+    "number": 9087,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9053,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9038,
+    "bucket": "ambiguous",
+    "cited_existing_slug": "homeassistant",
+    "rationale": ""
+  },
+  {
+    "number": 9034,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9030,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9028,
+    "bucket": "saturation",
+    "cited_existing_slug": null,
+    "rationale": "Existing plugin has this functionality"
+  },
+  {
+    "number": 9026,
+    "bucket": "takeover",
+    "cited_existing_slug": "bank-value-tracker",
+    "rationale": "Plugin takeover or maintenance issue"
+  },
+  {
+    "number": 9019,
+    "bucket": "takeover",
+    "cited_existing_slug": "monsterstats",
+    "rationale": "Plugin takeover or maintenance issue"
+  },
+  {
+    "number": 9015,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 9011,
+    "bucket": "code_quality",
+    "cited_existing_slug": null,
+    "rationale": "Code quality issues unaddressed"
+  },
+  {
+    "number": 9010,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 8984,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 8982,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 8978,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 8977,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 8968,
+    "bucket": "takeover",
+    "cited_existing_slug": "monsterstats",
+    "rationale": "Plugin takeover or maintenance issue"
+  },
+  {
+    "number": 8964,
+    "bucket": "build",
+    "cited_existing_slug": null,
+    "rationale": "Build or compilation failure"
+  },
+  {
+    "number": 8954,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Plugin takeover or maintenance issue"
+  },
+  {
+    "number": 8942,
+    "bucket": "takeover",
+    "cited_existing_slug": "kitten-tracker",
+    "rationale": "Plugin takeover or maintenance issue"
+  },
+  {
+    "number": 8906,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  },
+  {
+    "number": 8901,
+    "bucket": "takeover",
+    "cited_existing_slug": null,
+    "rationale": "Plugin takeover or maintenance issue"
+  },
+  {
+    "number": 8891,
+    "bucket": "ambiguous",
+    "cited_existing_slug": null,
+    "rationale": ""
+  }
+]
