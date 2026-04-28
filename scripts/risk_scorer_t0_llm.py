@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
-"""PRISM Risk axis T1 scorer — Haiku ensemble (N=3) over the rule catalog.
+"""PRISM Risk axis — T0 LLM rule extension.
 
-Why N=3: single-run Haiku has ~21pp recall variance on this task because
-different runs catch different cases (Jaccard 0.05–0.41 between runs).
-Three runs of the same input + union of flags + confidence-by-agreement
-gets stable enough behavior at small token cost.
+T0 is the rule-based detection tier. Two checks live here:
+  1. risk_scorer.py — regex over rule catalog (instant, blocks slop)
+  2. risk_scorer_t0_llm.py (this file) — LLM-driven rule matching
+     for cases the regex doesn't catch
 
-Output shape matches risk_scorer.py (T0) so callers can swap tiers
-transparently. Each matched rule carries a `confidence_runs` field
-indicating how many of the N runs flagged it (1, 2, or 3).
+Both check the same rule catalog. Together they form T0: catch obvious
+slop and blocked features before any deeper analysis happens.
 
-Two ways to invoke the model:
-  1. Direct Anthropic API call (requires ANTHROPIC_API_KEY)
-  2. Pluggable verdict_provider callable, for harness-neutral deployment
+This is NOT T1. T1 is the next tier — code-level correctness review with
+file:line pointers for the reviewer. T2 is the holistic semantic pass.
+
+Why N=3 ensemble: single-run Haiku has ~21pp recall variance on this
+task (Jaccard 0.05–0.41 between runs of identical input). Three runs +
+union of flags + confidence-by-agreement gets stable behavior at small
+token cost.
 """
 
 import argparse
@@ -25,7 +28,7 @@ from pathlib import Path
 PRISM_ROOT = Path(__file__).parent.parent
 RULES_PATH = PRISM_ROOT / "corpus" / "risk_rules.yaml"
 
-T1_SYSTEM_PROMPT = """You are evaluating an OSRS plugin against the RuneLite plugin-hub policy rule catalog. Identify which rules the plugin matches based on its description, displayName, tags, and title.
+T0_LLM_SYSTEM_PROMPT = """You are evaluating an OSRS plugin against the RuneLite plugin-hub policy rule catalog. Identify which rules the plugin matches based on its description, displayName, tags, and title.
 
 You're a maintainer reviewer reading the plugin's metadata — you do NOT have source code or rejection comments. Make your judgment from the description alone.
 
@@ -72,7 +75,7 @@ Output JSON only."""
     msg = client.messages.create(
         model="claude-haiku-4-5-20251001",
         max_tokens=1024,
-        system=T1_SYSTEM_PROMPT,
+        system=T0_LLM_SYSTEM_PROMPT,
         messages=[{"role": "user", "content": user}],
     )
     text = msg.content[0].text.strip()
@@ -150,7 +153,7 @@ def to_t0_shape(rule_runs, runs, n=3):
         "verdict": verdict,
         "rationale": rationale,
         "matched_rules": matched,
-        "tier": "t1",
+        "tier": "t0_llm",
         "ensemble_n": n,
     }
 

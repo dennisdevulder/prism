@@ -243,7 +243,7 @@ def main():
     parser.add_argument("--capabilities-file", type=Path, help="JSON file with capabilities for the new submission")
     parser.add_argument("--json", action="store_true", help="Emit raw JSON instead of formatted report")
     parser.add_argument("--markdown", action="store_true", help="Emit reviewer-friendly markdown (default)")
-    parser.add_argument("--t1-risk", action="store_true", help="Run T1 risk ensemble (Haiku, N=3); requires ANTHROPIC_API_KEY")
+    parser.add_argument("--t0-llm", action="store_true", help="Run T0 LLM rule extension (Haiku, N=3); requires ANTHROPIC_API_KEY")
     parser.add_argument("--packet", type=Path, default=DEFAULT_PACKET,
                         help=f"Path to PRISM Core Memory Packet (default: {DEFAULT_PACKET.name})")
     args = parser.parse_args()
@@ -306,20 +306,20 @@ def main():
     saturation = score_saturation(plugin_record, packet.saturation_index, packet.idf,
                                    k=5, exclude_slug=target["slug"])
 
-    # ===== Step 6: run T0 risk; optionally escalate to T1 if T0 came back compliant =====
+    # ===== Step 6: run T0 risk; optionally extend with T0 LLM check if T0 came back compliant =====
     risk = score_risk(plugin_record, packet.rules)
-    if args.t1_risk and risk["verdict"] == "compliant":
-        from risk_scorer_t1 import evaluate as t1_evaluate
-        t1_input = {
+    if args.t0_llm and risk["verdict"] == "compliant":
+        from risk_scorer_t0_llm import evaluate as t0_llm_evaluate
+        t0_llm_input = {
             "title": plugin_record["displayName"],
             "displayName": plugin_record["displayName"],
             "description": plugin_record["description"],
             "tags": plugin_record["tags"],
         }
         try:
-            risk = t1_evaluate(t1_input, n=3)
+            risk = t0_llm_evaluate(t0_llm_input, n=3)
         except SystemExit:
-            sys.stderr.write("(T1 risk skipped — ANTHROPIC_API_KEY not set)\n")
+            sys.stderr.write("(T0 LLM extension skipped — ANTHROPIC_API_KEY not set)\n")
 
     # ===== Step 6: render =====
     if args.json:

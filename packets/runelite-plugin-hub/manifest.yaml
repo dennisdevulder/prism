@@ -36,9 +36,10 @@ contents:
   - file: prompts/capability_extraction.md
     type: prompt_template
     sha256_prefix: ec61358928d13370
-  - file: prompts/t1_risk_classification.md
+  - file: prompts/t0_llm_rule_check.md
     type: prompt_template
-    sha256_prefix: 7a403df04d1c0191
+    description: T0 LLM extension — model-level rule sweep when regex T0 returns compliant
+    sha256_prefix: 47a4d98d41fc8eb3
 
 ecosystem_config:
   source_url_pattern: "https://github.com/{owner}/{repo}/tree/{commit}"

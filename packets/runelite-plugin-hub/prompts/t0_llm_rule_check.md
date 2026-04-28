@@ -1,6 +1,10 @@
-# T1 Risk Classification Prompt
+# T0 LLM Rule Check Prompt
 
-System prompt for ensemble T1 risk evaluation. Called N times (typically N=3) per submission; verdicts unioned with confidence-by-agreement.
+System prompt for the LLM-driven extension of the T0 rule-check tier. Catches policy violations the regex misses by reading the description+tags+title with model semantics.
+
+This is **part of T0** (rule-based detection). It is NOT T1. T1 is a separate tier — code-level correctness review with file:line pointers — and uses a different prompt entirely.
+
+Called N times (typically N=3) per submission; verdicts unioned with confidence-by-agreement to handle Haiku run-to-run variance (Jaccard 0.05–0.41 on identical inputs).
 
 ## System
 
@@ -45,6 +49,7 @@ Output JSON only.
 
 ## Notes
 
-- Single-run T1 has ~21pp recall variance on this task (Jaccard 0.05–0.41 between runs of identical input). N=3 ensemble lifts recall meaningfully without raising false positives.
+- Single-run Haiku has ~21pp recall variance on this task (Jaccard 0.05–0.41 between runs of identical input). N=3 ensemble lifts recall meaningfully without raising false positives.
 - The framework wires the N=3 ensemble; this prompt is what gets sent each run.
+- This is the **T0 LLM extension**. The actual T1 (code-level correctness review) and T2 (holistic semantic review) ship separate prompts that read source rather than just description.
 - If you adapt this prompt to a new ecosystem, keep the JSON schema unchanged so the framework's rule-aggregation logic still works.

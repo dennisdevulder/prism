@@ -6,17 +6,29 @@ A PRISM packet is a self-contained directory that lets the framework triage subm
 
 The whole point of the LTM positioning is harness-neutrality. The same `prism triage` command should work for any open-source registry, just by pointing at the right packet. A reviewer for a different ecosystem builds their packet once (rules from their docs, catalog index from their existing entries) and then PRISM works the same way.
 
+## Tier layering (read this first)
+
+PRISM is a layered triage tool. Each tier exists to do something a cheaper tier can't:
+
+- **T0 — rule-based detection.** Catches obvious slop and policy violations. Two checks live here: regex over the rule catalog (instant, no tokens) and an optional LLM rule sweep (Haiku-class, N=3 ensemble) for when the regex doesn't fire. If T0 blocks, the PR stops here — no point spending bigger model tokens on something the rules already rejected.
+- **T1 — code-level correctness review.** Small model reads the source diff and surfaces `file:line` pointers worth a closer look. Output is reviewer guidance, not a verdict.
+- **T2 — holistic semantic review.** Capable model reads the whole plugin, answers two questions: *"are there unsafe operations?"* and *"does the plugin do what its description claims?"* Output is a 30-second briefing for the reviewer.
+
+**No tier replaces the reviewer.** The reviewer still reads every line. The tiers exist to make a 600-line PR chewable — by the time the reviewer opens the diff, they already know where to look.
+
 ## Directory layout
 
 ```
 <packet-id>/
 ├── manifest.yaml                       # packet metadata + content hashes
-├── risk_rules.yaml                     # ecosystem-specific policy rules
-├── saturation_index.jsonl              # IDF-weighted capability vectors per existing entry
+├── risk_rules.yaml                     # ecosystem-specific policy rules (consumed by T0 regex + T0 LLM)
+├── saturation_index.jsonl              # IDF-weighted capability vectors per existing entry (T0 saturation)
 ├── capability_idf.json                 # IDF weights over the capability vocabulary
 ├── prompts/
-│   ├── capability_extraction.md        # prompt for generating capabilities from a new submission
-│   └── t1_risk_classification.md       # T1 risk-axis prompt
+│   ├── capability_extraction.md        # generates capabilities from a new submission (build-time)
+│   ├── t0_llm_rule_check.md            # T0 LLM rule sweep — runs when regex T0 returns compliant
+│   ├── t1_correctness_review.md        # T1 code-level pointers (planned)
+│   └── t2_holistic_review.md           # T2 semantic safety + description-match (planned)
 ├── README.md                           # human-readable description of this packet
 ```
 
@@ -53,7 +65,7 @@ contents:
     type: idf_weights
   - file: prompts/capability_extraction.md
     type: prompt_template
-  - file: prompts/t1_risk_classification.md
+  - file: prompts/t0_llm_rule_check.md
     type: prompt_template
 ```
 
@@ -90,12 +102,14 @@ Attribution fields support PRISM's chronology principle: credit goes to whoever 
 
 ### `prompts/`
 
-Markdown templates. The framework substitutes ecosystem-specific values (rule catalog, plugin manifest text) into placeholders. Two prompts ship by default:
+Markdown templates. The framework substitutes ecosystem-specific values (rule catalog, plugin manifest text) into placeholders. Default prompts:
 
-- `capability_extraction.md` — generates capability tags + summary for a new submission
-- `t1_risk_classification.md` — runs T1 risk against the rule catalog
+- `capability_extraction.md` — generates capability tags + summary at build time (Phase 3)
+- `t0_llm_rule_check.md` — T0 LLM rule sweep (runs after regex T0 returns compliant if `--t0-llm` flag is set)
+- `t1_correctness_review.md` — T1 code-level pointers (planned)
+- `t2_holistic_review.md` — T2 semantic safety + description-match (planned)
 
-A packet author can replace either with ecosystem-specific framing. The framework calls them by file name.
+A packet author can replace any of these with ecosystem-specific framing. The framework calls them by file name.
 
 ## What the framework provides
 
