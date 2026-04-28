@@ -129,6 +129,104 @@ def parse_properties(text):
     return fields
 
 
+def render_markdown(pr, target, manifest, manifest_url, capabilities,
+                     saturation, risk):
+    """Reviewer-friendly markdown output. Designed to be pasted into a PR
+    review comment. Suppresses empty sections; always opens with the
+    overall verdict so the reviewer sees the bottom line first.
+    """
+    pr_num = pr.get("number", "?")
+    pr_title = pr.get("title", "")
+    author = (pr.get("author") or {}).get("login", "?")
+    state = pr.get("state", "?")
+    created = (pr.get("createdAt") or "")[:10]
+    slug = target["slug"]
+    is_new = "NEW" if target["is_new_plugin"] else "UPDATE"
+    src = f"`{target['owner']}/{target['repo']}@{(target['commit'] or '')[:8]}`" if target["owner"] else ""
+
+    # ===== overall verdict =====
+    sat_v = saturation["verdict"]
+    risk_v = risk["verdict"]
+    if risk_v == "policy-violation" or sat_v == "duplicate":
+        overall = "🛑 **BLOCK** — review carefully"
+    elif risk_v == "policy-warning" or sat_v in {"extension", "novel-extension"}:
+        overall = "⚠️ **REVIEW** — flagged signals below"
+    else:
+        overall = "✅ **PASS** — no blocking signals"
+
+    out = []
+    out.append(f"## PRISM triage — PR #{pr_num}: {pr_title}")
+    out.append("")
+    out.append(f"{overall}")
+    out.append("")
+    out.append(f"- **Plugin**: `{slug}` ({is_new}) by `{author}`, opened {created}")
+    if src:
+        out.append(f"- **Source**: {src}")
+    if manifest_url:
+        out.append(f"- **Manifest**: <{manifest_url}>")
+    desc = (manifest.get("description") or "").strip()
+    if desc:
+        out.append(f"- **Description**: {desc}")
+
+    # ===== saturation =====
+    out.append("")
+    out.append(f"### Saturation — {sat_v.upper()}")
+    out.append("")
+    out.append(saturation["rationale"])
+    meaningful_neighbours = [n for n in saturation["top_neighbours"][:3] if n["cosine"] >= 0.1]
+    if meaningful_neighbours:
+        out.append("")
+        out.append("Closest existing plugins:")
+        out.append("")
+        for n in meaningful_neighbours:
+            authors = ", ".join((n.get("original_authors") or [])[:2]) or "?"
+            date = (n.get("first_added_at") or "")[:10]
+            attribution = f" — by **{authors}**, first added {date}" if date else ""
+            shared = ", ".join(f"`{c}`" for c in n["shared"]) or "—"
+            novel = ", ".join(f"`{c}`" for c in n["pr_only"]) or "—"
+            out.append(f"- `{n['slug']}` (cosine **{n['cosine']:.2f}**){attribution}")
+            out.append(f"  - Shared: {shared}")
+            out.append(f"  - This PR adds: {novel}")
+    if saturation.get("attribution_warnings"):
+        out.append("")
+        out.append("**⚠️ Attribution check:**")
+        for w in saturation["attribution_warnings"]:
+            out.append(f"- {w['warning']}")
+
+    # ===== risk =====
+    out.append("")
+    out.append(f"### Risk — {risk_v.upper()}")
+    out.append("")
+    out.append(risk["rationale"])
+    if risk["matched_rules"]:
+        tier = risk.get("tier", "t0")
+        n = risk.get("ensemble_n", 1)
+        out.append("")
+        for m in risk["matched_rules"]:
+            severity = m["severity"]
+            badge = "🛑" if severity == "block" else "⚠️"
+            confidence = ""
+            if "confidence_runs" in m:
+                confidence = f" ({m['confidence_runs']}/{m['total_runs']} ensemble runs)"
+            out.append(f"- {badge} **`{m['rule_id']}`** ({severity}{confidence})")
+            out.append(f"  - {m['rationale']}")
+            if m.get("evidence"):
+                out.append(f"  - Evidence: _\"{m['evidence'][:200]}\"_")
+            if m.get("citation"):
+                out.append(f"  - Cite: <{m['citation']}>")
+
+    # ===== reviewer summary =====
+    out.append("")
+    out.append("### Reviewer notes")
+    out.append("")
+    out.append("PRISM is a triage tool — every flag here is a suggestion, not a verdict. The reviewer makes the call.")
+    if not capabilities:
+        out.append("")
+        out.append("_(No capabilities supplied — saturation matching is not meaningful without them. Run capability extraction before relying on the saturation verdict.)_")
+
+    return "\n".join(out)
+
+
 def render_section(title, body):
     bar = "─" * (len(title) + 4)
     return f"\n┌{bar}┐\n│  {title}  │\n└{bar}┘\n{body}"
@@ -140,6 +238,8 @@ def main():
     parser.add_argument("--plugin-file", type=Path, help="JSON describing plugin (skip GH fetch)")
     parser.add_argument("--capabilities-file", type=Path, help="JSON file with capabilities for the new submission")
     parser.add_argument("--json", action="store_true", help="Emit raw JSON instead of formatted report")
+    parser.add_argument("--markdown", action="store_true", help="Emit reviewer-friendly markdown (default)")
+    parser.add_argument("--t1-risk", action="store_true", help="Run T1 risk ensemble (Haiku, N=3); requires ANTHROPIC_API_KEY")
     args = parser.parse_args()
 
     if not args.pr and not args.plugin_file:
@@ -200,8 +300,20 @@ def main():
     saturation = score_saturation(plugin_record, index, idf, k=5,
                                    exclude_slug=target["slug"])
 
-    # ===== Step 5: run T0 risk =====
+    # ===== Step 5: run T0 risk; optionally escalate to T1 if T0 came back compliant =====
     risk = score_risk(plugin_record, load_rules())
+    if args.t1_risk and risk["verdict"] == "compliant":
+        from risk_scorer_t1 import evaluate as t1_evaluate
+        t1_input = {
+            "title": plugin_record["displayName"],
+            "displayName": plugin_record["displayName"],
+            "description": plugin_record["description"],
+            "tags": plugin_record["tags"],
+        }
+        try:
+            risk = t1_evaluate(t1_input, n=3)
+        except SystemExit:
+            sys.stderr.write("(T1 risk skipped — ANTHROPIC_API_KEY not set)\n")
 
     # ===== Step 6: render =====
     if args.json:
@@ -215,61 +327,7 @@ def main():
         }, indent=2))
         return
 
-    pr_label = f"#{pr['number']} — {pr['title']}"
-    author = (pr.get("author") or {}).get("login", "?")
-    state = pr.get("state", "?")
-    created = (pr.get("createdAt") or "")[:10]
-
-    header = f"""
-PR: {pr_label}
-  author: {author}    state: {state}    created: {created}
-  target plugin: {target['slug']}  ({'NEW' if target['is_new_plugin'] else 'UPDATE'})
-  source: {target['owner']}/{target['repo']}@{(target['commit'] or '')[:8]}
-  manifest: {manifest_url or '(none)'}
-  description: {(manifest.get('description') or '')[:160]}
-  capabilities: {capabilities or '(none — needs LLM extraction)'}"""
-    print(header)
-
-    # Saturation
-    sat_lines = [
-        f"  verdict: {saturation['verdict'].upper()}",
-        f"  rationale: {saturation['rationale']}",
-        "  top neighbours:",
-    ]
-    for n in saturation["top_neighbours"]:
-        attribution = ""
-        if n.get("first_added_at"):
-            authors = ", ".join((n.get("original_authors") or [])[:3]) or "?"
-            date = n["first_added_at"][:10]
-            attribution = f"   [{authors} — first added {date}]"
-        sat_lines.append(
-            f"    - {n['slug']:<35} cos={n['cosine']:.3f} "
-            f"shared={n['shared']} pr_only={n['pr_only']}{attribution}"
-        )
-    if saturation.get("attribution_warnings"):
-        sat_lines.append("  ⚠ ATTRIBUTION WARNINGS:")
-        for w in saturation["attribution_warnings"]:
-            sat_lines.append(f"    - {w['warning']}")
-    print(render_section("SATURATION (T0)", "\n".join(sat_lines)))
-
-    # Risk
-    risk_lines = [
-        f"  verdict: {risk['verdict'].upper()}",
-        f"  rationale: {risk['rationale']}",
-    ]
-    if risk["matched_rules"]:
-        risk_lines.append("  matched rules:")
-        for m in risk["matched_rules"]:
-            risk_lines.append(f"    - [{m['severity']}] {m['rule_id']} ({m['category']})")
-            risk_lines.append(f"        {m['rationale']}")
-            risk_lines.append(f"        cite: {m['citation']}")
-    print(render_section("RISK (T0)", "\n".join(risk_lines)))
-
-    # Combined verdict
-    block = (saturation["verdict"] in {"duplicate"}) or (risk["verdict"] == "policy-violation")
-    warn = (saturation["verdict"] in {"extension", "novel-extension"}) or (risk["verdict"] == "policy-warning")
-    overall = "BLOCK" if block else ("WARN — manual review" if warn else "PASS")
-    print(render_section("PRISM OVERALL", f"  {overall}"))
+    print(render_markdown(pr, target, manifest, manifest_url, capabilities, saturation, risk))
 
 
 if __name__ == "__main__":

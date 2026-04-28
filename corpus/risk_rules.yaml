@@ -233,7 +233,7 @@ rules:
       # Visual cues for boss mechanics — Jagex 3PC: "Adds additional visual
       # or audio indicators of a boss mechanic". Word boundaries are required
       # because 'orb' as a substring matches 'colorblind' etc.
-      - text: '(?:highlight|mark|overlay|render).{0,40}\b(?:projectile|attack\s+pattern|orb|shockwave|tornado|volatile)\b'
+      - text: '(?:highlight|mark|overlay|render).{0,40}\b(?:projectiles?|attack\s+patterns?|orb|shockwave|tornado|volatile)\b'
       - text: '\b(?:dangerous|safe|avoid)\s+tile'
       - text: 'where\s+(?:to|not\s+to)\s+stand'
       - text: '\b(?:safe\s+spot|safe\s+square|safe\s+tile)\b'

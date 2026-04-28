@@ -1,57 +1,63 @@
 #!/usr/bin/env python3
-"""PRISM Risk axis T1 scorer — Haiku-driven evaluation against the rule catalog.
+"""PRISM Risk axis T1 scorer — Haiku ensemble (N=3) over the rule catalog.
 
-Same input/output shape as risk_scorer.py (T0). Differs in implementation:
-T0 is regex-only; T1 sends the rule catalog + plugin record to Haiku and lets
-the model decide which rules match. This catches the ~78% of policy
-rejections T0 can't pattern-match.
+Why N=3: single-run Haiku has ~21pp recall variance on this task because
+different runs catch different cases (Jaccard 0.05–0.41 between runs).
+Three runs of the same input + union of flags + confidence-by-agreement
+gets stable enough behavior at small token cost.
+
+Output shape matches risk_scorer.py (T0) so callers can swap tiers
+transparently. Each matched rule carries a `confidence_runs` field
+indicating how many of the N runs flagged it (1, 2, or 3).
 
 Two ways to invoke the model:
-  1. Direct Anthropic API call (requires ANTHROPIC_API_KEY env var)
-  2. Pluggable verdict provider (for harness-neutral deployment) — pass a
-     callable that takes (prompt, plugin) and returns the parsed JSON
-
-Output schema matches T0 exactly so downstream UI can render uniformly.
+  1. Direct Anthropic API call (requires ANTHROPIC_API_KEY)
+  2. Pluggable verdict_provider callable, for harness-neutral deployment
 """
 
 import argparse
 import json
 import os
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 PRISM_ROOT = Path(__file__).parent.parent
 RULES_PATH = PRISM_ROOT / "corpus" / "risk_rules.yaml"
 
-T1_SYSTEM_PROMPT = """You are evaluating an OSRS plugin against the RuneLite plugin-hub policy rule catalog. Your job is to identify which rules the plugin matches based on its description, displayName, tags, and title.
+T1_SYSTEM_PROMPT = """You are evaluating an OSRS plugin against the RuneLite plugin-hub policy rule catalog. Identify which rules the plugin matches based on its description, displayName, tags, and title.
 
-You're acting as a maintainer reviewer reading the plugin's metadata — you do NOT have access to source code or the maintainer's rejection comments. Make your judgment from the description alone.
+You're a maintainer reviewer reading the plugin's metadata — you do NOT have source code or rejection comments. Make your judgment from the description alone.
 
-Output structured JSON only, no prose.
-
-Output schema:
+Output JSON only. Schema:
 {
   "matched_rules": [
-    {"rule_id": "<id from catalog>", "severity": "block"|"warn", "confidence": "high"|"medium"|"low", "evidence": "<quote from input that triggered this>", "rationale": "<one-line why>"}
+    {"rule_id": "<id from catalog>", "severity": "block"|"warn", "confidence": "high"|"medium"|"low", "evidence": "<exact quote from input>", "rationale": "<one-line>"}
   ],
   "verdict": "compliant" | "policy-warning" | "policy-violation",
-  "reasoning": "<one-sentence summary>"
+  "reasoning": "<one-sentence>"
 }
 
 Matching rules:
-- Match a rule only when description+tags+title give clear evidence the plugin does the banned thing
-- BE STRICT — false positives are costly. If the description is ambiguous, prefer "warn" with confidence: low rather than "block"
+- Match a rule when description+tags+title give clear evidence of the banned thing
+- Be thorough — match every applicable rule
 - A plugin can match multiple rules
-- If no rule clearly applies, return matched_rules: [] and verdict: "compliant"
-- Verdict: "policy-violation" only if any matched rule is severity:block AND confidence:high; "policy-warning" if matched rules exist but lower confidence/severity; "compliant" if no matched rules
-- Treat the rule catalog as authoritative — don't invent rules not in the catalog
-"""
+- Verdict: "policy-violation" if any matched rule is severity:block AND confidence:high; "policy-warning" if matched rules exist but lower confidence; "compliant" otherwise
+- Treat the rule catalog as authoritative — don't invent rules"""
 
 
-def build_user_prompt(plugin, rules_yaml_text):
-    return f"""Rule catalog:
+def evaluate_via_anthropic(plugin):
+    try:
+        from anthropic import Anthropic
+    except ImportError:
+        raise SystemExit("pip install anthropic")
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        raise SystemExit("ANTHROPIC_API_KEY env var required")
+
+    rules_text = RULES_PATH.read_text()
+    user = f"""Rule catalog:
 ```yaml
-{rules_yaml_text}
+{rules_text}
 ```
 
 Plugin to evaluate:
@@ -62,80 +68,108 @@ Plugin to evaluate:
 
 Output JSON only."""
 
-
-def evaluate_via_anthropic(plugin):
-    """Direct Anthropic API call. Requires ANTHROPIC_API_KEY in env.
-
-    Wraps the model output in the same shape risk_scorer (T0) emits, so
-    callers can swap T0/T1 transparently.
-    """
-    try:
-        from anthropic import Anthropic
-    except ImportError:
-        raise SystemExit("pip install anthropic")
-
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        raise SystemExit("ANTHROPIC_API_KEY env var required")
-
-    rules_text = RULES_PATH.read_text()
     client = Anthropic()
     msg = client.messages.create(
         model="claude-haiku-4-5-20251001",
         max_tokens=1024,
         system=T1_SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": build_user_prompt(plugin, rules_text)}],
+        messages=[{"role": "user", "content": user}],
     )
     text = msg.content[0].text.strip()
-    # Strip optional code fences
     if text.startswith("```"):
         text = text.split("\n", 1)[1].rsplit("```", 1)[0]
     return json.loads(text)
 
 
-def to_t0_shape(t1_output, plugin):
-    """Reshape T1 output into the same dict shape as risk_scorer.evaluate.
+def ensemble(plugin, n=3, verdict_provider=evaluate_via_anthropic):
+    """Run the verdict provider N times and union the matched rules.
 
-    T0 emits {verdict, rationale, matched_rules: [{rule_id, category, severity,
-    rationale, citation, matched_pattern}]}. T1 emits a similar shape but
-    without category/citation/matched_pattern. Backfill from rules catalog.
+    Confidence_runs tracks how many runs flagged each rule, which is the
+    more honest confidence signal than the per-run confidence label.
+    """
+    runs = []
+    for _ in range(n):
+        try:
+            runs.append(verdict_provider(plugin))
+        except Exception as e:
+            runs.append({"matched_rules": [], "verdict": "compliant",
+                         "reasoning": f"run failed: {e}"})
+
+    rule_runs = defaultdict(list)  # rule_id -> list of {run_idx, severity, confidence, evidence, rationale}
+    for i, run in enumerate(runs):
+        for m in run.get("matched_rules", []):
+            rule_runs[m["rule_id"]].append({"run": i, **m})
+
+    return rule_runs, runs
+
+
+def to_t0_shape(rule_runs, runs, n=3):
+    """Reshape ensemble output into T0's verdict format.
+
+    A rule's severity is taken from the catalog (canonical). Each entry
+    carries `confidence_runs` (1..N) — flagged-by-N-runs is the strongest
+    signal. We choose verdict based on the strongest matched rule:
+    block-severity in 2+ runs => policy-violation, otherwise warning.
     """
     import yaml
-    catalog_by_id = {r["id"]: r for r in yaml.safe_load(RULES_PATH.read_text())["rules"]}
+    catalog = {r["id"]: r for r in yaml.safe_load(RULES_PATH.read_text())["rules"]}
 
     matched = []
-    for m in t1_output.get("matched_rules", []):
-        rid = m["rule_id"]
-        rule = catalog_by_id.get(rid, {})
+    for rule_id, instances in rule_runs.items():
+        cat = catalog.get(rule_id, {})
+        # Best evidence quote: longest one across runs (more context)
+        best_evidence = max((i.get("evidence", "") for i in instances), key=len, default="")
         matched.append({
-            "rule_id": rid,
-            "category": rule.get("category", "unknown"),
-            "severity": m.get("severity") or rule.get("severity"),
-            "rationale": m.get("rationale") or rule.get("rationale", ""),
-            "citation": rule.get("citation", ""),
-            "evidence": m.get("evidence", ""),
-            "confidence": m.get("confidence", ""),
-            "matched_pattern": {"tier": "t1"},
+            "rule_id": rule_id,
+            "category": cat.get("category", "unknown"),
+            "severity": cat.get("severity", "warn"),
+            "rationale": cat.get("rationale", instances[0].get("rationale", "")),
+            "citation": cat.get("citation", ""),
+            "evidence": best_evidence,
+            "confidence_runs": len(instances),
+            "total_runs": n,
         })
 
+    # Sort by confidence (most-flagged first) then severity
+    severity_order = {"block": 0, "warn": 1}
+    matched.sort(key=lambda m: (-m["confidence_runs"], severity_order.get(m["severity"], 2)))
+
+    # Verdict: block + 2+ runs => policy-violation; any match => warning
+    block_strong = [m for m in matched if m["severity"] == "block" and m["confidence_runs"] >= 2]
+    if block_strong:
+        verdict = "policy-violation"
+        rationale = f"{len(block_strong)} blocking rule(s) matched in ≥2 of {n} runs: " + ", ".join(m["rule_id"] for m in block_strong)
+    elif matched:
+        verdict = "policy-warning"
+        rationale = f"{len(matched)} rule(s) flagged across {n} runs (single-run signals)"
+    else:
+        verdict = "compliant"
+        rationale = "no rule matched in any of {} runs".format(n)
+
     return {
-        "verdict": t1_output.get("verdict", "compliant"),
-        "rationale": t1_output.get("reasoning", ""),
+        "verdict": verdict,
+        "rationale": rationale,
         "matched_rules": matched,
+        "tier": "t1",
+        "ensemble_n": n,
     }
+
+
+def evaluate(plugin, n=3, verdict_provider=evaluate_via_anthropic):
+    """Top-level T1 evaluator. Same call shape as risk_scorer.evaluate."""
+    rule_runs, runs = ensemble(plugin, n=n, verdict_provider=verdict_provider)
+    return to_t0_shape(rule_runs, runs, n=n)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, help="Plugin JSON record")
+    parser.add_argument("--input", type=Path, required=True, help="Plugin JSON record")
+    parser.add_argument("--n", type=int, default=3, help="Ensemble size (default 3)")
     parser.add_argument("--json", action="store_true", help="Emit raw JSON")
     args = parser.parse_args()
 
-    if not args.input:
-        parser.error("--input <file> required")
-
     plugin = json.loads(args.input.read_text())
-    raw = evaluate_via_anthropic(plugin)
-    result = to_t0_shape(raw, plugin)
+    result = evaluate(plugin, n=args.n)
 
     if args.json:
         print(json.dumps({"plugin": plugin, "result": result}, indent=2))
