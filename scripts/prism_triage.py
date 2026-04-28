@@ -132,7 +132,7 @@ def parse_properties(text):
 
 
 def render_markdown(pr, target, manifest, manifest_url, capabilities,
-                     saturation, risk, packet=None, t1=None):
+                     saturation, risk, packet=None, t1=None, t2=None):
     """Reviewer-friendly markdown output. Designed to be pasted into a PR
     review comment. Suppresses empty sections; always opens with the
     overall verdict so the reviewer sees the bottom line first.
@@ -237,6 +237,47 @@ def render_markdown(pr, target, manifest, manifest_url, capabilities,
         out.append("")
         out.append(f"_T1 not run: {t1['error']}_")
 
+    # ===== T2 holistic brief =====
+    if t2 and not t2.get("error"):
+        out.append("")
+        scope_note = ""
+        if t2.get("files_examined") and t2.get("files_total"):
+            if t2["files_examined"] < t2["files_total"]:
+                scope_note = f" _(examined {t2['files_examined']}/{t2['files_total']} files)_"
+            else:
+                scope_note = f" _(read all {t2['files_total']} files)_"
+        out.append(f"### T2 — holistic brief{scope_note}")
+        out.append("")
+        if t2.get("what_it_does"):
+            out.append(f"**What it does**: {t2['what_it_does']}")
+            out.append("")
+        dm = t2.get("description_match", {})
+        if dm:
+            verdict = dm.get("verdict", "?")
+            badge = {"matches": "✅", "partial": "⚠️", "diverges": "🛑"}.get(verdict, "?")
+            out.append(f"**Description match**: {badge} {verdict} — {dm.get('summary', '')}")
+            for gap in dm.get("gaps", []):
+                out.append(f"  - {gap}")
+            out.append("")
+        unsafe = t2.get("unsafe_operations", [])
+        if unsafe:
+            out.append(f"**Unsafe operations** ({len(unsafe)}):")
+            for op in unsafe:
+                level = op.get("level", "low")
+                badge = {"high": "🛑", "medium": "⚠️", "low": "ℹ️"}.get(level, "·")
+                out.append(f"  - {badge} **{op.get('kind', '?')}** at `{op.get('where', '?')}` — {op.get('what', '')}")
+            out.append("")
+        else:
+            out.append("**Unsafe operations**: none detected")
+            out.append("")
+        if t2.get("bottom_line"):
+            out.append(f"**Bottom line**: {t2['bottom_line']}")
+    elif t2 and t2.get("error"):
+        out.append("")
+        out.append("### T2 — holistic brief")
+        out.append("")
+        out.append(f"_T2 not run: {t2['error']}_")
+
     # ===== reviewer summary =====
     out.append("")
     out.append("### Reviewer notes")
@@ -266,6 +307,7 @@ def main():
     parser.add_argument("--markdown", action="store_true", help="Emit reviewer-friendly markdown (default)")
     parser.add_argument("--t0-llm", action="store_true", help="Run T0 LLM rule extension (Haiku, N=3); requires ANTHROPIC_API_KEY")
     parser.add_argument("--t1", action="store_true", help="Run T1 code-level review (Haiku); requires ANTHROPIC_API_KEY")
+    parser.add_argument("--t2", action="store_true", help="Run T2 holistic review (Sonnet); requires ANTHROPIC_API_KEY")
     parser.add_argument("--packet", type=Path, default=DEFAULT_PACKET,
                         help=f"Path to PRISM Core Memory Packet (default: {DEFAULT_PACKET.name})")
     args = parser.parse_args()
@@ -354,6 +396,16 @@ def main():
             sys.stderr.write(f"(T1 skipped — {e})\n")
             t1_result = None
 
+    # ===== Step 8: optionally run T2 holistic review =====
+    t2_result = None
+    if args.t2 and risk["verdict"] != "policy-violation":
+        from risk_scorer_t2 import evaluate as t2_evaluate
+        try:
+            t2_result = t2_evaluate(packet, target, pr, manifest)
+        except RuntimeError as e:
+            sys.stderr.write(f"(T2 skipped — {e})\n")
+            t2_result = None
+
     # ===== Step 6: render =====
     if args.json:
         print(json.dumps({
@@ -366,7 +418,7 @@ def main():
         }, indent=2))
         return
 
-    print(render_markdown(pr, target, manifest, manifest_url, capabilities, saturation, risk, packet=packet, t1=t1_result))
+    print(render_markdown(pr, target, manifest, manifest_url, capabilities, saturation, risk, packet=packet, t1=t1_result, t2=t2_result))
 
 
 if __name__ == "__main__":
