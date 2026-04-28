@@ -100,6 +100,10 @@ def score_against_entry(pr, entry, idf_weights):
         "cosine": cosine_similarity(pr_vec, entry_vec),
         "shared": sorted(pr_caps & entry_caps),
         "pr_only": sorted(pr_caps - entry_caps),
+        # Attribution: who built this first, and when
+        "first_added_at": entry.get("first_added_at"),
+        "first_added_by": entry.get("first_added_by"),
+        "original_authors": entry.get("original_authors", []),
     }
 
 
@@ -148,10 +152,37 @@ def score_pr(pr, index, idf_weights, k=5, exclude_slug=None):
     top_k = candidates[:k]
     top = top_k[0] if top_k else None
     verdict, rationale = decide_verdict(top, pr.get("capabilities", []))
+
+    # Attribution warnings: if the submitter's PR predates the cited
+    # neighbour's first-add date, credit may be wrongly assigned. Only
+    # checked for neighbours with cosine >= 0.5 (otherwise irrelevant).
+    attribution_warnings = []
+    pr_created = pr.get("createdAt")
+    if pr_created:
+        for n in top_k:
+            if n["cosine"] < 0.5:
+                continue
+            n_added = n.get("first_added_at")
+            if not n_added:
+                continue
+            if pr_created < n_added:
+                attribution_warnings.append({
+                    "slug": n["slug"],
+                    "submission_created": pr_created,
+                    "neighbour_first_added": n_added,
+                    "warning": (
+                        f"This submission ({pr_created[:10]}) predates the "
+                        f"catalog plugin '{n['slug']}' "
+                        f"({n_added[:10]}). The submitter may be the original "
+                        f"author of this functionality; credit should be reviewed."
+                    ),
+                })
+
     return {
         "verdict": verdict,
         "rationale": rationale,
         "top_neighbours": top_k,
+        "attribution_warnings": attribution_warnings,
     }
 
 
@@ -164,13 +195,19 @@ def format_result(pr, result):
         "  top neighbours:",
     ]
     for n in result["top_neighbours"]:
+        attribution = ""
+        if n.get("first_added_at"):
+            authors = ", ".join((n.get("original_authors") or [])[:3]) or "?"
+            date = n["first_added_at"][:10]
+            attribution = f"   [{authors} — first added {date}]"
         lines.append(
-            f"    - {n['slug']:<40} "
-            f"cos={n['cosine']:.3f} "
-            f"name={n['displayname_ngram_jaccard']:.2f} "
-            f"shared={n['shared']} "
-            f"pr_only={n['pr_only']}"
+            f"    - {n['slug']:<40} cos={n['cosine']:.3f} "
+            f"shared={n['shared']} pr_only={n['pr_only']}{attribution}"
         )
+    if result.get("attribution_warnings"):
+        lines.append("  ⚠ ATTRIBUTION WARNINGS:")
+        for w in result["attribution_warnings"]:
+            lines.append(f"    - {w['warning']}")
     return "\n".join(lines)
 
 

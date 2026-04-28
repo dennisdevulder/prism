@@ -43,16 +43,23 @@ def main():
         cited_by_eval_slug[eval_slug] = pm["cited_existing_slug"]
         title_by_eval_slug[eval_slug] = pm["title"]
 
+    # Pull PR createdAt timestamps so the scorer can flag chronology inversions
+    PRISM = Path(__file__).parent.parent
+    prs = [json.loads(l) for l in open(PRISM / "corpus" / "plugin_hub_rejected_prs.jsonl")]
+    created_by_num = {p["number"]: p.get("createdAt") for p in prs}
+
     K_VALUES = [1, 3, 5, 10, 25]
     recalls = {k: 0 for k in K_VALUES}
-    ranks = []
+    valid_ranks = []  # only chronologically-valid pairs
+    all_ranks = []
     verdicts_correct = {"duplicate": 0, "extension": 0, "novel-extension": 0, "novel": 0}
     verdict_counts = {"duplicate": 0, "extension": 0, "novel-extension": 0, "novel": 0}
-    cited_cosines = []
+    chronologically_valid = 0
+    chronology_inversions = []
 
-    print("=" * 100)
-    print(f"{'PR#':<8} {'Rejected Plugin':<32} {'Cited Existing':<26} {'Rank':>4} {'Cos':>6} Verdict")
-    print("-" * 100)
+    print("=" * 110)
+    print(f"{'PR#':<8} {'Rejected Plugin':<32} {'Cited Existing':<26} {'Rank':>4} {'Cos':>6} Verdict          Chrono")
+    print("-" * 110)
 
     for rec in eval_caps:
         eval_slug = rec["slug"]
@@ -60,10 +67,12 @@ def main():
         if not cited:
             continue
 
+        pr_num = int(eval_slug.replace("_eval_", ""))
         pr = {
             "slug": rec["slug"],
             "displayName": rec["displayName"],
             "capabilities": rec["summary"]["capabilities"],
+            "createdAt": created_by_num.get(pr_num),
         }
         # Score against everything
         candidates = [score_against_entry(pr, e, idf) for e in index]
@@ -86,33 +95,49 @@ def main():
         if verdict != "novel":
             verdicts_correct[verdict] = verdicts_correct.get(verdict, 0) + 1
 
-        if rank is not None:
-            ranks.append(rank)
-            for k in K_VALUES:
-                if rank <= k:
-                    recalls[k] += 1
-            cited_cosines.append(cited_cos)
+        # Chronology check: cited slug must predate the rejected PR
+        cited_added = next((c["first_added_at"] for c in candidates if c["slug"] == cited), None)
+        pr_created = pr.get("createdAt")
+        chrono_status = "?"
+        is_inversion = False
+        if cited_added and pr_created:
+            if cited_added < pr_created:
+                chrono_status = "ok"
+                chronologically_valid += 1
+            else:
+                chrono_status = "INVERTED"
+                is_inversion = True
+                chronology_inversions.append((eval_slug, cited, pr_created, cited_added))
 
-        pr_num = eval_slug.replace("_eval_", "#")
+        if rank is not None:
+            all_ranks.append(rank)
+            if not is_inversion:
+                valid_ranks.append(rank)
+                for k in K_VALUES:
+                    if rank <= k:
+                        recalls[k] += 1
+
+        pr_label = f"#{pr_num}"
         rank_str = str(rank) if rank else "—"
         cos_str = f"{cited_cos:.3f}" if cited_cos is not None else "—"
-        print(f"{pr_num:<8} {rec['displayName'][:30]:<32} {cited:<26} {rank_str:>4} {cos_str:>6} {verdict}")
+        print(f"{pr_label:<8} {rec['displayName'][:30]:<32} {cited:<26} {rank_str:>4} {cos_str:>6} {verdict:<16} {chrono_status}")
 
     n = len(eval_caps)
-    n_with_rank = len(ranks)
-    print("=" * 100)
+    n_valid = len(valid_ranks)
+    print("=" * 110)
     print()
-    print(f"Total eval pairs: {n}")
-    print(f"Pairs where cited slug found anywhere in catalog: {n_with_rank}")
+    print(f"Total eval pairs:         {n}")
+    print(f"Chronologically valid:    {chronologically_valid}")
+    print(f"Chronology inversions:    {len(chronology_inversions)}  (cited 'original' was actually added AFTER the rejected PR)")
     print()
-    print("Recall @ K:")
+    print(f"Recall @ K (over {n_valid} chronologically-valid pairs):")
     for k in K_VALUES:
-        pct = recalls[k] / n * 100
-        print(f"  recall@{k:<3}  {recalls[k]:>3}/{n}  ({pct:.0f}%)")
-    if ranks:
-        mrr = sum(1/r for r in ranks) / n
-        print(f"  MRR       {mrr:.3f}")
-        print(f"  median rank: {sorted(ranks)[len(ranks)//2]}")
+        pct = recalls[k] / n_valid * 100 if n_valid else 0
+        print(f"  recall@{k:<3}  {recalls[k]:>3}/{n_valid}  ({pct:.0f}%)")
+    if valid_ranks:
+        mrr = sum(1/r for r in valid_ranks) / n_valid
+        print(f"  MRR        {mrr:.3f}")
+        print(f"  median rank: {sorted(valid_ranks)[len(valid_ranks)//2]}")
     print()
     print("Verdict distribution (correct = anything except 'novel'):")
     for v, count in verdict_counts.items():
@@ -120,6 +145,11 @@ def main():
     correct = sum(verdicts_correct.values())
     print(f"  ----")
     print(f"  not-novel rate: {correct}/{n} ({correct/n*100:.0f}%)")
+    if chronology_inversions:
+        print()
+        print("Chronology inversions (these gold pairs have wrong direction):")
+        for slug, cited, pr_d, cited_d in chronology_inversions:
+            print(f"  {slug}: rejected PR ({pr_d[:10]}) PREDATES cited '{cited}' ({cited_d[:10]})")
 
 
 if __name__ == "__main__":

@@ -1,15 +1,5 @@
 {
-  "flip-opportunity-detection": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "merch-alerts": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
-  "ge-price-feed": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -19,7 +9,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "skill-method-helper": {
+  "ge-price-feed": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "flip-opportunity-detection": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -29,12 +24,17 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "texture-replacement": {
+  "skill-method-helper": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "dynamic-lighting": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "texture-replacement": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -49,12 +49,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "ambient-effects": {
+  "weather-simulation": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "weather-simulation": {
+  "ambient-effects": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
@@ -79,15 +79,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "skill-idle-detection": {
-    "idf": 6.027675929070554,
-    "doc_count": 4,
-    "doc_frequency": 0.0024110910186859553
-  },
   "afk-alert": {
     "idf": 6.315358001522335,
     "doc_count": 3,
     "doc_frequency": 0.0018083182640144665
+  },
+  "skill-idle-detection": {
+    "idf": 6.027675929070554,
+    "doc_count": 4,
+    "doc_frequency": 0.0024110910186859553
   },
   "raid-entry-gating": {
     "idf": 7.413970290190444,
@@ -99,12 +99,12 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "click-modifier-guard": {
+  "teleport-misclick-prevention": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "teleport-misclick-prevention": {
+  "click-modifier-guard": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -134,17 +134,17 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "bank-stat-filter": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "equipment-slot-search": {
     "idf": 6.315358001522335,
     "doc_count": 3,
     "doc_frequency": 0.0018083182640144665
   },
-  "ore-variant-tracking": {
+  "bank-stat-filter": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "mining-session-stats": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -154,7 +154,7 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "mining-session-stats": {
+  "ore-variant-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -204,12 +204,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "afk-training-aid": {
+  "distraction-reduction": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "distraction-reduction": {
+  "afk-training-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -229,12 +229,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "agility-course-rotation": {
+  "mark-of-grace-cooldown": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "mark-of-grace-cooldown": {
+  "agility-course-rotation": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -319,22 +319,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "other-player-hiding": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "social-ui-suppression": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "boost-debuff-tracking": {
+  "other-player-hiding": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "stat-deviation-display": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "boost-debuff-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -349,15 +349,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "farming-buff-reminder": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "equipment-omission-alert": {
     "idf": 4.929063640402444,
     "doc_count": 12,
     "doc_frequency": 0.007233273056057866
+  },
+  "farming-buff-reminder": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
   },
   "herblore-buff-reminder": {
     "idf": 7.413970290190444,
@@ -374,12 +374,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "skilling-eye-strain-reduction": {
+  "animation-suppression": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "animation-suppression": {
+  "skilling-eye-strain-reduction": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -399,27 +399,27 @@
     "doc_count": 48,
     "doc_frequency": 0.028933092224231464
   },
-  "bronzeman-ge-restriction": {
-    "idf": 6.315358001522335,
-    "doc_count": 3,
-    "doc_frequency": 0.0018083182640144665
-  },
   "unlocked-item-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "bronzeman-ge-restriction": {
+    "idf": 6.315358001522335,
+    "doc_count": 3,
+    "doc_frequency": 0.0018083182640144665
   },
   "antifire-expiry-warning": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "apm-tracking": {
+  "input-rate-graphing": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "input-rate-graphing": {
+  "apm-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -494,12 +494,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "spec-attack-sound": {
+  "miss-detection-sound": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "miss-detection-sound": {
+  "spec-attack-sound": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -544,12 +544,7 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "drop-split-calculation": {
-    "idf": 5.6222108209623896,
-    "doc_count": 6,
-    "doc_frequency": 0.003616636528028933
-  },
-  "group-loot-tracking": {
+  "split-settlement-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -559,10 +554,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "split-settlement-tracking": {
+  "group-loot-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "drop-split-calculation": {
+    "idf": 5.6222108209623896,
+    "doc_count": 6,
+    "doc_frequency": 0.003616636528028933
   },
   "autocast-state-tracking": {
     "idf": 7.413970290190444,
@@ -604,12 +604,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "away-indicator": {
+  "chat-keyword-status": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "chat-keyword-status": {
+  "away-indicator": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -659,12 +659,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "banned-player-highlight": {
+  "banlist-csv-export": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "banlist-csv-export": {
+  "banned-player-highlight": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -674,22 +674,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "bank-cleanup-suggestions": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "redundant-gear-detection": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "bank-snapshot-diff": {
+  "bank-cleanup-suggestions": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
+  },
+  "progress-baseline": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "progress-baseline": {
+  "bank-snapshot-diff": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -704,12 +704,12 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "untradeable-flagging": {
+  "junk-stack-labeling": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "junk-stack-labeling": {
+  "untradeable-flagging": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -724,17 +724,17 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
+  "bank-history-snapshot": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "cross-bank-search": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "bank-comparison": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
-  "bank-history-snapshot": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -809,12 +809,12 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "bank-value-attribution": {
+  "wealth-delta-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "wealth-delta-tracking": {
+  "bank-value-attribution": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -824,12 +824,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "live-bank-mirror": {
+  "bank-pin-safe-readout": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "bank-pin-safe-readout": {
+  "live-bank-mirror": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -849,15 +849,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "ge-price-delta-display": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "top-movers-listing": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
+  },
+  "ge-price-delta-display": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "fake-xp-meme": {
     "idf": 7.413970290190444,
@@ -884,12 +884,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "trials-tile-highlights": {
+  "sailing-pathfinding": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "sailing-pathfinding": {
+  "trials-tile-highlights": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -924,27 +924,17 @@
     "doc_count": 6,
     "doc_frequency": 0.003616636528028933
   },
-  "pet-notification": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "discord-webhook-output": {
     "idf": 4.322927836832129,
     "doc_count": 22,
     "doc_frequency": 0.013261000602772756
   },
-  "gwd-killcount-display": {
+  "pet-notification": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "entity-hiding": {
-    "idf": 6.315358001522335,
-    "doc_count": 3,
-    "doc_frequency": 0.0018083182640144665
-  },
-  "custom-npc-highlight": {
+  "gwd-killcount-display": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -954,17 +944,27 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
+  "custom-npc-highlight": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "entity-hiding": {
+    "idf": 6.315358001522335,
+    "doc_count": 3,
+    "doc_frequency": 0.0018083182640144665
+  },
   "extended-view-distance": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "virtual-level-tooltip": {
+  "xp-goal-tooltip": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "xp-goal-tooltip": {
+  "virtual-level-tooltip": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -989,12 +989,12 @@
     "doc_count": 3,
     "doc_frequency": 0.0018083182640144665
   },
-  "overload-timer": {
+  "overload-lag-compensation": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "overload-lag-compensation": {
+  "overload-timer": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1019,12 +1019,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "charge-threshold-reminder": {
+  "runecraft-charge-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "runecraft-charge-tracking": {
+  "charge-threshold-reminder": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1074,17 +1074,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "bitwarden-credential-retrieval": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "external-cli-bridge": {
     "idf": 6.315358001522335,
     "doc_count": 3,
     "doc_frequency": 0.0018083182640144665
   },
+  "bitwarden-credential-retrieval": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "chinchompa-spawn-highlight": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "blackjack-state-indicator": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1093,11 +1098,6 @@
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
-  },
-  "blackjack-state-indicator": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
   },
   "blast-furnace-clickbox-cues": {
     "idf": 7.413970290190444,
@@ -1209,12 +1209,12 @@
     "doc_count": 3,
     "doc_frequency": 0.0018083182640144665
   },
-  "team-kph-metrics": {
+  "boost-session-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "boost-session-tracking": {
+  "team-kph-metrics": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1239,12 +1239,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "boss-milestone-tracking": {
+  "per-boss-virtual-leveling": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "per-boss-virtual-leveling": {
+  "boss-milestone-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1269,7 +1269,7 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "bot-detection-ml": {
+  "player-flagging": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1279,7 +1279,7 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "player-flagging": {
+  "bot-detection-ml": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1394,22 +1394,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "xp-export-on-logout": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "calcusource-integration": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "cam-torum-stream-detection": {
+  "xp-export-on-logout": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "calcified-rock-highlight": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "cam-torum-stream-detection": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1444,12 +1444,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "cannonball-usage-counter": {
+  "cannon-damage-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "cannon-damage-tracking": {
+  "cannonball-usage-counter": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1494,12 +1494,17 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
+  "castle-wars-state-tracking": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "castle-wars-ticket-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "castle-wars-state-tracking": {
+  "spice-stew-helper": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1508,11 +1513,6 @@
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
-  },
-  "spice-stew-helper": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
   },
   "cannonball-xp-rate": {
     "idf": 7.413970290190444,
@@ -1544,27 +1544,27 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "achievement-history": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "adventurer-log-feed": {
     "idf": 6.027675929070554,
     "doc_count": 4,
     "doc_frequency": 0.0024110910186859553
+  },
+  "achievement-history": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "chance-roll-unlock": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "chanceman-data-export": {
+  "localhost-bridge": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "localhost-bridge": {
+  "chanceman-data-export": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1699,12 +1699,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "potion-loadout-labeling": {
+  "chugging-barrel-presets": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "chugging-barrel-presets": {
+  "potion-loadout-labeling": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1719,15 +1719,15 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "csv-export": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "last-seen-tracking": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
+  },
+  "csv-export": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "clan-member-activity": {
     "idf": 7.413970290190444,
@@ -1759,22 +1759,22 @@
     "doc_count": 3,
     "doc_frequency": 0.0018083182640144665
   },
-  "event-countdown-display": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "google-sheet-event-feed": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "clan-fight-analytics": {
+  "event-countdown-display": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "pvp-multi-fight-stats": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "clan-fight-analytics": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1804,17 +1804,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "external-data-driven-highlight": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "rank-eligibility-detection": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "rank-up-notification": {
+  "external-data-driven-highlight": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1824,7 +1819,7 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "clan-message-logging": {
+  "rank-up-notification": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1834,7 +1829,7 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "join-date-tracking": {
+  "clan-message-logging": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1844,17 +1839,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
+  "join-date-tracking": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "rpg-class-system": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "chat-prefix-hiding": {
+  "chat-decluttering": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "chat-decluttering": {
+  "chat-prefix-hiding": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1889,12 +1889,12 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "client-snap-positioning": {
+  "client-auto-resize": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "client-auto-resize": {
+  "client-snap-positioning": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1904,15 +1904,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "collection-log-sync": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "clogged-me-integration": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "collection-log-sync": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
   },
   "clogger-ca-integration": {
     "idf": 7.413970290190444,
@@ -1934,12 +1934,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "floor-clue-details": {
+  "clue-floor-highlight": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "clue-floor-highlight": {
+  "floor-clue-details": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1969,12 +1969,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "clue-speedrun": {
+  "clue-step-timing": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "clue-step-timing": {
+  "clue-speedrun": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -1989,15 +1989,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "livesplit-integration": {
-    "idf": 6.027675929070554,
-    "doc_count": 4,
-    "doc_frequency": 0.0024110910186859553
-  },
   "cox-cm-autosplit": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "livesplit-integration": {
+    "idf": 6.027675929070554,
+    "doc_count": 4,
+    "doc_frequency": 0.0024110910186859553
   },
   "coal-bag-counter": {
     "idf": 7.413970290190444,
@@ -2019,15 +2019,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "collection-log-tracking": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "clog-progress-aggregation": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "collection-log-tracking": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
   },
   "collectionlog-net-integration": {
     "idf": 7.413970290190444,
@@ -2054,12 +2054,12 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "chat-color-remapping": {
+  "colourblind-accessibility": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "colourblind-accessibility": {
+  "chat-color-remapping": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2089,12 +2089,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "combat-event-disk-log": {
+  "runelogs-integration": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "runelogs-integration": {
+  "combat-event-disk-log": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2199,22 +2199,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "corp-spec-counter": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "gear-verification": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "cross-player-gear-display": {
+  "corp-spec-counter": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "networked-cosmetic-overlay": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "cross-player-gear-display": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2229,7 +2229,7 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "cox-room-timers": {
+  "cox-thieving-locator": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2239,17 +2239,17 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "cox-thieving-locator": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
-  "cox-point-analytics": {
+  "cox-room-timers": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "cox-time-tracking": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "cox-point-analytics": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2269,12 +2269,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "cox-megascale-optimization": {
+  "cox-drop-roll-calc": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "cox-drop-roll-calc": {
+  "cox-megascale-optimization": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2304,12 +2304,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "gemstone-crab-crowdsource": {
+  "world-population-scout": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "world-population-scout": {
+  "gemstone-crab-crowdsource": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2334,12 +2334,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "cox-crab-stun-helper": {
+  "weapon-aware-menu-swap": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "weapon-aware-menu-swap": {
+  "cox-crab-stun-helper": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2348,11 +2348,6 @@
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
-  },
-  "content-creator-tools": {
-    "idf": 6.315358001522335,
-    "doc_count": 3,
-    "doc_frequency": 0.0018083182640144665
   },
   "camera-immersion-modes": {
     "idf": 7.413970290190444,
@@ -2363,6 +2358,11 @@
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "content-creator-tools": {
+    "idf": 6.315358001522335,
+    "doc_count": 3,
+    "doc_frequency": 0.0018083182640144665
   },
   "sailing-crew-dialog-meme": {
     "idf": 7.413970290190444,
@@ -2464,17 +2464,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "streamer-privacy": {
-    "idf": 5.8045323777563445,
-    "doc_count": 5,
-    "doc_frequency": 0.0030138637733574444
-  },
   "rsn-replacement": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
+  "streamer-privacy": {
+    "idf": 5.8045323777563445,
+    "doc_count": 5,
+    "doc_frequency": 0.0030138637733574444
+  },
   "settings-easter-eggs": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "warmth-display": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2483,11 +2488,6 @@
     "idf": 5.6222108209623896,
     "doc_count": 6,
     "doc_frequency": 0.003616636528028933
-  },
-  "warmth-display": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
   },
   "xp-globe-customization": {
     "idf": 6.7208231096305,
@@ -2509,12 +2509,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "daily-purchase-tracking": {
+  "impling-jar-reminder": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "impling-jar-reminder": {
+  "daily-purchase-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2529,6 +2529,11 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
+  "damage-history-tracking": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "predicted-hit-display": {
     "idf": 7.413970290190444,
     "doc_count": 1,
@@ -2539,22 +2544,17 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "damage-history-tracking": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "damage-tier-sounds": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "xp-per-kill-tracking": {
+  "damage-taken-logging": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "damage-taken-logging": {
+  "xp-per-kill-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2564,17 +2564,22 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "spotlight-rendering": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "selective-darkening": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
+  "spotlight-rendering": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "bank-clipboard-csv-export": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "ge-offer-logging": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2585,11 +2590,6 @@
     "doc_frequency": 0.0006027727546714888
   },
   "multi-client-aggregation": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
-  "ge-offer-logging": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2614,15 +2614,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "deadman-ge-logging": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "external-data-export": {
     "idf": 4.081765780015241,
     "doc_count": 28,
     "doc_frequency": 0.016877637130801686
+  },
+  "deadman-ge-logging": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "death-charge-reminder": {
     "idf": 7.413970290190444,
@@ -2639,12 +2639,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "death-inventory-snapshot": {
+  "supply-restock-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "supply-restock-aid": {
+  "death-inventory-snapshot": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2659,12 +2659,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "death-location-indicator": {
+  "item-despawn-timer": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "item-despawn-timer": {
+  "death-location-indicator": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2724,22 +2724,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "leagues-task-tracking": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "demonic-pacts-checklist": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "task-detail-tooltips": {
+  "leagues-task-tracking": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
+  },
+  "leagues-task-highlight": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "leagues-task-highlight": {
+  "task-detail-tooltips": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2809,11 +2809,6 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "level-notification": {
-    "idf": 5.8045323777563445,
-    "doc_count": 5,
-    "doc_frequency": 0.0030138637733574444
-  },
   "loot-notification": {
     "idf": 5.8045323777563445,
     "doc_count": 5,
@@ -2824,15 +2819,20 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "kc-notification": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
+  "level-notification": {
+    "idf": 5.8045323777563445,
+    "doc_count": 5,
+    "doc_frequency": 0.0030138637733574444
   },
   "death-notification": {
     "idf": 5.6222108209623896,
     "doc_count": 6,
     "doc_frequency": 0.003616636528028933
+  },
+  "kc-notification": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "action-cancel-blocking": {
     "idf": 7.413970290190444,
@@ -2894,22 +2894,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "dialogue-mirroring": {
-    "idf": 6.315358001522335,
-    "doc_count": 3,
-    "doc_frequency": 0.0018083182640144665
-  },
   "stream-friendly-text": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "scene-color-grading": {
+  "dialogue-mirroring": {
+    "idf": 6.315358001522335,
+    "doc_count": 3,
+    "doc_frequency": 0.0018083182640144665
+  },
+  "sky-day-night-cycle": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "sky-day-night-cycle": {
+  "scene-color-grading": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2924,15 +2924,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "anti-stream-snipe": {
-    "idf": 6.315358001522335,
-    "doc_count": 3,
-    "doc_frequency": 0.0018083182640144665
-  },
   "dmm-protection-spoof": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "anti-stream-snipe": {
+    "idf": 6.315358001522335,
+    "doc_count": 3,
+    "doc_frequency": 0.0018083182640144665
   },
   "dmwatch-list-check": {
     "idf": 7.413970290190444,
@@ -2944,17 +2944,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "leagues-thieving-aid": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "pickpocket-range-overlay": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "use-as-left-click-swap": {
+  "leagues-thieving-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -2964,17 +2959,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
+  "use-as-left-click-swap": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "telegrab-npc-blocking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "colorblind-boss-recolor": {
+  "mokhaiotl-accessibility": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "mokhaiotl-accessibility": {
+  "colorblind-boss-recolor": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3054,15 +3054,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "drop-rate-display": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "wiki-data-lookup": {
     "idf": 5.016075017392074,
     "doc_count": 11,
     "doc_frequency": 0.006630500301386378
+  },
+  "drop-rate-display": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "drop-table-simulation": {
     "idf": 7.413970290190444,
@@ -3089,12 +3089,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "clan-drop-leaderboard": {
+  "sheets-integration": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "sheets-integration": {
+  "clan-drop-leaderboard": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3109,12 +3109,12 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "chest-dry-tracking": {
+  "minigame-rng-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "minigame-rng-tracking": {
+  "chest-dry-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3124,22 +3124,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "perfect-kill-tracking": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "dt2-boss-utilities": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "stash-indexing": {
+  "perfect-kill-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "deathpile-tracking": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "stash-indexing": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3159,15 +3159,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "missing-switch-detection": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "weapon-aware-gear-tags": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "missing-switch-detection": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
   },
   "arceuus-rc-cues": {
     "idf": 7.413970290190444,
@@ -3179,12 +3179,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "rc-menu-swaps": {
+  "pouch-empty-swap": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "pouch-empty-swap": {
+  "rc-menu-swaps": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3239,12 +3239,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "ectoplasmator-prompt": {
+  "soul-wars-prayer-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "soul-wars-prayer-aid": {
+  "ectoplasmator-prompt": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3309,12 +3309,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "emote-clue-item-highlight": {
+  "stash-unit-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "stash-unit-tracking": {
+  "emote-clue-item-highlight": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3419,15 +3419,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "external-hardware-display": {
-    "idf": 5.334528748510609,
-    "doc_count": 8,
-    "doc_frequency": 0.004822182037371911
-  },
   "esp32-data-stream": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "external-hardware-display": {
+    "idf": 5.334528748510609,
+    "doc_count": 8,
+    "doc_frequency": 0.004822182037371911
   },
   "essence-pouch-count": {
     "idf": 6.7208231096305,
@@ -3489,15 +3489,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "localhost-http-server": {
-    "idf": 6.027675929070554,
-    "doc_count": 4,
-    "doc_frequency": 0.0024110910186859553
-  },
   "bank-state-export": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "localhost-http-server": {
+    "idf": 6.027675929070554,
+    "doc_count": 4,
+    "doc_frequency": 0.0024110910186859553
   },
   "hitsplat-cap-extension": {
     "idf": 7.413970290190444,
@@ -3524,12 +3524,12 @@
     "doc_count": 4,
     "doc_frequency": 0.0024110910186859553
   },
-  "f2pwiki-integration": {
+  "external-xp-tracker-sync": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "external-xp-tracker-sync": {
+  "f2pwiki-integration": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3694,12 +3694,12 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "ge-margin-display": {
+  "ge-flip-statistics": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "ge-flip-statistics": {
+  "ge-margin-display": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3789,15 +3789,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "live-location-sharing": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "cross-player-positioning": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "live-location-sharing": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
   },
   "new-player-tutorial": {
     "idf": 7.413970290190444,
@@ -3839,12 +3839,12 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "abbreviation-search": {
+  "fuzzy-bank-search": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "fuzzy-bank-search": {
+  "abbreviation-search": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3904,12 +3904,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "gauntlet-performance-stats": {
+  "tick-loss-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "tick-loss-tracking": {
+  "gauntlet-performance-stats": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3929,22 +3929,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "ge-offer-elapsed-timer": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "ge-fill-progress": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "ge-walk-click-block": {
+  "ge-offer-elapsed-timer": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "ge-modify-left-click": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "ge-walk-click-block": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -3964,12 +3964,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "gemstone-crab-tracking": {
+  "afk-boss-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "afk-boss-aid": {
+  "gemstone-crab-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -4024,12 +4024,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "gim-team-status": {
+  "gim-team-tracking": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "gim-team-tracking": {
+  "gim-team-status": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
@@ -4044,12 +4044,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "gim-chat-routing": {
+  "gim-clog-indicators": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "gim-clog-indicators": {
+  "gim-chat-routing": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -4174,15 +4174,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "proc-tracking": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "granite-mining-stats": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "proc-tracking": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
   },
   "gotr-guardian-hide": {
     "idf": 7.413970290190444,
@@ -4254,12 +4254,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "shared-asset-return-aid": {
+  "gim-storage-reminder": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "gim-storage-reminder": {
+  "shared-asset-return-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -4309,12 +4309,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "sepulchre-statistics": {
+  "agility-projection": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "agility-projection": {
+  "sepulchre-statistics": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -4399,12 +4399,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "race-finish-line-tracking": {
+  "clan-event-scoring": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "clan-event-scoring": {
+  "race-finish-line-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -4449,6 +4449,11 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
+  "historical-progress": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "multi-account-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
@@ -4458,11 +4463,6 @@
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
-  },
-  "historical-progress": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
   },
   "latency-debugging": {
     "idf": 6.7208231096305,
@@ -4524,12 +4524,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "house-advert-favourites": {
+  "house-advert-filtering": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "house-advert-filtering": {
+  "house-advert-favourites": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -4604,15 +4604,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "item-cooldown-ready-highlight": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "imbued-heart-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "item-cooldown-ready-highlight": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
   },
   "prop-ground-markers": {
     "idf": 7.413970290190444,
@@ -4644,12 +4644,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "leagues-fragment-filter": {
+  "leagues-fragment-info": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "leagues-fragment-info": {
+  "leagues-fragment-filter": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -4674,15 +4674,15 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "inferno-scouting": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "inferno-2d-map": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
+  },
+  "inferno-scouting": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
   },
   "inferno-autosplit": {
     "idf": 7.413970290190444,
@@ -4739,12 +4739,12 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "client-side-inventory-action": {
+  "instant-action-feedback": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "instant-action-feedback": {
+  "client-side-inventory-action": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -4789,12 +4789,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "buff-aware-calculations": {
+  "restore-amount-display": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "restore-amount-display": {
+  "buff-aware-calculations": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -4819,15 +4819,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "session-pnl": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "inventory-value-tracking": {
     "idf": 6.315358001522335,
     "doc_count": 3,
     "doc_frequency": 0.0018083182640144665
+  },
+  "session-pnl": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
   },
   "toa-invocation-screenshot": {
     "idf": 7.413970290190444,
@@ -4874,12 +4874,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "chat-item-tooltips": {
+  "chat-item-rarity-coloring": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "chat-item-rarity-coloring": {
+  "chat-item-tooltips": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -4894,12 +4894,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "item-eligibility-overlay": {
+  "requirement-validation": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "requirement-validation": {
+  "item-eligibility-overlay": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5084,17 +5084,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "cross-machine-sync": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "item-lending-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "clan-puzzle-event": {
+  "cross-machine-sync": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5103,6 +5098,11 @@
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
+  },
+  "clan-puzzle-event": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "level3-clue-eligibility": {
     "idf": 7.413970290190444,
@@ -5114,12 +5114,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "discord-bridge": {
+  "lfg-post-helper": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "lfg-post-helper": {
+  "discord-bridge": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5184,12 +5184,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "lms-rank-tracking": {
+  "lms-start-notification": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "lms-start-notification": {
+  "lms-rank-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5219,12 +5219,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "chunkman-aid": {
+  "locked-chunk-overlay": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "locked-chunk-overlay": {
+  "chunkman-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5324,12 +5324,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "chest-content-value": {
+  "perilous-moons-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "perilous-moons-aid": {
+  "chest-content-value": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5354,12 +5354,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "world-readiness-list": {
+  "maledictus-spawn-prediction": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "maledictus-spawn-prediction": {
+  "world-readiness-list": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5494,12 +5494,12 @@
     "doc_count": 3,
     "doc_frequency": 0.0018083182640144665
   },
-  "cox-mass-aid": {
+  "olm-burn-grid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "olm-burn-grid": {
+  "cox-mass-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5574,15 +5574,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "wildcard-drop-swap": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "left-click-drop": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
+  },
+  "wildcard-drop-swap": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "unclaimed-loot-tracking": {
     "idf": 7.413970290190444,
@@ -5634,12 +5634,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "drop-fireworks": {
+  "chat-keyword-fireworks": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "chat-keyword-fireworks": {
+  "drop-fireworks": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5729,12 +5729,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "high-contrast-dialog": {
+  "colorblind-minimap-shapes": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "colorblind-minimap-shapes": {
+  "high-contrast-dialog": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5769,6 +5769,11 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
+  "local-tts": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "dialogue-tts": {
     "idf": 6.7208231096305,
     "doc_count": 2,
@@ -5779,17 +5784,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "local-tts": {
+  "thieving-readiness-indicator": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "nature-chest-timer": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
-  "thieving-readiness-indicator": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5874,12 +5874,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "enemy-value-highlight": {
+  "nmz-point-optimization": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "nmz-point-optimization": {
+  "enemy-value-highlight": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -5959,12 +5959,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "combat-clog-overlay": {
+  "missing-drop-indicator": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "missing-drop-indicator": {
+  "combat-clog-overlay": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6049,15 +6049,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "ntfy-push-bridge": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "external-notification-bridge": {
     "idf": 6.027675929070554,
     "doc_count": 4,
     "doc_frequency": 0.0024110910186859553
+  },
+  "ntfy-push-bridge": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "stat-reset-visualization": {
     "idf": 6.7208231096305,
@@ -6159,12 +6159,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "one-tick-flick-visual": {
+  "flick-combo-counter": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "flick-combo-counter": {
+  "one-tick-flick-visual": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6194,22 +6194,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "amethyst-highlight": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "paydirt-highlight": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "osleague-integration": {
+  "amethyst-highlight": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "leagues-task-export": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "osleague-integration": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6224,15 +6224,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "anthropic-api-integration": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "llm-chat-bridge": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
+  },
+  "anthropic-api-integration": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "ui-french-translation": {
     "idf": 7.413970290190444,
@@ -6244,12 +6244,12 @@
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
   },
-  "afk-aware-stats": {
+  "rolling-mining-rate": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "rolling-mining-rate": {
+  "afk-aware-stats": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6289,12 +6289,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "bingo-event-tracking": {
+  "discord-account-link": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "discord-account-link": {
+  "bingo-event-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6309,15 +6309,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "matching-chat-removal": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "overhead-text-suppression": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
+  },
+  "matching-chat-removal": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "buff-expiry-overhead": {
     "idf": 7.413970290190444,
@@ -6414,12 +6414,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "party-spec-tracking": {
+  "energy-transfer-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "energy-transfer-tracking": {
+  "party-spec-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6429,12 +6429,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "party-xp-drops": {
+  "tob-team-xp": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "tob-team-xp": {
+  "party-xp-drops": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6499,12 +6499,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "wilderness-misclick-protection": {
+  "wilderness-utility-bundle": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "wilderness-utility-bundle": {
+  "wilderness-misclick-protection": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6539,12 +6539,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "necklace-break-sound": {
+  "protective-jewellery-sound": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "protective-jewellery-sound": {
+  "necklace-break-sound": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6554,17 +6554,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "pickpocket-safety-gate": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "hp-aware-action-block": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
+  "pickpocket-safety-gate": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "pickpocket-qol-bundle": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "pickpocket-success-rate": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6575,11 +6580,6 @@
     "doc_frequency": 0.0006027727546714888
   },
   "coin-pouch-counter": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
-  "pickpocket-success-rate": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6639,12 +6639,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "self-status-color-highlight": {
+  "status-effect-display": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "status-effect-display": {
+  "self-status-color-highlight": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6754,12 +6754,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "leagues-task-planner": {
+  "leagues-pathfinder": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "leagues-pathfinder": {
+  "leagues-task-planner": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6824,12 +6824,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "clan-kick-evidence": {
+  "fake-chat-message-fabrication": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "fake-chat-message-fabrication": {
+  "clan-kick-evidence": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6854,12 +6854,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "inventory-aware-action-block": {
+  "spell-cast-misclick-block": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "spell-cast-misclick-block": {
+  "inventory-aware-action-block": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -6964,12 +6964,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "trueskill-pvp-rating": {
+  "pvp-leaderboard-export": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "pvp-leaderboard-export": {
+  "trueskill-pvp-rating": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7034,12 +7034,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "chat-command-search": {
+  "external-search-bridge": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "external-search-bridge": {
+  "chat-command-search": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7099,15 +7099,15 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "spell-omission-alert": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "pre-raid-spellbook-check": {
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
+  },
+  "spell-omission-alert": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
   },
   "dead-npc-indicator-calibrated": {
     "idf": 7.413970290190444,
@@ -7254,12 +7254,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "rune-supply-tracking": {
+  "spell-cast-counter": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "spell-cast-counter": {
+  "rune-supply-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7334,12 +7334,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "markdown-notes": {
+  "rich-text-notes": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "rich-text-notes": {
+  "markdown-notes": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7419,17 +7419,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "world-message-board": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "message-voting": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "ccg-companion": {
+  "world-message-board": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7439,17 +7434,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
+  "ccg-companion": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "rune-shop-cost-calc": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "runecraft-profit-tracking": {
+  "rune-craft-counter": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "rune-craft-counter": {
+  "runecraft-profit-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7534,12 +7534,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "salve-omission-flag": {
+  "party-gear-check": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "party-gear-check": {
+  "salve-omission-flag": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7559,12 +7559,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "obs-integration": {
+  "obs-replay-buffer-trigger": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "obs-replay-buffer-trigger": {
+  "obs-integration": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7594,12 +7594,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "clue-stack-tracking": {
+  "stack-limit-progression": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "stack-limit-progression": {
+  "clue-stack-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7634,22 +7634,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "coordinate-clue-aid": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "sextant-coordinate-lookup": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "sgs-savings-tracking": {
+  "coordinate-clue-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "spec-savings-tracking": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "sgs-savings-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7714,12 +7714,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "shortest-path-integration": {
+  "clue-shortest-path": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "clue-shortest-path": {
+  "shortest-path-integration": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7809,22 +7809,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "turael-skip-aid": {
-    "idf": 6.7208231096305,
-    "doc_count": 2,
-    "doc_frequency": 0.0012055455093429777
-  },
   "slayer-task-aid": {
     "idf": 6.315358001522335,
     "doc_count": 3,
     "doc_frequency": 0.0018083182640144665
   },
-  "milestone-master-reminder": {
+  "turael-skip-aid": {
+    "idf": 6.7208231096305,
+    "doc_count": 2,
+    "doc_frequency": 0.0012055455093429777
+  },
+  "slayer-streak-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "slayer-streak-tracking": {
+  "milestone-master-reminder": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7924,12 +7924,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "minimap-extra-orb": {
+  "soulreaper-stack-orb": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "soulreaper-stack-orb": {
+  "minimap-extra-orb": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -7999,12 +7999,17 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
+  "spec-misclick-prevention": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
   "spec-orb-conditional-hide": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "spec-misclick-prevention": {
+  "wave-pause-aware-timers": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -8013,11 +8018,6 @@
     "idf": 6.7208231096305,
     "doc_count": 2,
     "doc_frequency": 0.0012055455093429777
-  },
-  "wave-pause-aware-timers": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
   },
   "specimen-cleaning-tracking": {
     "idf": 6.7208231096305,
@@ -8044,12 +8044,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "teleport-map-ui": {
+  "interactive-teleport-menu": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "interactive-teleport-menu": {
+  "teleport-map-ui": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -8164,12 +8164,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "supply-cost-tracking": {
+  "supply-usage-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "supply-usage-tracking": {
+  "supply-cost-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -8319,12 +8319,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "pet-chance-tracking": {
+  "stall-thieve-counter": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "stall-thieve-counter": {
+  "pet-chance-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -8364,12 +8364,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "tick-jitter-reduction": {
+  "mac-wifi-keepalive": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "mac-wifi-keepalive": {
+  "tick-jitter-reduction": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -8384,12 +8384,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "tick-replay-logging": {
+  "combat-replay-analysis": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "combat-replay-analysis": {
+  "tick-replay-logging": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -8659,22 +8659,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "toa-preset-management": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "toa-utility-bundle": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "toa-damage-tracking": {
+  "toa-preset-management": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "toa-phase-stats": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "toa-damage-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -8804,12 +8804,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "twitch-extension-stream": {
+  "viewer-engagement": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "viewer-engagement": {
+  "twitch-extension-stream": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -8819,22 +8819,22 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "per-npc-hp-tracking": {
-    "idf": 7.413970290190444,
-    "doc_count": 1,
-    "doc_frequency": 0.0006027727546714888
-  },
   "fight-cave-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "nmz-afk-aid": {
+  "per-npc-hp-tracking": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
   "nmz-state-tracking": {
+    "idf": 7.413970290190444,
+    "doc_count": 1,
+    "doc_frequency": 0.0006027727546714888
+  },
+  "nmz-afk-aid": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -8879,12 +8879,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "muted-state-jingles": {
+  "level-up-jingle": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "level-up-jingle": {
+  "muted-state-jingles": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -9014,12 +9014,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "teammate-opacity": {
+  "ground-view-filter": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "ground-view-filter": {
+  "teammate-opacity": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
@@ -9199,12 +9199,12 @@
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "wintertodt-crowdsource": {
+  "boss-hp-scouting": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
   },
-  "boss-hp-scouting": {
+  "wintertodt-crowdsource": {
     "idf": 7.413970290190444,
     "doc_count": 1,
     "doc_frequency": 0.0006027727546714888
