@@ -1,0 +1,56 @@
+# Example workflow for the runelite-plugin-hub repository.
+# Save as .github/workflows/prism-triage.yml in plugin-hub.
+#
+# This adds a single PR comment per submission via the PRISM triage action.
+# Reviewers see the same shape of comment they already get from the
+# runelite-github-app bot — complementary, not replacing.
+#
+# Adoption is one workflow file + one secret (ANTHROPIC_API_KEY if T0 LLM
+# extension is enabled; T0 regex alone needs no secrets).
+#
+# Pin the action to a commit SHA, NEVER a mutable tag, so the verification
+# code itself can't be swapped without breaking the pin. Replace
+# `prism-framework/triage-action@<COMMIT_SHA>` below with the specific
+# commit you've reviewed.
+
+name: PRISM triage
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'plugins/**'
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write    # to post/update the triage comment
+      contents: read
+    steps:
+      - name: Checkout PRISM action
+        uses: actions/checkout@<COMMIT_SHA>     # pin to reviewed PRISM repo SHA
+        with:
+          repository: prism-framework/prism
+          path: prism
+
+      - name: Setup Python
+        uses: actions/setup-python@<COMMIT_SHA>
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps
+        run: |
+          python3 -m pip install pyyaml
+          # anthropic only needed if T0 LLM extension is enabled below
+          # python3 -m pip install anthropic
+
+      - name: Run PRISM triage
+        uses: ./prism/action
+        with:
+          packet-path: prism/packets/runelite-plugin-hub
+          pr-number: ${{ github.event.pull_request.number }}
+          enable-t0-llm: 'false'    # set 'true' when API key is available
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

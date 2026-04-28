@@ -1,0 +1,79 @@
+name: PRISM Triage
+description: Run PRISM triage on a plugin-hub PR and post a single labelled comment
+author: PRISM contributors
+branding:
+  icon: shield
+  color: blue
+
+inputs:
+  packet-path:
+    description: |
+      Path within this repository to a PRISM packet directory. Default points
+      at the runelite-plugin-hub packet bundled with the action. To pin to a
+      specific packet release, point at a tarball you've downloaded and
+      extracted in an earlier workflow step.
+    required: false
+    default: packets/runelite-plugin-hub
+
+  pr-number:
+    description: PR number to triage. Defaults to the workflow's current PR.
+    required: false
+    default: ${{ github.event.pull_request.number }}
+
+  enable-t0-llm:
+    description: |
+      Run the optional T0 LLM rule extension when regex T0 returns compliant.
+      Adds tokens (~500/PR via Haiku) for cases the regex misses. Requires
+      ANTHROPIC_API_KEY in env.
+    required: false
+    default: 'false'
+
+  comment-marker:
+    description: |
+      HTML comment marker used to identify and update the existing PRISM comment
+      on subsequent runs. Don't change unless you have a reason.
+    required: false
+    default: '<!-- prism-triage -->'
+
+runs:
+  using: composite
+  steps:
+    - name: Verify packet integrity
+      shell: bash
+      run: |
+        set -e
+        echo "Verifying packet at ${{ inputs.packet-path }}"
+        python3 ${{ github.action_path }}/../prism verify "${{ inputs.packet-path }}"
+
+    - name: Run triage
+      id: triage
+      shell: bash
+      env:
+        ANTHROPIC_API_KEY: ${{ env.ANTHROPIC_API_KEY }}
+      run: |
+        set -e
+        ARGS=( --pr "${{ inputs.pr-number }}" --packet "${{ inputs.packet-path }}" )
+        if [ "${{ inputs.enable-t0-llm }}" = "true" ]; then
+          ARGS+=( --t0-llm )
+        fi
+        python3 ${{ github.action_path }}/../prism triage "${ARGS[@]}" > /tmp/prism-output.md
+        echo "Triage complete: $(wc -l < /tmp/prism-output.md) lines"
+
+    - name: Post or update PR comment
+      shell: bash
+      env:
+        GH_TOKEN: ${{ env.GH_TOKEN || github.token }}
+        MARKER: ${{ inputs.comment-marker }}
+      run: |
+        set -e
+        BODY="$MARKER"$'\n'"$(cat /tmp/prism-output.md)"
+        EXISTING_ID=$(gh api "repos/${{ github.repository }}/issues/${{ inputs.pr-number }}/comments" \
+          --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -1)
+        if [ -n "$EXISTING_ID" ]; then
+          echo "Updating existing PRISM comment $EXISTING_ID"
+          gh api -X PATCH "repos/${{ github.repository }}/issues/comments/$EXISTING_ID" \
+            -f body="$BODY"
+        else
+          echo "Posting new PRISM comment"
+          gh pr comment "${{ inputs.pr-number }}" --repo "${{ github.repository }}" --body "$BODY"
+        fi

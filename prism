@@ -1,0 +1,132 @@
+#!/usr/bin/env python3
+"""prism — single entry point for the framework.
+
+Subcommands:
+  triage   Triage a plugin-hub PR; emits markdown reviewer brief.
+  verify   Verify a packet's hash integrity (or recompute hashes during dev).
+  eval     Run an evaluation suite (saturation, risk, chronology).
+
+For the runelite team's CI integration, only `prism triage` matters — the
+GitHub Action invokes it on every PR and posts the output as a comment.
+The `verify` and `eval` subcommands are dev/maintenance tools.
+
+Usage:
+  ./prism triage --pr 11565
+  ./prism triage --pr 11565 --capabilities-file caps.json --t0-llm
+  ./prism verify packets/runelite-plugin-hub
+  ./prism verify packets/runelite-plugin-hub --update-hashes
+  ./prism eval saturation
+  ./prism eval risk
+  ./prism eval chronology
+"""
+
+import argparse
+import sys
+from pathlib import Path
+
+PRISM_ROOT = Path(__file__).parent.resolve()
+sys.path.insert(0, str(PRISM_ROOT / "scripts"))
+
+
+def cmd_triage(args):
+    """Hand off to prism_triage.main with a constructed argv."""
+    import prism_triage
+    argv = ["--pr", str(args.pr), "--packet", str(args.packet)]
+    if args.capabilities_file:
+        argv += ["--capabilities-file", str(args.capabilities_file)]
+    if args.plugin_file:
+        argv = ["--plugin-file", str(args.plugin_file), "--packet", str(args.packet)]
+    if args.json:
+        argv += ["--json"]
+    if args.t0_llm:
+        argv += ["--t0-llm"]
+    sys.argv = ["prism_triage"] + argv
+    prism_triage.main()
+
+
+def cmd_verify(args):
+    """Verify packet integrity. With --update-hashes, recompute and rewrite."""
+    from packet import Packet, PacketIntegrityError, update_manifest_hashes
+
+    if args.update_hashes:
+        update_manifest_hashes(args.packet)
+        return
+
+    try:
+        p = Packet(args.packet)
+    except PacketIntegrityError as e:
+        print(f"INTEGRITY FAILURE\n{e}", file=sys.stderr)
+        sys.exit(2)
+
+    print(f"✓ {p.id}@{p.version} verified")
+    print(f"  rules:            {len(p.rules)}")
+    print(f"  saturation index: {len(p.saturation_index)} entries")
+    print(f"  capability vocab: {len(p.idf)}")
+    print(f"  chronology:       {len(p.chronology)} entries")
+    prompts = sorted(f.stem for f in (p.path / "prompts").glob("*.md"))
+    print(f"  prompts:          {prompts}")
+
+
+def cmd_eval_saturation(args):
+    """Run T0 saturation eval against the gold pairs."""
+    import subprocess
+    subprocess.run(["python3", str(PRISM_ROOT / "scripts" / "eval_t0.py")], check=False)
+
+
+def cmd_eval_risk(args):
+    """Run T0 risk eval (catalog FP + policy-bucket recall)."""
+    import subprocess
+    subprocess.run(["python3", str(PRISM_ROOT / "scripts" / "eval_risk.py")], check=False)
+
+
+def cmd_eval_chronology(args):
+    """Run chronology check on the gold-pair eval set."""
+    import subprocess
+    subprocess.run(["python3", str(PRISM_ROOT / "scripts" / "eval_chronology_check.py")], check=False)
+
+
+def build_parser():
+    parser = argparse.ArgumentParser(prog="prism", description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = parser.add_subparsers(dest="cmd", required=True)
+
+    # triage
+    default_packet = PRISM_ROOT / "packets" / "runelite-plugin-hub"
+    p_triage = sub.add_parser("triage", help="Triage a PR; emit reviewer markdown")
+    src = p_triage.add_mutually_exclusive_group(required=True)
+    src.add_argument("--pr", type=int, help="plugin-hub PR number")
+    src.add_argument("--plugin-file", type=Path, help="local plugin JSON for dev/test")
+    p_triage.add_argument("--packet", type=Path, default=default_packet)
+    p_triage.add_argument("--capabilities-file", type=Path,
+                          help="precomputed capabilities (skip extraction)")
+    p_triage.add_argument("--t0-llm", action="store_true",
+                          help="run T0 LLM rule extension when regex T0 returns compliant")
+    p_triage.add_argument("--json", action="store_true",
+                          help="emit raw JSON instead of markdown")
+    p_triage.set_defaults(func=cmd_triage)
+
+    # verify
+    p_verify = sub.add_parser("verify", help="Verify packet integrity (sha256)")
+    p_verify.add_argument("packet", type=Path, default=default_packet, nargs="?")
+    p_verify.add_argument("--update-hashes", action="store_true",
+                          help="recompute and rewrite hashes (dev only)")
+    p_verify.set_defaults(func=cmd_verify)
+
+    # eval
+    p_eval = sub.add_parser("eval", help="Run an evaluation suite")
+    eval_sub = p_eval.add_subparsers(dest="eval_cmd", required=True)
+    eval_sub.add_parser("saturation").set_defaults(func=cmd_eval_saturation)
+    eval_sub.add_parser("risk").set_defaults(func=cmd_eval_risk)
+    eval_sub.add_parser("chronology").set_defaults(func=cmd_eval_chronology)
+
+    return parser
+
+
+def main():
+    parser = build_parser()
+    args = parser.parse_args()
+    args.func(args)
+
+
+if __name__ == "__main__":
+    main()
