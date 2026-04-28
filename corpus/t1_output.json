@@ -1,0 +1,400 @@
+[
+  {
+    "number": 11454,
+    "matched_rules": [
+      {
+        "rule_id": "level_based_pvp_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Alerts you when another player is detected nearby in the Wilderness with configurable filters, combat level detection",
+        "rationale": "Explicitly highlights players by combat level in Wilderness PvP context"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Combat level detection for PvP in Wilderness violates level_based_pvp_indicator rule"
+  },
+  {
+    "number": 11280,
+    "matched_rules": [
+      {
+        "rule_id": "simulated_content",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Overlays boss models and attack patterns on the Gemstone Crab for PvM training",
+        "rationale": "Simulates/trains boss mechanics outside actual boss encounters"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Boss model and attack pattern overlay constitutes simulated content per Jagex policy"
+  },
+  {
+    "number": 11182,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "NPC customization for world flavor does not match any catalog rules"
+  },
+  {
+    "number": 11123,
+    "matched_rules": [
+      {
+        "rule_id": "plugin_takeover_without_policy",
+        "severity": "warn",
+        "confidence": "high",
+        "evidence": "Title contains 'takeover'",
+        "rationale": "Plugin takeover requires following documented takeover policy"
+      }
+    ],
+    "verdict": "policy-warning",
+    "reasoning": "Title indicates takeover but no evidence of policy violation if takeover was conducted properly"
+  },
+  {
+    "number": 11077,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Greenscreen for content creators does not match any catalog rules"
+  },
+  {
+    "number": 11023,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Animation and menu text replacement does not match any catalog rules"
+  },
+  {
+    "number": 10989,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Real-time boss map overlay does not match any catalog rules"
+  },
+  {
+    "number": 10896,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Grand Exchange UI convenience buttons do not match any catalog rules"
+  },
+  {
+    "number": 10877,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Boss attack path and debris overlay does not match any catalog rules"
+  },
+  {
+    "number": 10683,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Clan event attendance tracking to local file does not match any catalog rules"
+  },
+  {
+    "number": 10598,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Boss mechanic tracking during actual fight does not match any catalog rules"
+  },
+  {
+    "number": 10450,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Projectile highlighting for visibility does not match any catalog rules"
+  },
+  {
+    "number": 10345,
+    "matched_rules": [
+      {
+        "rule_id": "simulated_content",
+        "severity": "block",
+        "confidence": "medium",
+        "evidence": "plugin to help players learn the mechanics of the Vorkath fight",
+        "rationale": "Teaching/learning mechanics of actual boss may constitute simulation depending on implementation"
+      }
+    ],
+    "verdict": "policy-warning",
+    "reasoning": "Mechanic learning tool flagged for medium-confidence simulated_content concern; depends on whether it simulates the fight or just highlights mechanics during actual fight"
+  },
+  {
+    "number": 10180,
+    "matched_rules": [
+      {
+        "rule_id": "http_player_info_exposure",
+        "severity": "warn",
+        "confidence": "high",
+        "evidence": "Exposes game state via HTTP for Stream Deck integration",
+        "rationale": "HTTP exposure of game state creates potential data exfiltration risk"
+      }
+    ],
+    "verdict": "policy-warning",
+    "reasoning": "HTTP exposure of game state flagged for manual review of scope and security"
+  },
+  {
+    "number": 10153,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "PvP opponent switch/style alerts during LMS do not match any catalog rules"
+  },
+  {
+    "number": 10148,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Automatic run/walk toggle based on configured tiles does not match any catalog rules"
+  },
+  {
+    "number": 10069,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Memory diagnostic tool does not match any catalog rules"
+  },
+  {
+    "number": 9962,
+    "matched_rules": [
+      {
+        "rule_id": "credential_direct_storage",
+        "severity": "warn",
+        "confidence": "medium",
+        "evidence": "Manage multiple OSRS accounts with encrypted storage and optional 2FA support",
+        "rationale": "Account credentials and 2FA tokens stored locally raise security concerns"
+      }
+    ],
+    "verdict": "policy-warning",
+    "reasoning": "Encrypted credential storage flagged; rule prefers external password managers"
+  },
+  {
+    "number": 9513,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Highlighting attackable targets in Bounty Hunter does not match any catalog rules"
+  },
+  {
+    "number": 9459,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Single camera position save/load (Camera Points allowlist pattern) does not match any catalog rules"
+  },
+  {
+    "number": 9343,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Dangerous tile alerts during boss special attacks does not match any catalog rules"
+  },
+  {
+    "number": 9324,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Nightmare boss quality-of-life improvements do not match any catalog rules"
+  },
+  {
+    "number": 9319,
+    "matched_rules": [
+      {
+        "rule_id": "opponent_freeze_timer",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Tags include 'freeze', 'timer', 'opponent', 'pvp'; description says 'PVP assistance through various means'",
+        "rationale": "Freeze timer on opponents is explicitly forbidden by Jagex Third-Party Client Guidelines"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "PK Helper tags indicate opponent freeze timer functionality which is blocked"
+  },
+  {
+    "number": 9202,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Example greeter plugin does not match any catalog rules"
+  },
+  {
+    "number": 9150,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Cosmetic RuneScape reskinning does not match any catalog rules"
+  },
+  {
+    "number": 9005,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Fight Cave pathing guide overlay does not match any catalog rules"
+  },
+  {
+    "number": 8905,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Filtering ground items by ownership for Ironman does not match any catalog rules"
+  },
+  {
+    "number": 8855,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Hiding objects by fixed ID list does not match any catalog rules (user_id_based_plugin requires user-provided IDs)"
+  },
+  {
+    "number": 8787,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Scorching bow freeze effect timer does not match any catalog rules"
+  },
+  {
+    "number": 8772,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Chat enhancement does not match any catalog rules"
+  },
+  {
+    "number": 8727,
+    "matched_rules": [
+      {
+        "rule_id": "crowdsourced_player_data",
+        "severity": "warn",
+        "confidence": "high",
+        "evidence": "Logs player data (location, activity, gear) to a custom API",
+        "rationale": "Crowdsources player locations, activity, and equipment to external API"
+      }
+    ],
+    "verdict": "policy-warning",
+    "reasoning": "Player Tracker logs location, activity, and gear to custom API violating crowdsourced_player_data rule"
+  },
+  {
+    "number": 8725,
+    "matched_rules": [
+      {
+        "rule_id": "level_based_pvp_indicator",
+        "severity": "block",
+        "confidence": "medium",
+        "evidence": "Hides players below a certain combat level",
+        "rationale": "Filtering players by combat level in PvP context violates level-based highlighting rule"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Combat level-based player filtering constitutes level_based_pvp_indicator violation"
+  },
+  {
+    "number": 8682,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Sound alert for blackjack glance does not match any catalog rules"
+  },
+  {
+    "number": 8548,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Attack style tracker for Corrupted Gauntlet learning does not match any catalog rules (not simulated, used during actual gameplay)"
+  },
+  {
+    "number": 8520,
+    "matched_rules": [
+      {
+        "rule_id": "party_auto_rejoin",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Automatically join last party on login",
+        "rationale": "Auto-rejoin party functionality would strain party servers"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Auto Party plugin violates party_auto_rejoin block rule"
+  },
+  {
+    "number": 8062,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Boss projectile highlighting does not match any catalog rules"
+  },
+  {
+    "number": 7932,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Sound effect swapping by ID does not match any catalog rules"
+  },
+  {
+    "number": 7890,
+    "matched_rules": [
+      {
+        "rule_id": "keystroke_or_mouse_faking",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "A plugin that allows keyboard keys to be used as a mouse click",
+        "rationale": "Keyboard-to-mouse input emulation counts as input faking (botting)"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Alternative Click plugin allows keystroke-to-mouse conversion which is input faking"
+  },
+  {
+    "number": 7858,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Attack counter does not match any catalog rules"
+  },
+  {
+    "number": 7737,
+    "matched_rules": [
+      {
+        "rule_id": "adult_sexual_content",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Allows basic Intiface functionality; tags include 'butt'",
+        "rationale": "Intiface is adult intimacy device control software"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "ButtScape integrates Intiface (adult content) which violates adult_sexual_content rule"
+  },
+  {
+    "number": 7615,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Damage calculator based on XP drops does not match any catalog rules"
+  },
+  {
+    "number": 7545,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Graphics enhancement plugin does not match any catalog rules"
+  },
+  {
+    "number": 7494,
+    "matched_rules": [
+      {
+        "rule_id": "level_based_pvp_indicator",
+        "severity": "block",
+        "confidence": "high",
+        "evidence": "Shows player names info with color-coded combat brackets",
+        "rationale": "Color-coded combat brackets constitute level-based player highlighting in PvP context"
+      }
+    ],
+    "verdict": "policy-violation",
+    "reasoning": "Player Names with color-coded combat brackets violates level_based_pvp_indicator rule"
+  },
+  {
+    "number": 7383,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Text-to-speech narration does not match any catalog rules"
+  },
+  {
+    "number": 7172,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Todo list utility does not match any catalog rules"
+  },
+  {
+    "number": 5592,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Projectile visual swapping does not match any catalog rules"
+  },
+  {
+    "number": 3708,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Flinching timer overlay does not match any catalog rules"
+  },
+  {
+    "number": 3128,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "Wintertodt tile highlighting does not match any catalog rules"
+  },
+  {
+    "number": 3062,
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "F2P-only mode toggle does not match any catalog rules"
+  }
+]

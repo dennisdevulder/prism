@@ -1,0 +1,218 @@
+[
+  {
+    "number": "stat-track",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "clue-steps",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "average-total-level",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "unique-npc-kc-tracker",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "drift-net-improved",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "death-inventory",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "cox-scouting-qol",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "brimhaven-agility",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "poison-moo",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "boss-voicer",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "orb-hider",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "pre-eoc-xp-drops",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "combo-runes-only",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "tictac7x-capslock",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "better-tile-exporter",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "barracuda-trial-helm-lock",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "bracelet-reminder",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "ground-item-notification",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "health-notifier",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "tob-notification",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "agilityfc",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "voicescape",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "collection-log-shout",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "thenwefight",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "house-advertisement-plus",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "customizable-xp-drops",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "instant-inventory",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "normal-ancient-teleports",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "line-markers",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "afk-overlay",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "wilderness-multi-lines",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "diagonal-tile-indicators",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "osrs-wiki-crowdsourcing",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "lfghelper",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "hide-and-seek-tracker",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  },
+  {
+    "number": "discord-rare-drop-notificater",
+    "matched_rules": [],
+    "verdict": "compliant",
+    "reasoning": "No policy violations detected"
+  }
+]
