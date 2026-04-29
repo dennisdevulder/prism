@@ -2,6 +2,10 @@
 
 **A second pair of eyes for plugin-hub PRs.**
 
+[![Benchmark](https://img.shields.io/badge/Benchmark-15_models_×_16_cases-1f6feb?style=for-the-badge)](./BENCHMARK.md)
+[![GitHub Action](https://img.shields.io/badge/CI-GitHub_Action-da7e28?style=for-the-badge)](./action/)
+[![License](https://img.shields.io/badge/License-MIT-3f9142?style=for-the-badge)](./LICENSE)
+
 prism reads each pull request the way a careful maintainer would and writes a short brief: what the plugin does, what's worth a closer look, and whether anything in the code clashes with what the description claims. It never approves, rejects, or merges. It just makes the next ten minutes of review faster.
 
 ## Why this exists
