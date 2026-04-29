@@ -60,6 +60,8 @@ bottom_line is the reviewer's expectation in one sentence:
 - "Straightforward — quick read" if matches+nothing unsafe
 - "Careful review on <area>" if anything specific deserves attention
 - "Description does not match implementation — recommend dialog before review" if diverges
+
+**Author disclosure (when present)**: Some PRs include a block titled "Author disclosure (from a `prism-packet` block in the PR body)". The author has pasted a structured statement of intent — model, goal, locked decisions, disclosed failed attempts. Treat those claims as ground-truth to verify against the code, in addition to the manifest description. If the code re-introduces something the author disclosed as a failed attempt, surface that under `description_match.gaps`. Absence of the block is not a flag — many PRs won't have one.
 ```
 
 ## User template

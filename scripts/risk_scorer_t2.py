@@ -54,7 +54,7 @@ def gather_full_source(owner, repo, commit, max_files=30, max_total_chars=200000
     return "\n".join(rendered), len(paths), used
 
 
-def evaluate_via_anthropic(packet, plugin_meta, files_text, files_examined, files_total):
+def evaluate_via_anthropic(packet, plugin_meta, files_text, files_examined, files_total, author_disclosure=None):
     """Call a capable model with the T2 prompt. Sonnet by default; override
     via PRISM_T2_MODEL env var. Returns the parsed JSON brief.
     """
@@ -73,6 +73,19 @@ def evaluate_via_anthropic(packet, plugin_meta, files_text, files_examined, file
         if files_examined < files_total
         else f"all {files_total} files"
     )
+
+    disclosure_block = ""
+    if author_disclosure:
+        disclosure_block = f"""
+
+Author disclosure (from a `prism-packet` block in the PR body):
+{author_disclosure}
+
+When you write `description_match`, treat the author's stated goal and
+locked decisions as additional ground-truth claims to verify against the
+code. Silent re-introduction of a disclosed failed attempt is a
+description-match issue worth surfacing."""
+
     user = f"""Plugin manifest:
 - displayName: {plugin_meta.get('displayName', '?')}
 - description: {plugin_meta.get('description', '?')}
@@ -80,7 +93,7 @@ def evaluate_via_anthropic(packet, plugin_meta, files_text, files_examined, file
 - author: {plugin_meta.get('author', '?')}
 
 PR description (from the PR body):
-{plugin_meta.get('pr_description') or '(empty)'}
+{plugin_meta.get('pr_description') or '(empty)'}{disclosure_block}
 
 Plugin source ({scope}):
 
@@ -101,7 +114,7 @@ Output JSON only. Be decisive — the reviewer wants signal, not hedging."""
     return json.loads(text)
 
 
-def evaluate(packet, target, pr, manifest, evaluator=evaluate_via_anthropic):
+def evaluate(packet, target, pr, manifest, evaluator=evaluate_via_anthropic, author_packet=None):
     """Top-level T2 evaluator.
 
     Same interface shape as T1: takes packet + target + pr + manifest,
@@ -121,8 +134,13 @@ def evaluate(packet, target, pr, manifest, evaluator=evaluate_via_anthropic):
         "pr_description": (pr.get("body") or "").strip(),
     }
 
+    author_disclosure = None
+    if author_packet:
+        from author_packet import summarize_for_prompt
+        author_disclosure = summarize_for_prompt(author_packet)
+
     try:
-        brief = evaluator(packet, plugin_meta, files_text, used, total)
+        brief = evaluator(packet, plugin_meta, files_text, used, total, author_disclosure)
     except Exception as e:
         return {"error": str(e), "files_examined": used, "files_total": total}
 
@@ -133,6 +151,7 @@ def evaluate(packet, target, pr, manifest, evaluator=evaluate_via_anthropic):
         "bottom_line": brief.get("bottom_line", ""),
         "files_examined": used,
         "files_total": total,
+        "author_packet_used": author_packet is not None,
     }
 
 

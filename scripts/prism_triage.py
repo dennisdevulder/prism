@@ -132,7 +132,8 @@ def parse_properties(text):
 
 
 def render_markdown(pr, target, manifest, manifest_url, capabilities,
-                     saturation, risk, packet=None, t1=None, t2=None):
+                     saturation, risk, packet=None, t1=None, t2=None,
+                     author_packet=None):
     """Reviewer-friendly markdown output. Designed to be pasted into a PR
     review comment. Suppresses empty sections; always opens with the
     overall verdict so the reviewer sees the bottom line first.
@@ -169,6 +170,16 @@ def render_markdown(pr, target, manifest, manifest_url, capabilities,
     desc = (manifest.get("description") or "").strip()
     if desc:
         out.append(f"- **Description**: {desc}")
+
+    # ===== provenance (LTM author packet) =====
+    out.append("")
+    if author_packet:
+        from author_packet import render_provenance_section
+        out.append(render_provenance_section(author_packet))
+    else:
+        out.append("### Provenance")
+        out.append("")
+        out.append("_No provenance packet in the PR body. The author has not disclosed which model wrote this PR or what they intended to ship. Reviewer note only — not a penalty._")
 
     # ===== saturation =====
     out.append("")
@@ -366,6 +377,13 @@ def main():
     # ===== Step 4: load packet (rules + saturation index + chronology + prompts) =====
     packet = Packet(args.packet)
 
+    # ===== Step 4b: extract author provenance packet from the PR body =====
+    # The author pastes a ```prism-packet block in the PR description.
+    # No fetch from the author's repo — we only read from PR metadata
+    # (already in hand from gh_pr above).
+    from author_packet import extract_from_pr_body
+    author_packet = extract_from_pr_body(pr.get("body"))
+
     # ===== Step 5: run T0 saturation =====
     saturation = score_saturation(plugin_record, packet.saturation_index, packet.idf,
                                    k=5, exclude_slug=target["slug"])
@@ -391,7 +409,7 @@ def main():
         # T1 only useful if T0 didn't already block — saves tokens.
         from risk_scorer_t1 import evaluate as t1_evaluate
         try:
-            t1_result = t1_evaluate(packet, target, pr, manifest)
+            t1_result = t1_evaluate(packet, target, pr, manifest, author_packet=author_packet)
         except RuntimeError as e:
             sys.stderr.write(f"(T1 skipped — {e})\n")
             t1_result = None
@@ -401,7 +419,7 @@ def main():
     if args.t2 and risk["verdict"] != "policy-violation":
         from risk_scorer_t2 import evaluate as t2_evaluate
         try:
-            t2_result = t2_evaluate(packet, target, pr, manifest)
+            t2_result = t2_evaluate(packet, target, pr, manifest, author_packet=author_packet)
         except RuntimeError as e:
             sys.stderr.write(f"(T2 skipped — {e})\n")
             t2_result = None
@@ -418,7 +436,7 @@ def main():
         }, indent=2))
         return
 
-    print(render_markdown(pr, target, manifest, manifest_url, capabilities, saturation, risk, packet=packet, t1=t1_result, t2=t2_result))
+    print(render_markdown(pr, target, manifest, manifest_url, capabilities, saturation, risk, packet=packet, t1=t1_result, t2=t2_result, author_packet=author_packet))
 
 
 if __name__ == "__main__":

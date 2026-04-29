@@ -33,11 +33,11 @@ contents:
   - file: prompts/t1_correctness_review.md
     type: prompt_template
     description: T1 code-level review — surfaces file:line pointers worth reviewer attention
-    sha256: 36f929bdc81d81f7f18c342ac8b480338b20addefde808c77684fc004db8d678
+    sha256: 7fe1e3a94ceb22146db5e03039c810df6b9ff2d570734fa2f508a5578a747587
   - file: prompts/t2_holistic_review.md
     type: prompt_template
     description: T2 holistic review — full source, prose brief on what-it-does + description-match + unsafe-ops
-    sha256: 7dbe031c875a07859bdb11c78a238611705638b9c577d369abfa9b510fd511c2
+    sha256: b402a2a67eff19d390ff67bf26af76d8b7ec1cc1e5a04f743fffca902bf76679
 
 sources:
   rules:

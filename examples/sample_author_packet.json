@@ -1,0 +1,50 @@
+{
+  "ltm_version": "0.2",
+  "id": "01K9SAMPLEAUTHORPACKET00001A",
+  "created_at": "2026-04-29T00:00:00Z",
+  "project": {
+    "name": "osrs-tracker-plugin",
+    "ref": "github.com/dennisdevulder/osrs-tracker-plugin"
+  },
+  "goal": "Add a Sailing-skill quest helper that overlays NPC dialogue choices and step-by-step waypoints, without auto-advancing dialogue or simulating input.",
+  "success_criteria": [
+    "Plugin builds against the current RuneLite client without warnings.",
+    "Manifest description names every user-visible feature shipped in the diff.",
+    "No reflection, no java.awt.Robot, no Runtime.exec, no JNI."
+  ],
+  "constraints": [
+    "Use the existing QuestStep API; do not introduce a parallel state machine.",
+    "Feature scope is overlay-only — no input automation, even where it would be convenient."
+  ],
+  "decisions": [
+    {
+      "what": "Use existing QuestStep API; do not introduce a parallel state machine.",
+      "why": "Existing patterns are well-tested and other helpers depend on them.",
+      "consequences": "Adding a new step type means extending QuestStep, not subclassing in this plugin's package.",
+      "locked": true
+    },
+    {
+      "what": "No prayer-flick or DPS-boss hints — out of scope for Sailing.",
+      "why": "Those would invite policy rejections under simulated_content.",
+      "locked": true
+    }
+  ],
+  "attempts": [
+    {
+      "tried": "Hooking the dialogue widget directly to auto-advance choices.",
+      "outcome": "failed",
+      "learned": "That crosses the line into input automation; reverted before commit.",
+      "confidence": "high"
+    }
+  ],
+  "open_questions": [
+    "Is the Sailing XP table stable across worlds, or does it differ on tournament worlds?"
+  ],
+  "next_step": "Land the Sailing quest helper, then add the Fishing trawler refresh as a follow-up.",
+  "tags": ["plugin", "quest-helper", "sailing"],
+  "provenance": {
+    "author_model": "claude-opus-4-7",
+    "author_human": "dennisdevulder",
+    "confidence": "high"
+  }
+}

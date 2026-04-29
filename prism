@@ -5,6 +5,7 @@ Subcommands:
   triage   Triage a plugin-hub PR; emits markdown reviewer brief.
   verify   Verify a packet's hash integrity (or recompute hashes during dev).
   eval     Run an evaluation suite (saturation, risk, chronology).
+  bench    Run the benchmark; optionally test an ad-hoc model and persist it.
 
 For the runelite team's CI integration, only `prism triage` matters — the
 GitHub Action invokes it on every PR and posts the output as a comment.
@@ -18,6 +19,10 @@ Usage:
   ./prism eval saturation
   ./prism eval risk
   ./prism eval chronology
+  ./prism bench
+  ./prism bench --only-models deepseek-3-2,llama-4-maverick
+  ./prism bench --model-id my-model --label "My Model" --pricing 0.5 1.5
+  ./prism bench --model-id my-model --label "My Model" --pricing 0.5 1.5 --save-as my-model
 """
 
 import argparse
@@ -89,6 +94,34 @@ def cmd_eval_chronology(args):
     subprocess.run(["python3", str(PRISM_ROOT / "scripts" / "eval_chronology_check.py")], check=False)
 
 
+def cmd_bench(args):
+    """Hand off to scripts/benchmark.py with constructed argv."""
+    import benchmark
+    argv = []
+    if args.tiers:
+        argv += ["--tiers", args.tiers]
+    if args.only_models:
+        argv += ["--only-models", args.only_models]
+    if args.model_id:
+        argv += ["--model-id", args.model_id]
+    if args.label:
+        argv += ["--label", args.label]
+    if args.pricing:
+        argv += ["--pricing", str(args.pricing[0]), str(args.pricing[1])]
+    if args.strict_json is False:
+        argv += ["--strict-json", "false"]
+    if args.max_tokens != 2048:
+        argv += ["--max-tokens", str(args.max_tokens)]
+    if args.save_as:
+        argv += ["--save-as", args.save_as]
+    if args.base_url:
+        argv += ["--base-url", args.base_url]
+    if args.api_key:
+        argv += ["--api-key", args.api_key]
+    sys.argv = ["benchmark"] + argv
+    benchmark.main()
+
+
 def build_parser():
     parser = argparse.ArgumentParser(prog="prism", description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -126,6 +159,37 @@ def build_parser():
     eval_sub.add_parser("saturation").set_defaults(func=cmd_eval_saturation)
     eval_sub.add_parser("risk").set_defaults(func=cmd_eval_risk)
     eval_sub.add_parser("chronology").set_defaults(func=cmd_eval_chronology)
+
+    # bench
+    p_bench = sub.add_parser("bench",
+        help="Run the benchmark; optionally test an ad-hoc model and persist it",
+        description=(
+            "Run the benchmark across registered models, or pass --model-id "
+            "to test an ad-hoc model immediately. Add --save-as to also "
+            "persist it to benchmarks/models.yaml for future runs."
+        ))
+    p_bench.add_argument("--tiers", default="t1,t2",
+                         help="comma-separated tier list (default: t1,t2)")
+    p_bench.add_argument("--only-models",
+                         help="comma-separated model ids to run (default: all enabled)")
+    # Ad-hoc model flags
+    p_bench.add_argument("--model-id",
+                         help="API model id for an ad-hoc test (e.g. gpt-4o-mini)")
+    p_bench.add_argument("--label",
+                         help="display label for the ad-hoc model (defaults to --model-id)")
+    p_bench.add_argument("--pricing", nargs=2, metavar=("INPUT", "OUTPUT"), type=float,
+                         help="pricing per million tokens, e.g. --pricing 0.50 1.50")
+    p_bench.add_argument("--strict-json", type=lambda s: s.lower() != "false", default=True,
+                         help="send response_format=json_object (default: true)")
+    p_bench.add_argument("--max-tokens", type=int, default=2048,
+                         help="max output tokens (default 2048; use 8192 for reasoning models)")
+    p_bench.add_argument("--save-as",
+                         help="also append the ad-hoc model to models.yaml under this id")
+    p_bench.add_argument("--base-url",
+                         help="override OPENAI_BASE_URL for this run")
+    p_bench.add_argument("--api-key",
+                         help="override OPENAI_API_KEY for this run")
+    p_bench.set_defaults(func=cmd_bench)
 
     return parser
 

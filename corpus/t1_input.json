@@ -1,0 +1,345 @@
+[
+  {
+    "number": 11454,
+    "title": "Add Wilderness Sentinel plugin",
+    "displayName": "Wilderness Sentinel",
+    "description": "Alerts you when another player is detected nearby in the Wilderness with configurable filters, combat level detection, and screen flash",
+    "tags": "wilderness,alert,alarm,detector,pk,players,sentinel,pker,pvp,escape"
+  },
+  {
+    "number": 11280,
+    "title": "Add Gemstone Trainer plugin",
+    "displayName": "Gemstone Trainer",
+    "description": "Overlays boss models and attack patterns on the Gemstone Crab for PvM training.",
+    "tags": "verzik,sol,heredit,colosseum,tob,trainer,pvm,gemstone,crab"
+  },
+  {
+    "number": 11182,
+    "title": "[New Plugin] Citizens-2",
+    "displayName": "Citizens 2",
+    "description": "Adds citizens to help bring life to the world (Citizens 2)",
+    "tags": "citizen,npc,scenery,customization"
+  },
+  {
+    "number": 11123,
+    "title": "bank memory: takeover",
+    "displayName": "Bank Memory",
+    "description": "Remembers all your banks, lets you instantly search them, and lets you compare their contents.",
+    "tags": "banks, content, contents, item, items"
+  },
+  {
+    "number": 11077,
+    "title": "Ezra black merge greenscreen + minimap greenscreen",
+    "displayName": "Green Screen",
+    "description": "Adds a greenscreen, useful for content creators. Original author: I Yam Jeremy",
+    "tags": ""
+  },
+  {
+    "number": 11023,
+    "title": "Add MorphPlugin",
+    "displayName": "MorphPlugin",
+    "description": "Allows you to replace animation IDS and Menu Texts",
+    "tags": "animation, text, menu, replacer"
+  },
+  {
+    "number": 10989,
+    "title": "Update commit reference in gauntlet-map",
+    "displayName": "Gauntlet Map",
+    "description": "A real time map of the gauntlet",
+    "tags": "gauntlet, map, hunllef"
+  },
+  {
+    "number": 10896,
+    "title": "Add Grand Exchange Buttons plugin",
+    "displayName": "Grand Exchange Buttons",
+    "description": "Adds Collect, Modify, and Abort buttons to the Grand Exchange overview",
+    "tags": ""
+  },
+  {
+    "number": 10877,
+    "title": "Doom of Mokhaiotl Quality of Life",
+    "displayName": "Doom of Mokhaiotl QOL",
+    "description": "Draws Volatile Earth and orb paths (1x1 centers and optional 3x3 hull), plus debris, and shadow markers.",
+    "tags": "earthen shield, volatile earth, doom, mokha, shield"
+  },
+  {
+    "number": 10683,
+    "title": "adding clan-event-attendance-v2 file",
+    "displayName": "Clan Event Attendance V2",
+    "description": "Track clan event attendance and time spent at the event. Tracks in side panel and saves to local file.",
+    "tags": "clan,event,attendance,time"
+  },
+  {
+    "number": 10598,
+    "title": "Doom shield tracker Plugin",
+    "displayName": "Doom Shield Tracker",
+    "description": "A plugin that tracks the volatile shield path during the Doom boss fight.",
+    "tags": "doom,shield,volatile earth,volatile,orb,shockwave"
+  },
+  {
+    "number": 10450,
+    "title": "Add Projectile Highlighter plugin",
+    "displayName": "Projectile Highlighter",
+    "description": "Highlights projectiles with customizable colored overlays for better visibility",
+    "tags": "projectile,highlight,overlay,pvm,combat,visibility"
+  },
+  {
+    "number": 10345,
+    "title": "Add Vorky Trainer plugin",
+    "displayName": "Vorky Trainer",
+    "description": "A plugin to help players learn the mechanics of the Vorkath fight. Currently only support melee attack style.",
+    "tags": "Vorkath, PvM, Bossing, Learning"
+  },
+  {
+    "number": 10180,
+    "title": "Add repository and commit information for streamdeck",
+    "displayName": "Stream Deck Integration",
+    "description": "Exposes game state via HTTP for Stream Deck integration",
+    "tags": "integration,streamdeck,api"
+  },
+  {
+    "number": 10153,
+    "title": "Add LMS Helper plugin",
+    "displayName": "LMS Helper",
+    "description": "Displays alerts when opponents switch gear or attack styles in Last Man Standing to combat bot advantage.",
+    "tags": "lms,last man standing,pvp,pk,prayer,switches,combat,anti-bot,notifications"
+  },
+  {
+    "number": 10148,
+    "title": "Add Smart Walk Run",
+    "displayName": "Smart Walk Run",
+    "description": "A RuneLite plugin that automatically toggles run or walk based on configured tiles.",
+    "tags": "movement,run,walk,quality of life"
+  },
+  {
+    "number": 10069,
+    "title": "memory-diagnostic",
+    "displayName": "Memory Diagnostic",
+    "description": "Estimates relative memory usage of enabled plugins.",
+    "tags": "memory,diagnostic,performance"
+  },
+  {
+    "number": 9962,
+    "title": "Add account-manager plugin",
+    "displayName": "Account Manager",
+    "description": "Manage multiple OSRS accounts with encrypted storage and optional 2FA support",
+    "tags": "account,login,manager,2fa,totp"
+  },
+  {
+    "number": 9513,
+    "title": "Added Attackable Player Indicator plugin",
+    "displayName": "Highlight Attackable Players",
+    "description": "Highlights attackable targets in bounty hunter",
+    "tags": "bh,pking,pk,bounty hunter"
+  },
+  {
+    "number": 9459,
+    "title": "Add groups, toggles, enhanced positions, key remapping support to camera points.",
+    "displayName": "Camera Points",
+    "description": "Allows you to save and load your camera position.",
+    "tags": "save, load, direction, zoom, yaw, pitch, camera, keybind"
+  },
+  {
+    "number": 9343,
+    "title": "Crazy/Deranged Archaeologist and Chaos Fanatic helper",
+    "displayName": "Crazy Archaeologist",
+    "description": "Alerts and highlights dangerous tiles during Crazy/Deranged Archaeologist and Chaos Fanatic special attacks",
+    "tags": "boss,pvm,wilderness,combat,overlay,crazy,deranged,archaeologist,chaos,fanatic"
+  },
+  {
+    "number": 9324,
+    "title": "create phosaniqol",
+    "displayName": "Phosani QoL",
+    "description": "Phosani QoL",
+    "tags": "phosani,nightmare,qol"
+  },
+  {
+    "number": 9319,
+    "title": "PK Helper Plugin",
+    "displayName": "PK Helper",
+    "description": "Provides PVP assistance through various means",
+    "tags": "\"pvp\",\"pk\",\"pking\",\"combat\",\"freeze\",\"timer\",\"prayer\",\"weapon\",\"overlay\",\"indicator\",\"opponent\",\"wilderness\",\"farcast\",\"inventory\",\"gear\",\"highlights\",\"switching\",\"tribrid\",\"hybrid\""
+  },
+  {
+    "number": 9202,
+    "title": "Add GuthixLive plugin",
+    "displayName": "Example",
+    "description": "An example greeter plugin",
+    "tags": ""
+  },
+  {
+    "number": 9150,
+    "title": "Ciwascape",
+    "displayName": "Ciwascape",
+    "description": "Ciwafy your runescape!",
+    "tags": ""
+  },
+  {
+    "number": 9005,
+    "title": "Create no-prayer-fight-cave-guide",
+    "displayName": "No Prayer Fight Cave Guide",
+    "description": "Path overlay for Rotation 2 no prayer fight cave runs",
+    "tags": "fightcave,rotation2,pathing,noprayer,guide"
+  },
+  {
+    "number": 8905,
+    "title": "ironman-ground-items Initial Review",
+    "displayName": "Ironman Ground Items",
+    "description": "Removes items you don't own from right-click menus. Perfect for Ironman accounts to avoid clicking on other players' drops that can't be taken.",
+    "tags": "ironman,ground,items,menu,filter,ownership"
+  },
+  {
+    "number": 8855,
+    "title": "Added No-Stalactites",
+    "displayName": "No Stalactites",
+    "description": "Hide selected in-game objects by ID. Optionally append object IDs in right-click menus.",
+    "tags": "object,hide,ids,stalactites"
+  },
+  {
+    "number": 8787,
+    "title": "Create scorching-bow-freeze-timer",
+    "displayName": "Scorching Bow Freeze Timer",
+    "description": "This plugin tracks the amount of time that the scorching bow freeze lasts for.",
+    "tags": "scorching bow,freeze,special attack"
+  },
+  {
+    "number": 8772,
+    "title": "add chat-improved",
+    "displayName": "Chat Improved",
+    "description": "An improved chat plugin for RuneLite that enhances the chat experience with additional features.",
+    "tags": "chat, improved, quality of life"
+  },
+  {
+    "number": 8727,
+    "title": "Create player-tracker",
+    "displayName": "Player Tracker",
+    "description": "Logs player data (location, activity, gear) to a custom API.",
+    "tags": "player, tracker, logger, location, activity, equipment, telemetry, api, external"
+  },
+  {
+    "number": 8725,
+    "title": "Create noob-hider",
+    "displayName": "Noob Hider",
+    "description": "Hides players below a certain combat level",
+    "tags": "noob,players,annoy,filter,spam"
+  },
+  {
+    "number": 8682,
+    "title": "Add blackjack glance alert plugin",
+    "displayName": "Blackjack Glance Alert",
+    "description": "Plays a familiar sound when your blow glances off the bandit's head.",
+    "tags": "alert,blackjack,thieving"
+  },
+  {
+    "number": 8548,
+    "title": "Create crimson-prison-break",
+    "displayName": "Crimson Prisonbreak",
+    "description": "Attack style tracker/helper to assist with learning corrupted gauntlet. Includes cycles for both 5:1 (single perfected) and multiple perfected weapons.",
+    "tags": "Attack,Corrupted Gauntlet,Gauntlet,5:1,CG,Red Prison,Crimson Prison,Ironman,Iron"
+  },
+  {
+    "number": 8520,
+    "title": "Add auto party plugin",
+    "displayName": "Auto Party",
+    "description": "Automatically join last party on login",
+    "tags": "party,automatic,rejoin,group"
+  },
+  {
+    "number": 8062,
+    "title": "Add Sote Ball Highlighter",
+    "displayName": "Sote Ball Highlighter",
+    "description": "Highlight Sote projectiles",
+    "tags": "sote,tob,projectile"
+  },
+  {
+    "number": 7932,
+    "title": "Created simple sound swapper",
+    "displayName": "Simple Sound Swapper",
+    "description": "Allows swapping of sounds based off sound ID",
+    "tags": "sound,ID,swap,replace,effect,volume"
+  },
+  {
+    "number": 7890,
+    "title": "add alternative-click",
+    "displayName": "Alternative Click",
+    "description": "A plugin that allows keyboard keys to be used as a mouse click.",
+    "tags": "keybind,mouse"
+  },
+  {
+    "number": 7858,
+    "title": "Create Player Attack Tracker",
+    "displayName": "Attack Counter",
+    "description": "Counts Player Attacks based on a configurable interval",
+    "tags": "counter"
+  },
+  {
+    "number": 7737,
+    "title": "Create buttscape",
+    "displayName": "ButtScape",
+    "description": "Allows basic Intiface functionality.",
+    "tags": "butt"
+  },
+  {
+    "number": 7615,
+    "title": "Exclude NPCs, Reset on NPC change, Add Overlay Config Option",
+    "displayName": "InstantDamageCalculator",
+    "description": "Calculates damage dealt based on Hitpoints xp drop",
+    "tags": ""
+  },
+  {
+    "number": 7545,
+    "title": "RuneMod. A new graphics plugin for the phub.",
+    "displayName": "RuneMod",
+    "description": "A Runescape graphics modifier. Requires private beta key. Windows only.",
+    "tags": "runemod, rune, mod, hd, graphics, high, detail, graphics, shaders, textures, gpu, shadows, lights"
+  },
+  {
+    "number": 7494,
+    "title": "add playernames plugin",
+    "displayName": "Player Names",
+    "description": "Shows player names info with color-coded combat brackets",
+    "tags": "players,indicator,pvp,wilderness,name"
+  },
+  {
+    "number": 7383,
+    "title": "Upgrade naturalspeech",
+    "displayName": "Natural Speech",
+    "description": "Natural sounding text-to-speech with over 1000 voices.",
+    "tags": "tts,text-to-speech,text,speech,voice,speak,talk,piper,sound,audio,quest,questing,gary,gilbert,youtube,j1mmy"
+  },
+  {
+    "number": 7172,
+    "title": "Add Todo plugin",
+    "displayName": "Todo",
+    "description": "A Todo list",
+    "tags": "workflow,util,reminder"
+  },
+  {
+    "number": 5592,
+    "title": "Projectile swapper",
+    "displayName": "ProjectileSwapper",
+    "description": "Swaps projectile visuals",
+    "tags": "projectile"
+  },
+  {
+    "number": 3708,
+    "title": "Create flinching-timer",
+    "displayName": "Flinching Timer",
+    "description": "Renders customizable flinching timer over designated NPC",
+    "tags": "flinch,flinching,timers,combat"
+  },
+  {
+    "number": 3128,
+    "title": "Add wintertodt-highlight",
+    "displayName": "Wintertodt Highlighter",
+    "description": "Tile highlighting for Wintertodt",
+    "tags": "wintertodt,visual"
+  },
+  {
+    "number": 3062,
+    "title": "Add f2ponly plugin",
+    "displayName": "F2P Only",
+    "description": "Makes the game F2P only.",
+    "tags": "f2p"
+  }
+]

@@ -1,9 +1,9 @@
 [
   {
     "number": 11641,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": "hotkey-toggle-sidepanels",
-    "rationale": ""
+    "rationale": "PR submission issue"
   },
   {
     "number": 11626,
@@ -39,7 +39,7 @@
     "number": 11545,
     "bucket": "procedural",
     "cited_existing_slug": "leaguessync",
-    "rationale": "Duplicate/concurrent PR"
+    "rationale": "PR submission issue"
   },
   {
     "number": 11466,
@@ -63,7 +63,7 @@
     "number": 11324,
     "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Duplicate/concurrent PR"
+    "rationale": "PR submission issue"
   },
   {
     "number": 11323,
@@ -79,9 +79,9 @@
   },
   {
     "number": 11229,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "PR submission issue"
   },
   {
     "number": 11183,
@@ -129,19 +129,19 @@
     "number": 11104,
     "bucket": "code_quality",
     "cited_existing_slug": "07flip",
-    "rationale": "Code quality feedback"
+    "rationale": "Code quality issue"
   },
   {
     "number": 11092,
     "bucket": "takeover",
     "cited_existing_slug": "group-ironmen-tracker",
-    "rationale": "Ownership/maintenance"
+    "rationale": "Maintenance/ownership"
   },
   {
     "number": 11087,
-    "bucket": "build",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Build failure"
+    "rationale": "PR submission issue"
   },
   {
     "number": 11084,
@@ -153,7 +153,7 @@
     "number": 11078,
     "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Duplicate/concurrent PR"
+    "rationale": "PR submission issue"
   },
   {
     "number": 11077,
@@ -163,9 +163,9 @@
   },
   {
     "number": 11008,
-    "bucket": "procedural",
+    "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": "Already merged/closed"
+    "rationale": "Build failure"
   },
   {
     "number": 10984,
@@ -189,7 +189,7 @@
     "number": 10922,
     "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Duplicate/concurrent PR"
+    "rationale": "PR submission issue"
   },
   {
     "number": 10910,
@@ -201,19 +201,19 @@
     "number": 10893,
     "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Duplicate/concurrent PR"
+    "rationale": "PR submission issue"
   },
   {
     "number": 10892,
     "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Duplicate/concurrent PR"
+    "rationale": "PR submission issue"
   },
   {
     "number": 10883,
     "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Duplicate/concurrent PR"
+    "rationale": "PR submission issue"
   },
   {
     "number": 10880,
@@ -223,15 +223,15 @@
   },
   {
     "number": 10868,
-    "bucket": "procedural",
+    "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": "Already merged/closed"
+    "rationale": "Build failure"
   },
   {
     "number": 10862,
-    "bucket": "procedural",
+    "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": "Already merged/closed"
+    "rationale": "Build failure"
   },
   {
     "number": 10839,
@@ -253,33 +253,33 @@
   },
   {
     "number": 10822,
-    "bucket": "procedural",
+    "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": "Already merged/closed"
+    "rationale": "Build failure"
   },
   {
     "number": 10765,
     "bucket": "procedural",
     "cited_existing_slug": "examine-tooltip",
-    "rationale": "Duplicate/concurrent PR"
+    "rationale": "PR submission issue"
   },
   {
     "number": 10757,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Code quality feedback"
+    "rationale": "Code quality issue"
   },
   {
     "number": 10754,
-    "bucket": "ambiguous",
+    "bucket": "saturation",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Duplicate functionality"
   },
   {
     "number": 10733,
     "bucket": "build",
     "cited_existing_slug": null,
-    "rationale": "Build configuration error"
+    "rationale": "Build configuration"
   },
   {
     "number": 10722,
@@ -307,9 +307,9 @@
   },
   {
     "number": 10683,
-    "bucket": "takeover",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Plugin takeover"
+    "rationale": "PR submission issue"
   },
   {
     "number": 10682,
@@ -327,7 +327,7 @@
     "number": 10666,
     "bucket": "code_quality",
     "cited_existing_slug": "osrs-claude",
-    "rationale": "Code quality feedback"
+    "rationale": "Code quality issue"
   },
   {
     "number": 10658,
@@ -351,7 +351,7 @@
     "number": 10577,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Code quality feedback"
+    "rationale": "Code quality issue"
   },
   {
     "number": 10523,
@@ -363,7 +363,7 @@
     "number": 10505,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Code quality feedback"
+    "rationale": "Code quality issue"
   },
   {
     "number": 10458,
@@ -373,21 +373,21 @@
   },
   {
     "number": 10449,
-    "bucket": "ambiguous",
+    "bucket": "not_interested",
     "cited_existing_slug": "gauntlet",
-    "rationale": ""
+    "rationale": "Design/direction feedback"
   },
   {
     "number": 10438,
-    "bucket": "procedural",
+    "bucket": "build",
     "cited_existing_slug": "sailing",
-    "rationale": "Already merged/closed"
+    "rationale": "Build configuration"
   },
   {
     "number": 10437,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Code quality feedback"
+    "rationale": "Code quality issue"
   },
   {
     "number": 10431,
@@ -397,9 +397,9 @@
   },
   {
     "number": 10428,
-    "bucket": "procedural",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": "Already merged/closed"
+    "rationale": "Invalid submission"
   },
   {
     "number": 10426,
@@ -409,15 +409,15 @@
   },
   {
     "number": 10425,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": "choicer",
-    "rationale": ""
+    "rationale": "PR submission issue"
   },
   {
     "number": 10419,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Invalid submission"
   },
   {
     "number": 10400,
@@ -427,15 +427,15 @@
   },
   {
     "number": 10391,
-    "bucket": "build",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": "Build configuration error"
+    "rationale": "PR submission issue"
   },
   {
     "number": 10382,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality issue"
   },
   {
     "number": 10379,
@@ -451,21 +451,21 @@
   },
   {
     "number": 10294,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Code quality issue"
   },
   {
     "number": 10260,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": "qol-interfaces",
-    "rationale": ""
+    "rationale": "Invalid submission"
   },
   {
     "number": 10251,
-    "bucket": "ambiguous",
+    "bucket": "policy",
     "cited_existing_slug": "dink",
-    "rationale": ""
+    "rationale": "Policy violation"
   },
   {
     "number": 10230,
@@ -481,45 +481,45 @@
   },
   {
     "number": 10203,
-    "bucket": "ambiguous",
+    "bucket": "not_interested",
     "cited_existing_slug": "sailing",
-    "rationale": ""
+    "rationale": "Design/direction feedback"
   },
   {
     "number": 10193,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Code quality feedback"
+    "rationale": "Code quality issue"
   },
   {
     "number": 10181,
-    "bucket": "ambiguous",
+    "bucket": "policy",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Policy violation"
   },
   {
     "number": 10154,
-    "bucket": "ambiguous",
+    "bucket": "code_quality",
     "cited_existing_slug": "custom-emoji",
-    "rationale": ""
+    "rationale": "Code quality issue"
   },
   {
     "number": 10115,
-    "bucket": "ambiguous",
+    "bucket": "policy",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Policy violation"
   },
   {
     "number": 10068,
-    "bucket": "ambiguous",
+    "bucket": "procedural",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "PR submission issue"
   },
   {
     "number": 10064,
-    "bucket": "ambiguous",
+    "bucket": "invalid",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Invalid submission"
   },
   {
     "number": 10052,
@@ -543,7 +543,7 @@
     "number": 9995,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Code quality feedback"
+    "rationale": "Code quality issue"
   },
   {
     "number": 9962,
@@ -567,7 +567,7 @@
     "number": 9941,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Code quality feedback"
+    "rationale": "Code quality issue"
   },
   {
     "number": 9936,
@@ -579,12 +579,12 @@
     "number": 9895,
     "bucket": "code_quality",
     "cited_existing_slug": null,
-    "rationale": "Code quality feedback"
+    "rationale": "Code quality issue"
   },
   {
     "number": 9889,
-    "bucket": "ambiguous",
+    "bucket": "takeover",
     "cited_existing_slug": null,
-    "rationale": ""
+    "rationale": "Maintenance/ownership"
   }
 ]

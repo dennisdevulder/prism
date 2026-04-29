@@ -1,0 +1,254 @@
+[
+  {
+    "number": "stat-track",
+    "title": "StatTrack",
+    "displayName": "StatTrack",
+    "description": "Saves group ironman data",
+    "tags": ""
+  },
+  {
+    "number": "clue-steps",
+    "title": "Clue steps",
+    "displayName": "Clue steps",
+    "description": "Shows the amount of steps completed on each clue scroll.",
+    "tags": "clue, cluescroll, steps"
+  },
+  {
+    "number": "average-total-level",
+    "title": "Average Total Level",
+    "displayName": "Average Total Level",
+    "description": "Show your average total level",
+    "tags": "average,level,total,max,xp"
+  },
+  {
+    "number": "unique-npc-kc-tracker",
+    "title": "Unique NPC Kill Tracker",
+    "displayName": "Unique NPC Kill Tracker",
+    "description": "Tracker to identify what NPCs have been killed.",
+    "tags": "Tracker, ID"
+  },
+  {
+    "number": "drift-net-improved",
+    "title": "Drift Net Improved",
+    "displayName": "Drift Net Improved",
+    "description": "Drift net plugin with additional features including fill opacity, notifications, statistics, and more",
+    "tags": "drift,net,hunter,fishing,skilling"
+  },
+  {
+    "number": "death-inventory",
+    "title": "Death Inventory",
+    "displayName": "Death Inventory",
+    "description": "A plugin which captures and shows your inventory when you died so you can replace used supplies and continue.",
+    "tags": "Inventory,Death,Die,Respawn"
+  },
+  {
+    "number": "cox-scouting-qol",
+    "title": "CoX Scouting QoL",
+    "displayName": "CoX Scouting QoL",
+    "description": "A Chambers of Xeric plugin that allows you to filter rooms!",
+    "tags": "CoX,Raids,Raid,Chambers,QoL,Raids 1,Olm,Scouting,Scout,Filter"
+  },
+  {
+    "number": "brimhaven-agility",
+    "title": "Brimhaven Agility",
+    "displayName": "Brimhaven Agility",
+    "description": "Brimhaven Agility Arena helpers, including a weighted shorted pathfinder",
+    "tags": "agility,brimhaven,arena,ticket,dispenser"
+  },
+  {
+    "number": "poison-moo",
+    "title": "Poison Moo",
+    "displayName": "Poison Moo",
+    "description": "Like the cows do",
+    "tags": "poison,moo,cow,sound"
+  },
+  {
+    "number": "boss-voicer",
+    "title": "Boss Voicer",
+    "displayName": "Boss Voicer",
+    "description": "Boss Voice Acting!",
+    "tags": "boss,voice,voicer,voicing,acting,sol,heredit,gwd,god,wars,dungeon,general,graardor,kril,k'ril,tsutsaroth,kree,arra,kree'arra,commander,zilyana,wilderness,wildy,vetion,vet'ion,calvarion,calvar'ion,barrows,barrow,brothers,tob,theatre,blood,verzik,vitur"
+  },
+  {
+    "number": "orb-hider",
+    "title": "Orb Hider",
+    "displayName": "Orb Hider",
+    "description": "Hides minimap orbs",
+    "tags": "orbs,orb,minimap,spec,hide"
+  },
+  {
+    "number": "pre-eoc-xp-drops",
+    "title": "Pre Eoc Xp Drops",
+    "displayName": "Pre Eoc Xp Drops",
+    "description": "\"Customize pre Eoc Xp drops of your desired era and display the 2010 xp Counter\"",
+    "tags": "\"experience\", \"levels\", \"overlay\", \"xp drop\""
+  },
+  {
+    "number": "combo-runes-only",
+    "title": "Combo Runes Only",
+    "displayName": "Combo Runes Only",
+    "description": "Removes the Craft-rune option from Runecraft altars, so you never misclick and make non-combination runes.",
+    "tags": "runecraft,rc,runecrafting,altar,gotr,guardians,rift"
+  },
+  {
+    "number": "tictac7x-capslock",
+    "title": "CAPS LOCK",
+    "displayName": "CAPS LOCK",
+    "description": "ALLOW CAPS LOCK MESSAGES",
+    "tags": "caps,lock"
+  },
+  {
+    "number": "better-tile-exporter",
+    "title": "Better Tile Exporter",
+    "displayName": "Better Tile Exporter",
+    "description": "Export tiles that are close to your or within the camera viewpoint",
+    "tags": "tile,marker,ground,export,exporter,qol,cox"
+  },
+  {
+    "number": "barracuda-trial-helm-lock",
+    "title": "Barracuda Trial Helm Lock",
+    "displayName": "Barracuda Trial Helm Lock",
+    "description": "Menu swaps to prevent leaving the ship's helm during Barracuda Trials",
+    "tags": "sailing,barracuda,trial,sail,sails,menu,swap,boat,ship, helm"
+  },
+  {
+    "number": "bracelet-reminder",
+    "title": "Bracelet Reminder",
+    "displayName": "Bracelet Reminder",
+    "description": "Reminder to wear a slaughter/expeditious bracelet",
+    "tags": "reminder, slayer, slaughter, expeditious"
+  },
+  {
+    "number": "ground-item-notification",
+    "title": "Ground Item Notification",
+    "displayName": "Ground Item Notification",
+    "description": "Plays a sound notification when specific items are spawned on the ground.",
+    "tags": "item,notification,sound,ground,drops"
+  },
+  {
+    "number": "health-notifier",
+    "title": "Target Health Notifier",
+    "displayName": "Target Health Notifier",
+    "description": "Alerts you when your target is dead or below a specified health amount",
+    "tags": "health,notifier,notify,kill,dead,hp,target"
+  },
+  {
+    "number": "tob-notification",
+    "title": "Tob Notification",
+    "displayName": "Tob Notification",
+    "description": "Pops up a notification for tob events",
+    "tags": "tob,notification"
+  },
+  {
+    "number": "agilityfc",
+    "title": "Agility FC",
+    "displayName": "Agility FC",
+    "description": "A multi-purpose utility plugin for Agility FC members.",
+    "tags": "agility,afc"
+  },
+  {
+    "number": "voicescape",
+    "title": "voicescape",
+    "displayName": "voicescape",
+    "description": "",
+    "tags": ""
+  },
+  {
+    "number": "collection-log-shout",
+    "title": "collection-log-shout",
+    "displayName": "collection-log-shout",
+    "description": "",
+    "tags": ""
+  },
+  {
+    "number": "thenwefight",
+    "title": "thenwefight",
+    "displayName": "thenwefight",
+    "description": "",
+    "tags": ""
+  },
+  {
+    "number": "house-advertisement-plus",
+    "title": "House Advertisement Plus",
+    "displayName": "House Advertisement Plus",
+    "description": "QOL features for the House Advertisement board.",
+    "tags": "poh, house, advert, advertisement, plus, board, favourites, filter"
+  },
+  {
+    "number": "customizable-xp-drops",
+    "title": "Customizable XP drops",
+    "displayName": "Customizable XP drops",
+    "description": "Allows you to customize your xp drops in more ways than in-game.",
+    "tags": "xp,drop,exp,experience,customizable,damage,hit,predicted"
+  },
+  {
+    "number": "instant-inventory",
+    "title": "Instant Inventory",
+    "displayName": "Instant Inventory",
+    "description": "Perform inventory actions instantly",
+    "tags": "inventory,qol,improvement,overlay,instant,client,drop,clean,herb,quality,of,life,item,items,equip"
+  },
+  {
+    "number": "normal-ancient-teleports",
+    "title": "Normal Ancient Teleports",
+    "displayName": "Normal Ancient Teleports",
+    "description": "Renames the teleports in the Ancient spell book to their logical names",
+    "tags": "qol,teleport,ancient,rename,label,name,spellbook"
+  },
+  {
+    "number": "line-markers",
+    "title": "Line Markers",
+    "displayName": "Line Markers",
+    "description": "Draw lines on tiles",
+    "tags": "line,tile,edge,ground,marker"
+  },
+  {
+    "number": "afk-overlay",
+    "title": "AFK Overlay",
+    "displayName": "AFK Overlay",
+    "description": "Displays player information in a floating overlay window",
+    "tags": "overlay,player,stats,afk"
+  },
+  {
+    "number": "wilderness-multi-lines",
+    "title": "Wilderness Lines",
+    "displayName": "Wilderness Lines",
+    "description": "Show wilderness multicombat areas, the dragon spear range to those areas, and level 20 and 30 lines.",
+    "tags": "dragon spear,multicombat,wildy,20,30,wilderness level"
+  },
+  {
+    "number": "diagonal-tile-indicators",
+    "title": "Diagonal Tile Indicators",
+    "displayName": "Diagonal Tile Indicators",
+    "description": "Displays tile indicators on diagonal tiles from the player's true tile position",
+    "tags": "tile,indicator,diagonal,overlay,highlight,pvp,pvm"
+  },
+  {
+    "number": "osrs-wiki-crowdsourcing",
+    "title": "OSRS Wiki Crowdsourcing",
+    "displayName": "OSRS Wiki Crowdsourcing",
+    "description": "Help the wiki figure out skilling success rates, burn rates, and more.",
+    "tags": "wiki"
+  },
+  {
+    "number": "lfghelper",
+    "title": "LFG Helper",
+    "displayName": "LFG Helper",
+    "description": "\"Helps organize LFG posts for Discord\"",
+    "tags": "\"lfg\", \"discord\", \"group\""
+  },
+  {
+    "number": "hide-and-seek-tracker",
+    "title": "Event Tools - Racing & Hide and Seek",
+    "displayName": "Event Tools - Racing & Hide and Seek",
+    "description": "A score tracking plugin for racing events.",
+    "tags": "Hide and Seek,game,clan,event,community,race,racing,finish line,Gieliguesser"
+  },
+  {
+    "number": "discord-rare-drop-notificater",
+    "title": "Discord Rare Drop Notifier",
+    "displayName": "Discord Rare Drop Notifier",
+    "description": "Sends a detailed notification via Discord webhooks whenever you get a rare/unique drop.",
+    "tags": "discord,loot,unique,boss,notification"
+  }
+]

@@ -1,49 +1,176 @@
-# Models the benchmark can run against. Adapter is the dispatch hint — what
-# the benchmark needs to know to actually invoke the model. Pricing is per
-# million tokens, sourced 2026-04-28.
+# Models the benchmark can run against. Pricing per million tokens.
 #
-# To add a model: drop an entry here. To run only a subset: pass --models
-# to scripts/benchmark.py.
+# Models below run via DigitalOcean Gradient Serverless Inference
+# (https://inference.do-ai.run/v1) — single OpenAI-compatible endpoint.
+# Catalog probed via scripts/probe_models.py on 2026-04-29.
+#
+# Per-model knobs:
+#   strict_json: false     drop response_format=json_object (some models
+#                          return empty/parse-error under strict JSON)
+#   max_tokens: <n>        widen budget for reasoning models that burn
+#                          tokens on internal reasoning before answering
+#   disabled: true         skip in the default sweep (--only-models still
+#                          forces them; useful for "broken upstream" cases)
+#
+# To run via DO:
+#   export OPENAI_API_KEY=<DO Model Access Key>
+#   export OPENAI_BASE_URL=https://inference.do-ai.run/v1
+#   python3 scripts/benchmark.py --tiers t1,t2
 
 models:
-  - id: claude-opus-4-7
-    label: Claude Opus 4.7
-    provider: anthropic
-    model_id: claude-opus-4-7
-    pricing: { input: 5.00, output: 25.00 }
-    notes: Anthropic flagship; deep reasoning at premium cost
+  # To benchmark a model not in this catalog (a direct Anthropic key, an
+  # OpenAI key, a local Ollama instance, your own fine-tune), use:
+  #   ./prism bench --model-id <api-id> --label "..." --pricing IN OUT \
+  #                 --base-url <url> --api-key <key>
+  # Add --save-as <id> to also append the model here for future runs.
 
-  - id: claude-sonnet-4-6
-    label: Claude Sonnet 4.6
-    provider: anthropic
-    model_id: claude-sonnet-4-6
-    pricing: { input: 3.00, output: 15.00 }
-    notes: Strong on multi-file reasoning; default T2 candidate
-
-  - id: claude-haiku-4-5
-    label: Claude Haiku 4.5
-    provider: anthropic
-    model_id: claude-haiku-4-5-20251001
-    pricing: { input: 1.00, output: 5.00 }
-    notes: Cheap baseline; default T1 candidate
-
-  - id: gpt-5-5
-    label: GPT-5.5
+  # ─── Open-weight models accessible on DO Gradient (verified 2026-04-29) ───
+  - id: deepseek-3-2
+    label: DeepSeek 3.2
     provider: openai
-    model_id: gpt-5.5
-    pricing: { input: 2.50, output: 15.00 }
-    notes: OpenAI flagship; tops Intelligence Index benchmarks
-
-  - id: gemini-3-1-pro
-    label: Gemini 3.1 Pro
-    provider: google
-    model_id: gemini-3.1-pro
-    pricing: { input: 2.00, output: 8.00 }
-    notes: Best price/performance for code per artificialanalysis.ai
-
-  - id: deepseek-v3-2
-    label: DeepSeek V3.2
-    provider: deepseek
-    model_id: deepseek-v3.2
+    model_id: deepseek-3.2
     pricing: { input: 0.35, output: 1.40 }
-    notes: Open-weight; extreme value per token
+    notes: |
+      Non-reasoning. Best value/correct in the prior sweep. Fast (~3s/cell).
+
+  - id: glm-5
+    label: GLM-5 (z.ai)
+    provider: openai
+    model_id: glm-5
+    pricing: { input: 1.00, output: 3.00 }
+    notes: |
+      Reasoning model but emitted 1 false-positive in the prior sweep
+      (description-mismatch on a clean fixture). Slower than DeepSeek.
+
+  - id: llama-4-maverick
+    label: Llama 4 Maverick
+    provider: openai
+    model_id: llama-4-maverick
+    pricing: { input: 1.50, output: 4.50 }
+    notes: Meta open-weight flagship; highest accuracy in prior sweep at higher cost
+
+  - id: llama-3-3-70b
+    label: Llama 3.3 70B Instruct
+    provider: openai
+    model_id: llama3.3-70b-instruct
+    pricing: { input: 0.59, output: 0.79 }
+    notes: Meta previous-gen flagship; pricing is rough public rate
+
+  - id: qwen3-5-397b
+    label: Qwen 3.5 397B (MoE)
+    provider: openai
+    model_id: qwen3.5-397b-a17b
+    pricing: { input: 0.80, output: 2.40 }
+    strict_json: false
+    max_tokens: 8192
+    notes: |
+      Alibaba flagship MoE (17B active). Reasoning model — needs the
+      wider max_tokens and free-form JSON. Verified fixed 2026-04-29.
+
+  - id: qwen3-32b
+    label: Qwen 3 32B
+    provider: openai
+    model_id: alibaba-qwen3-32b
+    pricing: { input: 0.40, output: 0.80 }
+    strict_json: false
+    max_tokens: 8192
+    notes: Reasoning; pricing approximate (DeepInfra public rate)
+
+  - id: qwen3-coder-flash
+    label: Qwen 3 Coder Flash
+    provider: openai
+    model_id: qwen3-coder-flash
+    pricing: { input: 0.30, output: 0.60 }
+    notes: Non-reasoning code-tuned variant; pricing approximate
+
+  - id: deepseek-r1-distill-llama-70b
+    label: DeepSeek R1 Distill (Llama 70B)
+    provider: openai
+    model_id: deepseek-r1-distill-llama-70b
+    pricing: { input: 0.59, output: 0.79 }
+    strict_json: false
+    max_tokens: 8192
+    notes: Reasoning distill; pricing approximate
+
+  - id: gpt-oss-120b
+    label: GPT-OSS 120B (OpenAI open-weight)
+    provider: openai
+    model_id: openai-gpt-oss-120b
+    pricing: { input: 0.10, output: 0.50 }
+    strict_json: false
+    max_tokens: 8192
+    notes: |
+      OpenAI's open-weight release. Reasoning. Pricing approximate
+      (Fireworks public rate).
+
+  - id: gpt-oss-20b
+    label: GPT-OSS 20B (OpenAI open-weight)
+    provider: openai
+    model_id: openai-gpt-oss-20b
+    pricing: { input: 0.05, output: 0.20 }
+    strict_json: false
+    max_tokens: 8192
+    notes: Smaller GPT-OSS variant; pricing approximate
+
+  - id: gemma-4-31b
+    label: Gemma 4 31B
+    provider: openai
+    model_id: gemma-4-31B-it
+    pricing: { input: 0.30, output: 0.80 }
+    notes: Google open-weight, instruction-tuned; pricing approximate
+
+  - id: mistral-3-14b
+    label: Mistral 3 14B
+    provider: openai
+    model_id: mistral-3-14B
+    pricing: { input: 0.20, output: 0.60 }
+    notes: Mistral mid-size; pricing approximate
+
+  - id: minimax-m2-5
+    label: MiniMax M2.5
+    provider: openai
+    model_id: minimax-m2.5
+    pricing: { input: 0.50, output: 1.50 }
+    strict_json: false
+    max_tokens: 8192
+    notes: Reasoning; pricing approximate
+
+  - id: nemotron-super-120b
+    label: NVIDIA Nemotron 3 Super 120B
+    provider: openai
+    model_id: nvidia-nemotron-3-super-120b
+    pricing: { input: 0.60, output: 1.80 }
+    strict_json: false
+    max_tokens: 8192
+    notes: Reasoning; pricing approximate
+
+  - id: nemotron-nano-12b
+    label: NVIDIA Nemotron Nano 12B v2 VL
+    provider: openai
+    model_id: nemotron-nano-12b-v2-vl
+    pricing: { input: 0.20, output: 0.60 }
+    notes: Non-reasoning, vision-language; pricing approximate
+
+  - id: nemotron-nano-omni
+    label: NVIDIA Nemotron 3 Nano Omni
+    provider: openai
+    model_id: nemotron-3-nano-omni
+    pricing: { input: 0.20, output: 0.60 }
+    strict_json: false
+    max_tokens: 8192
+    notes: Reasoning, omnimodal; pricing approximate
+
+  # ─── Models known broken on this provider; off by default ────────────────
+  - id: kimi-k2-5
+    label: Kimi K2.5
+    provider: openai
+    model_id: kimi-k2.5
+    pricing: { input: 0.60, output: 2.40 }
+    strict_json: false
+    max_tokens: 8192
+    disabled: true
+    notes: |
+      Reasoning model, BROKEN on DO Gradient for inputs >~5K tokens —
+      reasoning trace collapses to `!` spam from the first token, content
+      always empty. Tiny prompts work fine. Tested 2026-04-29; re-enable
+      when DO fixes the serving.

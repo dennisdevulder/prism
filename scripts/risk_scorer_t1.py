@@ -114,7 +114,16 @@ def gather_files_for_new(owner, repo, commit, max_files=15, max_total_chars=8000
     return "\n".join(rendered), len(paths)
 
 
-def build_user_prompt(pr_description, manifest_description, tags, scope, files_text):
+def build_user_prompt(pr_description, manifest_description, tags, scope, files_text, author_disclosure=None):
+    disclosure_block = ""
+    if author_disclosure:
+        disclosure_block = f"""Author disclosure (from a `prism-packet` block in the PR body):
+{author_disclosure}
+
+If the code contradicts a claimed decision or silently re-introduces a
+disclosed failed attempt, that's a high-severity pointer.
+
+"""
     return f"""PR description:
 {pr_description or "(empty)"}
 
@@ -124,13 +133,13 @@ Plugin manifest description:
 Tags:
 {tags or "(empty)"}
 
-Files in this {scope}:
+{disclosure_block}Files in this {scope}:
 {files_text}
 
 Output JSON only. Up to 7 pointers, sorted by severity (high → low)."""
 
 
-def evaluate_via_anthropic(packet, pr_description, manifest_description, tags, scope, files_text):
+def evaluate_via_anthropic(packet, pr_description, manifest_description, tags, scope, files_text, author_disclosure=None):
     try:
         from anthropic import Anthropic
     except ImportError:
@@ -142,7 +151,7 @@ def evaluate_via_anthropic(packet, pr_description, manifest_description, tags, s
     prompt_md = packet.prompt("t1_correctness_review")
     # Pull the System block out of the markdown
     system_prompt = _extract_section(prompt_md, "## System")
-    user = build_user_prompt(pr_description, manifest_description, tags, scope, files_text)
+    user = build_user_prompt(pr_description, manifest_description, tags, scope, files_text, author_disclosure)
 
     client = Anthropic()
     msg = client.messages.create(
@@ -181,13 +190,14 @@ def _extract_section(md, header):
     return "\n".join(out).strip()
 
 
-def evaluate(packet, target, pr, manifest, evaluator=evaluate_via_anthropic):
+def evaluate(packet, target, pr, manifest, evaluator=evaluate_via_anthropic, author_packet=None):
     """Top-level T1 evaluator.
 
     target = {slug, owner, repo, commit, is_new_plugin, base_commit?}
     pr = the PR metadata dict (for description)
     manifest = the parsed manifest dict (for description, tags)
     evaluator = pluggable; default is direct Anthropic SDK
+    author_packet = optional LTM packet dict from .prism/packet.json
     """
     owner, repo, commit = target.get("owner"), target.get("repo"), target.get("commit")
     if not (owner and repo and commit):
@@ -210,8 +220,13 @@ def evaluate(packet, target, pr, manifest, evaluator=evaluate_via_anthropic):
     manifest_desc = (manifest or {}).get("description", "")
     tags = (manifest or {}).get("tags", "")
 
+    author_disclosure = None
+    if author_packet:
+        from author_packet import summarize_for_prompt
+        author_disclosure = summarize_for_prompt(author_packet)
+
     try:
-        result = evaluator(packet, pr_desc, manifest_desc, tags, scope, files_text)
+        result = evaluator(packet, pr_desc, manifest_desc, tags, scope, files_text, author_disclosure)
     except Exception as e:
         return {"pointers": [], "error": str(e), "files_examined": file_count}
 
@@ -219,6 +234,7 @@ def evaluate(packet, target, pr, manifest, evaluator=evaluate_via_anthropic):
         "pointers": result.get("pointers", []),
         "scope": scope,
         "files_examined": file_count,
+        "author_packet_used": author_packet is not None,
     }
 
 

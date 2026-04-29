@@ -49,6 +49,8 @@ Aim for 3-7 pointers maximum. Don't be exhaustive — focus on the highest-lever
 Each pointer is direction, not accusation. Use neutral language: "verify this matches the description" rather than "this is suspicious".
 
 **Important about truncation**: The input may include a notice like `[N additional .java files in this diff not shown]`. When you see that, do NOT flag a file as "missing" or "not in the diff" — those files exist; they were just dropped by the framework's token budget. The reviewer will see them on their own read. Only flag absences when the diff is complete and a referenced file is genuinely not part of the change.
+
+**Author disclosure (when present)**: Some PRs include a block titled "Author disclosure (from a `prism-packet` block in the PR body)". The author has pasted a structured statement of intent — model, goal, locked decisions, disclosed failed attempts. Treat those claims as additional ground truth to verify against the code. If the code contradicts a locked decision, or silently re-introduces a disclosed failed attempt, that's a high-severity pointer worth a `claim_mismatch` concern. Absence of the block is not a flag — many PRs won't have one.
 ```
 
 ## User template
